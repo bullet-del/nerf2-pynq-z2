@@ -1,0 +1,4 @@
+interface:
+  display_name: "FPGA/ML Reproducibility Audit"
+  short_description: "Audit source, FPGA evidence, and power claims"
+  default_prompt: "Use $fpga-ml-reproducibility-audit to audit this FPGA/ML repository against its declared evidence contract."

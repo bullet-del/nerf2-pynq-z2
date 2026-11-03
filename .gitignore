@@ -1,0 +1,47 @@
+# External inputs: datasets and source checkpoints are supplied separately.
+/external/
+/00_Config/reproduction_config.local.json
+
+# Generated model, report, and delivery artifacts.
+/work/*
+!/work/README.md
+/outputs/*
+!/outputs/README.md
+/01_Vivado/output/*
+!/01_Vivado/output/README.md
+/01_Vivado/_build/
+/01_Vivado/**/*.cache/
+/01_Vivado/**/*.runs/
+/01_Vivado/**/*.sim/
+/01_Vivado/**/*.gen/
+/01_Vivado/**/*.srcs/
+/01_Vivado/**/*.hw/
+/01_Vivado/**/*.ip_user_files/
+/01_Vivado/**/*.xpr
+/01_Vivado/**/*.jou
+/01_Vivado/**/*.log
+
+# Python and local tooling.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Local measurements and large archives.
+/06_Power_Measurement/results/
+*.cfn
+*.zip
+*.tar
+*.tar.gz
+
+# Operating-system files.
+.DS_Store
+Thumbs.db
+Desktop.ini

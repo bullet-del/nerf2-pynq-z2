@@ -1,0 +1,42 @@
+{
+  "schema": "stage39-skill-verification-v1",
+  "skill": "nerf2-checkpoint-fpga-export",
+  "test_kind": "nondefault_end_to_end_smoke",
+  "scene_alias": "s23_skill_smoke_v5",
+  "status": "NONDEFAULT_RUN_RUNTIME_MODEL_CREATED_COMPATIBLE",
+  "input": {
+    "checkpoint_sha256": "eeccf2bba9cd4e84853e0fcf1dab9fa2d218b166a6f81485a9e5dc498f8a8beb",
+    "train_count": 4898,
+    "test_count": 1225,
+    "spectrum_png_count": 6123,
+    "resolution": [90, 360]
+  },
+  "parameters": {
+    "factorization_steps": 1,
+    "calibration_rays": 1024,
+    "qat_steps": 1,
+    "evaluated_test_maps": 1,
+    "formal_defaults_used": false
+  },
+  "pipeline_steps": 9,
+  "pipeline_step_statuses": ["PASS", "PASS", "PASS", "PASS", "PASS", "PASS", "PASS", "PASS", "PASS"],
+  "runtime": {
+    "weight_words": 1456,
+    "capacity_words": 3072,
+    "current_bitstream_compatible": true,
+    "npz_sha256": "1d7dac43125f956719ab678435d6c1f68d8f9318a263bbf601f7348be8ae5a39"
+  },
+  "final_code_dry_run_2026_10_19": {
+    "default_status": "PLANNED",
+    "default_formal_defaults_used": true,
+    "checkpoint_shapes_pass": true,
+    "planned_steps": 9,
+    "single_changed_parameter": "factorization_validation_maps=1",
+    "changed_parameter_formal_defaults_used": false
+  },
+  "claims": {
+    "software_pipeline_smoke": true,
+    "formal_new_scene_accuracy": false,
+    "physical_fpga_execution": false
+  }
+}

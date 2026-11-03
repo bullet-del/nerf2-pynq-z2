@@ -1,0 +1,23 @@
+{
+  "schema": "n2-stage37-independent-sim-vector-v1",
+  "expected_q15": [
+    4582,
+    4582
+  ],
+  "first_raw_per_ray": [
+    [
+      0,
+      -94,
+      12,
+      0
+    ],
+    [
+      0,
+      -94,
+      12,
+      0
+    ]
+  ],
+  "cache_words": 64,
+  "provenance": "portable frozen two-ray regression vector; no external file is required"
+}

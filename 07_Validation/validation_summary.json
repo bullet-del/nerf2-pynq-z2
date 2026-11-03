@@ -1,0 +1,121 @@
+{
+  "schema": "n2-stage39-cold-kit-validation-v1",
+  "validated_on": "2026-10-13",
+  "status": "PARAMETER_CORRECTED_AND_PARTIALLY_FORMALLY_REVALIDATED_NO_PS1",
+  "input_preflight": {
+    "status": "PASS",
+    "scenes": 4,
+    "total_test_maps_expected": 1725,
+    "checkpoint_hashes_verified": true
+  },
+  "model_pipeline_smoke": {
+    "status": "PASS",
+    "scope": "2 factorization steps, 2 QAT steps and 1 test map per scene",
+    "formal_accuracy_claim": false,
+    "runtime_weight_words": {
+      "s23": 1439,
+      "Meetingroom": 1637,
+      "Office1": 1669,
+      "Office2": 2385
+    }
+  },
+  "formal_parameter_revalidation": {
+    "status": "S23_AND_MEETINGROOM_PASS_OFFICE1_AND_OFFICE2_PENDING_RERUN",
+    "fixed_activation_percentile_all_scenes": 99.5,
+    "fixed_qat_learning_rate": 1e-05,
+    "preflight_contract_lock": true,
+    "stale_qat_provenance_guard": true,
+    "s23": {
+      "maps": 1225,
+      "pc_mean_ssim": 0.7545534930087519,
+      "qat_integer_mean_ssim": 0.7415369036231789,
+      "ptq_integer_mean_ssim": 0.7380942855234939,
+      "mean_ssim_gap": 0.01301658938557293,
+      "status": "PASS",
+      "weight_words": 1448
+    },
+    "Meetingroom": {
+      "maps": 200,
+      "pc_mean_ssim": 0.6925123339526891,
+      "qat_integer_mean_ssim": 0.682628587054179,
+      "ptq_integer_mean_ssim": 0.6717961625475881,
+      "mean_ssim_gap": 0.009883746898510126,
+      "status": "PASS",
+      "weight_words": 1851
+    },
+    "frozen_formal_target_cross_check": {
+      "scope": "read-only expected-result check; does not replace cold retraining",
+      "Office1": {
+        "maps": 200,
+        "pc_mean_ssim": 0.6616384745158226,
+        "qat_integer_mean_ssim": 0.6527056125135933,
+        "ptq_integer_mean_ssim": 0.629838716981308,
+        "mean_ssim_gap": 0.008932862002229314,
+        "status": "PASS"
+      },
+      "Office2": {
+        "maps": 100,
+        "pc_mean_ssim": 0.6128524901606137,
+        "qat_integer_mean_ssim": 0.6053295467549846,
+        "ptq_integer_mean_ssim": 0.6030485375647586,
+        "mean_ssim_gap": 0.00752294340562909,
+        "status": "PASS"
+      }
+    },
+    "fresh_network_tensors_match_formal_stage39": true,
+    "fresh_ptq_and_qat_weight_streams_match_formal_stage39": true
+  },
+  "rtl_simulation": {
+    "status": "PASS",
+    "runtime_load_cache_inference_bit_exact": true,
+    "four_scene_switch_and_return": true
+  },
+  "vivado_2024_1_full_build": {
+    "status": "PASS",
+    "part": "xc7z020clg400-1",
+    "wns_ns": 0.015,
+    "whs_ns": 0.019,
+    "bit_sha256": "688e0d2369e9190efb393521a892fcb251b9471f7b3f6241c3f776ce719ed559",
+    "hwh_sha256": "25c5ccc40cbb9c5dc569ba7d7544b3a7aa6049b31ceca4bc44719f0ea27c7cea",
+    "requested_frequency_mhz": 95,
+    "hwh_nominal_frequency_hz": 94117645,
+    "implemented_clock_period_ns": 10.625
+  },
+  "temporary_package_integration": {
+    "status": "PASS",
+    "board_files_checked": 239,
+    "pc_files_checked": 138,
+    "notebook_rerun_hash_policy": "PASS"
+  },
+  "source_static_checks": {
+    "status": "PASS",
+    "python_files": 124,
+    "json_files": 3,
+    "ps1_files": 0,
+    "ps1_text_references": 0,
+    "batch_files": 2,
+    "direct_python_entrypoints_tested": 3,
+    "direct_preflight_in_no_ps1_folder": "PASS",
+    "direct_python_to_vivado_tcl_launch": "PASS",
+    "errors": 0
+  },
+  "core_source_identity": {
+    "rtl_and_tcl_match_validated_build": true,
+    "stage37_model_pipeline_matches": true,
+    "package_builder_matches_pre_correction": false,
+    "pynq_board_template_matches": true,
+    "intentional_corrections": [
+      "formal QAT default learning rate restored to 1e-5",
+      "preflight fixed model contract added",
+      "evaluation and runtime stale-output provenance guard added"
+    ]
+  },
+  "not_executed_as_validation_shortcuts": {
+    "formal_3000_step_factorization": "Historical structural-adaptation stage complete; current fixed config uses s23=0 and other scenes=3000, while generic export defaults to 3000 for every new compatible model.",
+    "formal_1800_step_qat": "S23_AND_MEETINGROOM_COMPLETED; OFFICE1_AND_OFFICE2_MUST_RERUN",
+    "complete_1725_map_evaluation": "1425_MAPS_COMPLETED; OFFICE1_200_AND_OFFICE2_100_PENDING",
+    "new_physical_pynq_gate": "MUST_RUN_AFTER_PACKAGE_GENERATION",
+    "new_power_measurements": "MUST_MEASURE_PHYSICALLY"
+  },
+  "archive_scope_note": "Historical 2026-10-13 validation snapshot; not a new full run of the 2026-11-03 source copy."
+}

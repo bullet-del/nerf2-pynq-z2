@@ -1,0 +1,5 @@
+interface:
+  display_name: "FPGA/ML Reproduction Workflow"
+  short_description: "Run an FPGA/ML pipeline and produce evidence reports"
+  default_prompt: "Use $fpga-ml-reproduction-workflow to run the narrowest contract-defined pipeline, preserve evidence boundaries, and report the first failed step with its log."
+

@@ -1,0 +1,26 @@
+{
+  "schema": "amd-2026-competition-skill-submission-v1",
+  "directory_required_by_guide": "skill/",
+  "skills": [
+    {
+      "id": "nerf2-checkpoint-fpga-export",
+      "classification": ["prompt_workflow", "case_template", "validation_script", "troubleshooting_knowledge"],
+      "competition_position": "general_skill_package",
+      "project_bound": true,
+      "topic_independent": false,
+      "board_independent": false,
+      "generic_pynq_bonus_claim": false,
+      "verification_level": "nondefault_end_to_end_software_smoke"
+    },
+    {
+      "id": "pynq-overlay-validation",
+      "classification": ["case_template", "validation_script", "troubleshooting_checklist", "interface_contract_generator"],
+      "competition_position": "generic_pynq_skill",
+      "project_bound": false,
+      "topic_independent": true,
+      "board_independent_within_supported_pynq_targets": true,
+      "generic_pynq_bonus_claim": true,
+      "verification_level": "offline_unit_negative_control_real_stage39_bit_hwh_mock"
+    }
+  ]
+}

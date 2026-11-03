@@ -1,0 +1,46 @@
+{
+  "schema": "n2-stage39-english-repository-validation-v1",
+  "validated_on": "2026-10-13",
+  "status": "PASS_SOURCE_RELEASE",
+  "source_manifest": {
+    "status": "PASS",
+    "expected_manifested_files_after_this_report": 201,
+    "detects_missing_changed_and_unmanifested_source": true
+  },
+  "static_parsing": {
+    "status": "PASS",
+    "python_files": 129,
+    "json_files_excluding_source_manifest": 5,
+    "yaml_files": 8
+  },
+  "repository_hygiene": {
+    "status": "PASS",
+    "git_main_branch_initialized": true,
+    "generated_work_ignored": true,
+    "external_inputs_ignored": true,
+    "ps1_files_in_source_release": 0,
+    "non_ascii_path_names_in_source_release": 0,
+    "english_repository_documentation": true,
+    "chinese_judge_application_ui_preserved": true
+  },
+  "generic_skill": {
+    "name": "fpga-ml-reproducibility-audit",
+    "quick_validate": "PASS",
+    "stage39_source_contract_audit": "PASS",
+    "unrelated_synthetic_fpga_contract_forward_test": "PASS",
+    "clean_repository_software_mode": "PENDING_AS_DESIGNED"
+  },
+  "executable_source_identity": {
+    "files_compared_with_corrected_cold_kit": 142,
+    "missing": 0,
+    "content_differences_ignoring_line_endings": [
+      "03_Package_Builder/common.py"
+    ],
+    "difference_reason": "select ignored machine-local configuration when present; model, RTL, board, PC application, and measurement algorithms are unchanged"
+  },
+  "formal_result_boundary": {
+    "current_clean_release_contains_generated_formal_results": false,
+    "current_clean_release_contains_physical_board_evidence": false,
+    "rule": "The current reproduction must finish the documented software and physical gates before claiming a newly reproduced Stage39 result."
+  }
+}

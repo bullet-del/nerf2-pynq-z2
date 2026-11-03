@@ -1,0 +1,9 @@
+Copyright (c) 2026 Stage39 Project Authors. All rights reserved.
+
+No license is granted for redistribution, modification, or commercial use of
+the original Stage39 project code unless the copyright holder gives separate
+written permission.
+
+Third-party components remain under their own licenses. In particular, the
+vendored NeRF2 source in 04_PC_App/template/software/third_party/NeRF2 retains
+the license shipped in that directory.

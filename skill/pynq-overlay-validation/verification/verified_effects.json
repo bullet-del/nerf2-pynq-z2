@@ -1,0 +1,35 @@
+{
+  "schema": "stage39-skill-verification-v1",
+  "skill": "pynq-overlay-validation",
+  "offline_unit_test": {
+    "namespace_hwh_parse": "PASS",
+    "bundle_generation": "PASS",
+    "positive_mock": "PASS_MOCK",
+    "negative_golden_control": "FAIL_AS_EXPECTED"
+  },
+  "real_stage39_design": {
+    "design": "n2_stage37_universal",
+    "device": "7z020",
+    "vivado": "2024.1",
+    "module_count": 7,
+    "dma_candidates": ["dma"],
+    "custom_module_candidates": ["n2_wrapper"],
+    "register_bases": {"dma": "0x40400000", "gpio": "0x41200000"},
+    "bit_sha256": "0c3966e4f2e0ee7f367ca2de6855d0dd3acdb90de7ae993493fdeaa056b3ecf7",
+    "hwh_sha256": "95799c8626ea8d3971ceb5ff0b31901d3c65a225c85aec383bfdd643fee52bff"
+  },
+  "mock_cross_check": {
+    "verified_date": "2026-10-19",
+    "status": "PASS_MOCK",
+    "physical_board_evidence": false,
+    "repetitions": 5,
+    "output_count": 1,
+    "maximum_absolute_error": 0.0
+  },
+  "claims": {
+    "offline_parser_generator_and_comparator": true,
+    "real_project_bit_hwh_cross_check": true,
+    "new_script_pass_board": false,
+    "cross_board_pass_board": false
+  }
+}

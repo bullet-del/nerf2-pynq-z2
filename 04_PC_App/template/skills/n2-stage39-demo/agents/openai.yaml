@@ -1,0 +1,4 @@
+interface:
+  display_name: "N2-NeRF2 Stage39 Demo"
+  short_description: "Run and audit the Stage39 four-scene FPGA demonstration"
+  default_prompt: "Audit and run the N2-NeRF2 Stage39 demonstration without treating software references as physical FPGA evidence."

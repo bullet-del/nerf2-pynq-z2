@@ -1,0 +1,16 @@
+* text=auto eol=lf
+
+*.bat text eol=crlf
+
+*.bit binary
+*.hwh binary
+*.npz binary
+*.npy binary
+*.tar binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.cfn binary

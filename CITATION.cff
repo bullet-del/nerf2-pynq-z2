@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this repository, cite the Stage39 project and the upstream NeRF2 work."
+title: "N2-NeRF2 Stage39: Four-Scene Wireless Radio Map Inference on PYNQ-Z2"
+type: software
+version: "39.0-source-2026.11.03"
+date-released: 2026-11-03
+authors:
+  - name: "Stage39 Project Team"
+license: LicenseRef-Proprietary
+keywords:
+  - FPGA
+  - PYNQ-Z2
+  - neural radiance field
+  - wireless radio map
+  - quantization-aware training
+  - reproducible research
