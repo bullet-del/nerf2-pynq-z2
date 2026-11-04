@@ -1,6 +1,6 @@
 {
   "schema": "n2-stage39-source-manifest-v2",
-  "generated_utc": "2026-11-04T05:55:47.208066+00:00",
+  "generated_utc": "2026-11-04T08:52:48.810613+00:00",
   "scope": "All distributable source files; generated work, local configuration, external inputs, caches, and Git metadata are excluded.",
   "files": [
     {
@@ -880,8 +880,8 @@
     },
     {
       "path": "07_Validation/PUBLICATION_VALIDATION.json",
-      "bytes": 1462,
-      "sha256": "c7b6119cebb2abe9cdd2a19a415cd643a0ec3a4c22431037dca631d79c950e6a"
+      "bytes": 1751,
+      "sha256": "c5b52ebd958e2b6b9bd2165729c90194bc1a035702d2da1d563f39b777d947da"
     },
     {
       "path": "07_Validation/VALIDATION_REPORT.md",
@@ -1165,8 +1165,8 @@
     },
     {
       "path": "docs/GITHUB_UPLOAD.md",
-      "bytes": 1765,
-      "sha256": "ed22c143ab95a2168cfb9abd4559cc3eb2875b0b058941c4ef4736f32fdb87ba"
+      "bytes": 2219,
+      "sha256": "d2849d238ef9d90db9e93cb943678f2f71b98f0f62d35ea66ef98015adda1384"
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
@@ -1225,8 +1225,8 @@
     },
     {
       "path": "scripts/publish_complete.py",
-      "bytes": 11748,
-      "sha256": "3977166d06faa346cf5c76e9d16759113e981b186f2ad790afbee72e185ec1a8"
+      "bytes": 15226,
+      "sha256": "c712cb679937a17bebd2f56aace814fa348e69cf231ec27f5e65bf0dde131912"
     },
     {
       "path": "scripts/publish_github.py",
@@ -1240,8 +1240,8 @@
     },
     {
       "path": "scripts/tests/test_complete_publication.py",
-      "bytes": 3508,
-      "sha256": "94d379b40dd2743671c9bae67e6dc3f6697373851b471b4085172bfe895fe77f"
+      "bytes": 7811,
+      "sha256": "714b4f136e01d317bab8d09f0e50dbdb3fc684c544e3eacffc1c95590ee2b29b"
     },
     {
       "path": "scripts/tests/test_publish_github.py",

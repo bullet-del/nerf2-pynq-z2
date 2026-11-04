@@ -12,6 +12,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 from pathlib import Path
 
 import publish_github as github_tools
@@ -26,8 +27,49 @@ def run(args, cwd=None, check=True, live=False):
                             stderr=None if live else subprocess.PIPE,
                             encoding="utf-8", errors="replace")
     if check and result.returncode:
-        raise RuntimeError((result.stderr or result.stdout or "Command failed").strip())
+        command = " ".join(str(arg) for arg in args[:3])
+        detail = (result.stderr or result.stdout or "See the command output above").strip()
+        raise RuntimeError(f"{command} exited with status {result.returncode}: {detail}")
     return result
+
+
+def seed_fetch_cache(workspace, checkout, origin):
+    """Reuse Git objects from an earlier publication checkout for the same remote."""
+    for previous in sorted(workspace.glob("checkout-*"), reverse=True):
+        if previous == checkout or previous.resolve().parent != workspace.resolve():
+            continue
+        if not (previous / ".git").is_dir():
+            continue
+        configured = run(["git", "config", "--local", "--get", "remote.origin.url"],
+                         cwd=previous, check=False)
+        if configured.returncode or configured.stdout.strip() != origin:
+            continue
+        head = run(["git", "rev-parse", "--verify", "HEAD^{commit}"], cwd=previous, check=False)
+        if head.returncode:
+            continue
+        result = run(["git", "fetch", "--no-tags", previous.resolve().as_uri(),
+                      "HEAD:refs/stage39/fetch-cache"], cwd=checkout, check=False)
+        if result.returncode == 0:
+            print("Reused objects from the previous local checkout.", flush=True)
+            return
+
+
+def fetch_main(checkout):
+    command = ["git", "fetch", "--no-tags", "origin", "refs/heads/main:refs/remotes/origin/main"]
+    transient_errors = ("rpc failed", "early eof", "unexpected disconnect", "connection reset",
+                        "timed out", "timeout", "http 502", "http 503", "http 504")
+    for attempt in range(1, 4):
+        print(f"Fetching GitHub main via HTTP/1.1 ({attempt}/3)...", flush=True)
+        result = run(command, cwd=checkout, check=False)
+        if result.returncode == 0:
+            if result.stderr.strip():
+                print(result.stderr.strip(), flush=True)
+            return
+        detail = (result.stderr or result.stdout or "No details from Git").strip()
+        if attempt == 3 or not any(error in detail.lower() for error in transient_errors):
+            raise RuntimeError(f"GitHub main fetch failed on attempt {attempt}:\n{detail}")
+        print(detail, file=sys.stderr, flush=True)
+        time.sleep(2 * attempt)
 
 
 def replace_checkout(checkout, source, files):
@@ -90,6 +132,40 @@ def release_source_commit(release, tag_ref, commit, checkout):
     return tag_commit
 
 
+def find_release(gh, repository, tag):
+    """The tag endpoint finds published releases. List releases to find drafts."""
+    endpoint = "repos/" + repository + "/releases"
+    response = run([gh, "api", endpoint + "/tags/" + tag], check=False)
+    if response.returncode == 0:
+        return json.loads(response.stdout)
+    if "HTTP 404" not in (response.stderr or ""):
+        raise RuntimeError(response.stderr or "Unable to query release")
+    page = 1
+    while True:
+        response = run([gh, "api", endpoint + "?per_page=100&page=" + str(page)])
+        releases = json.loads(response.stdout)
+        matches = [release for release in releases if release.get("tag_name") == tag]
+        if len(matches) > 1:
+            raise RuntimeError("More than one release has the requested tag. Inspect the repository releases.")
+        if matches:
+            return matches[0]
+        if len(releases) < 100:
+            return None
+        page += 1
+
+
+def ensure_release(gh, repository, tag, commit):
+    release = find_release(gh, repository, tag)
+    if release is None:
+        run([gh, "release", "create", tag, "--repo", repository, "--target", commit, "--draft",
+             "--title", "Stage39 complete engineering submission (2026-11-04)",
+             "--notes-file", ROOT / "docs/release_notes.md"], live=True)
+        release = find_release(gh, repository, tag)
+    if release is None:
+        raise RuntimeError("Release was created but is not visible yet. Run the same command to resume.")
+    return release
+
+
 def publish(assets_dir):
     metadata = read_json(ROOT / "data/release_assets.json")
     repository = metadata["repository"]
@@ -114,8 +190,11 @@ def publish(assets_dir):
     # is read, printed, put in a URL, or passed on the command line.
     run(["git", "init", "--initial-branch=main", checkout])
     configure_credentials(gh, checkout)
-    run(["git", "remote", "add", "origin", "https://github.com/" + repository + ".git"], cwd=checkout)
-    run(["git", "fetch", "origin", "main"], cwd=checkout, live=True)
+    origin = "https://github.com/" + repository + ".git"
+    run(["git", "remote", "add", "origin", origin], cwd=checkout)
+    run(["git", "config", "--local", "http.version", "HTTP/1.1"], cwd=checkout)
+    seed_fetch_cache(workspace, checkout, origin)
+    fetch_main(checkout)
     run(["git", "checkout", "-B", "main", "origin/main"], cwd=checkout)
     old_commit = run(["git", "rev-parse", "HEAD"], cwd=checkout).stdout.strip()
     run(["git", "config", "--local", "user.name", user.get("name") or user["login"]], cwd=checkout)
@@ -140,15 +219,9 @@ def publish(assets_dir):
     if remote != commit:
         raise RuntimeError("Remote main differs from the uploaded commit")
     tag = metadata["tag"]
-    endpoint = "repos/" + repository + "/releases/tags/" + tag
-    response = run([gh, "api", endpoint], check=False)
-    if response.returncode:
-        if "HTTP 404" not in (response.stderr or ""):
-            raise RuntimeError(response.stderr or "Unable to query release")
-        run([gh, "release", "create", tag, "--repo", repository, "--target", commit, "--draft",
-             "--title", "Stage39 complete engineering submission (2026-11-04)",
-             "--notes-file", ROOT / "docs/release_notes.md"], live=True)
-    release = json.loads(run([gh, "api", endpoint]).stdout)
+    release = ensure_release(gh, repository, tag, commit)
+    endpoint = "repos/" + repository + "/releases/" + str(release["id"])
+    print("Using release " + str(release["id"]) + " (draft=" + str(release["draft"]) + ")", flush=True)
     tag_ref = run(["git", "ls-remote", "origin", "refs/tags/" + tag], cwd=checkout).stdout.split()
     tag_commit = release_source_commit(release, tag_ref, commit, checkout)
     if tag_commit != commit:
