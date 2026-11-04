@@ -115,4 +115,4 @@ python skill/nerf2-checkpoint-fpga-export/scripts/run_nerf2_checkpoint_export.py
 | Notebook 保存会改变自身哈希 | 可复现检查不应把会被运行环境自动改写的 Notebook 当作不可变运行输入 |
 
 更详细的输入输出契约见 `references/input-and-output-contract.md`，大模型协作提示词见
-`prompts/使用提示词模板.md`。
+`prompts/prompt_workflow.md`。

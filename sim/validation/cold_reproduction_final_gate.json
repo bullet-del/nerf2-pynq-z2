@@ -1,0 +1,105 @@
+{
+  "schema": "n2-stage39-cold-reproduction-final-gate-v1",
+  "created_utc": "2026-10-13T15:18:54.858733+00:00",
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "delivery.board.zip_sha256",
+      "status": "PASS"
+    },
+    {
+      "id": "delivery.pc.zip_sha256",
+      "status": "PASS"
+    },
+    {
+      "id": "package.board.verifier",
+      "status": "PASS",
+      "output": "STAGE39 BOARD PACKAGE VERIFY PASS\nimmutable_files_checked = 5402\nnotebook_sources_checked = 1\npackage_revision = stage39-board-cold-repro-20261012-r1\nfrequency_mhz = 95.0; scenes = 4"
+    },
+    {
+      "id": "package.pc.verifier",
+      "status": "PASS",
+      "output": "STAGE39 PC PACKAGE VERIFY PASS\nfiles_checked = 5301\nscenes = 4; output = raw_int8_q15; output_calibration = none"
+    },
+    {
+      "id": "lineage.s23.original_checkpoint",
+      "status": "PASS",
+      "expected": "eeccf2bba9cd4e84853e0fcf1dab9fa2d218b166a6f81485a9e5dc498f8a8beb",
+      "actual": "eeccf2bba9cd4e84853e0fcf1dab9fa2d218b166a6f81485a9e5dc498f8a8beb",
+      "factorized_source": "eeccf2bba9cd4e84853e0fcf1dab9fa2d218b166a6f81485a9e5dc498f8a8beb"
+    },
+    {
+      "id": "accuracy.s23.gap",
+      "status": "PASS",
+      "gap": 0.01301658938557293
+    },
+    {
+      "id": "lineage.Meetingroom.original_checkpoint",
+      "status": "PASS",
+      "expected": "b12006b8945f7fddbfb9e54c870dc9a52a634adff66eb4a48a07e8d8f20d72ae",
+      "actual": "b12006b8945f7fddbfb9e54c870dc9a52a634adff66eb4a48a07e8d8f20d72ae",
+      "factorized_source": "b12006b8945f7fddbfb9e54c870dc9a52a634adff66eb4a48a07e8d8f20d72ae"
+    },
+    {
+      "id": "accuracy.Meetingroom.gap",
+      "status": "PASS",
+      "gap": 0.009883746898510126
+    },
+    {
+      "id": "lineage.Office1.original_checkpoint",
+      "status": "PASS",
+      "expected": "8a4e437a31dc631e99cba20633a581b8f93007e43ff329e1b59d458c1dfad16d",
+      "actual": "8a4e437a31dc631e99cba20633a581b8f93007e43ff329e1b59d458c1dfad16d",
+      "factorized_source": "8a4e437a31dc631e99cba20633a581b8f93007e43ff329e1b59d458c1dfad16d"
+    },
+    {
+      "id": "accuracy.Office1.gap",
+      "status": "PASS",
+      "gap": 0.008932862002229314
+    },
+    {
+      "id": "lineage.Office2.original_checkpoint",
+      "status": "PASS",
+      "expected": "95e5fc58eb2c4790517fcb3380e7f5d4247654773f3723b3c14a13bf9a7e72ba",
+      "actual": "95e5fc58eb2c4790517fcb3380e7f5d4247654773f3723b3c14a13bf9a7e72ba",
+      "factorized_source": "95e5fc58eb2c4790517fcb3380e7f5d4247654773f3723b3c14a13bf9a7e72ba"
+    },
+    {
+      "id": "accuracy.Office2.gap",
+      "status": "PASS",
+      "gap": 0.00752294340562909
+    },
+    {
+      "id": "four_scene.one_bitstream",
+      "status": "PASS"
+    },
+    {
+      "id": "four_scene.distinct_runtime_models",
+      "status": "PASS"
+    },
+    {
+      "id": "complete_test_maps.1725",
+      "status": "PASS",
+      "maps": 1725
+    },
+    {
+      "id": "rtl.simulation",
+      "status": "PASS"
+    },
+    {
+      "id": "vivado.95mhz_timing",
+      "status": "PASS"
+    }
+  ],
+  "physical_gate": "PENDING_NEW_BOARD_EXECUTION",
+  "physical_requirements": [
+    "four-scene full-map bit exact",
+    "4x50 latency",
+    "1725 board maps",
+    "HDMI",
+    "random blind",
+    "arbitrary Tx",
+    "nonce negative control",
+    "new power measurements"
+  ]
+}

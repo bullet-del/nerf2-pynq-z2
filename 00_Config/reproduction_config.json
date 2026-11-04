@@ -1,6 +1,6 @@
 {
   "schema": "n2-stage39-cold-reproduction-config-v1",
-  "input_root": "external/NeRF2-main",
+  "input_root": "external/nerf2_inputs",
   "vivado_executable": "C:/Xilinx/Vivado/2024.1/bin/vivado.bat",
   "conda_environment": "nerf2",
   "required_vivado_version": "2024.1",
@@ -64,12 +64,15 @@
   "qat": {
     "steps": 1800,
     "batch": 192,
-    "learning_rate": 0.00001,
+    "learning_rate": 1e-05,
     "seed": 3902,
     "algorithm_id": "stage39-hardware-exact-qat-ste-v1"
   },
   "acceptance": {
-    "resolution": [90, 360],
+    "resolution": [
+      90,
+      360
+    ],
     "total_test_maps": 1725,
     "maximum_mean_ssim_gap": 0.015,
     "weight_capacity_words": 3072,

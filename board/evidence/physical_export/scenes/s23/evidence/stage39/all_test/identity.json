@@ -1,0 +1,9 @@
+{
+  "schema": "n2-stage39-all-test-identity-v1",
+  "scene_id": "s23",
+  "bit_sha256": "0c3966e4f2e0ee7f367ca2de6855d0dd3acdb90de7ae993493fdeaa056b3ecf7",
+  "runtime_model_sha256": "31a2df57e190799e23ccef3001701657b30bdad1d5476966ea8742da277f9d56",
+  "test_catalog_sha256": "7bc59c5cceb86efc244f5ee6cdba64425e7f718f6b470e8b4d910647cd55905f",
+  "output_mode": "raw_int8_q15",
+  "qat_algorithm_id": "stage39-hardware-exact-qat-ste-v1"
+}

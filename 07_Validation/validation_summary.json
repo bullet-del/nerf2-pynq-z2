@@ -1,4 +1,7 @@
 {
+  "historical_snapshot_date": "2026-10-13 before the final four-scene run completed",
+  "superseded_for_final_software_status_by": "sim/validation/cold_reproduction_final_gate.json",
+  "archived_deployed_physical_status": "board/evidence/physical_finalization.json",
   "schema": "n2-stage39-cold-kit-validation-v1",
   "validated_on": "2026-10-13",
   "status": "PARAMETER_CORRECTED_AND_PARTIALLY_FORMALLY_REVALIDATED_NO_PS1",

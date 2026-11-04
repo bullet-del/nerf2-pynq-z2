@@ -1,0 +1,295 @@
+{
+  "schema": "n2-stage39-physical-finalization-v1",
+  "created_utc": "2026-10-09T09:27:42.386789+00:00",
+  "status": "FULL_PASS",
+  "checks": [
+    {
+      "id": "physical_export_integrity",
+      "status": "PASS"
+    },
+    {
+      "id": "four_scene_physical_bit_exact",
+      "status": "PASS"
+    },
+    {
+      "id": "four_scene_50x_latency_stability",
+      "status": "PASS"
+    },
+    {
+      "id": "four_scene_physical_full_test_export",
+      "status": "PASS"
+    },
+    {
+      "id": "four_scene_physical_accuracy_gap",
+      "status": "PASS"
+    },
+    {
+      "id": "board_export_matches_pc_app_archive",
+      "status": "PASS"
+    },
+    {
+      "id": "external_board_input_power",
+      "status": "PASS"
+    },
+    {
+      "id": "live_hdmi_and_judge_rehearsal",
+      "status": "PASS",
+      "reason": null
+    }
+  ],
+  "details": {
+    "physical_export_manifest": {
+      "schema": "n2-stage39-physical-evidence-export-v1",
+      "created_utc": "2026-10-08T11:43:47.871681+00:00",
+      "board_package": "N2-NeRF2-Stage39-board",
+      "scenes": [
+        "s23",
+        "Meetingroom",
+        "Office1",
+        "Office2"
+      ],
+      "contains_full_test_summaries": {
+        "s23": true,
+        "Meetingroom": true,
+        "Office1": true,
+        "Office2": true
+      },
+      "files": [
+        {
+          "path": "evidence/stage39_physical_gate/selftests.json",
+          "sha256": "4ca8e506dfb15f523be1970c6b023811d7a90c7bacc4daed11278ecba8551c6a",
+          "bytes": 5179
+        },
+        {
+          "path": "evidence/stage39_physical_gate/benchmark_50.json",
+          "sha256": "c2dc03f8608600d05f97a8706b114aa9b0321f429bb8d75d300b94fda100058a",
+          "bytes": 8591
+        },
+        {
+          "path": "scenes/s23/evidence/stage39/benchmark_50.json",
+          "sha256": "14ca097e22ba06396d67be0060b53c6022ee8424a5138bd3cae21467d852d66e",
+          "bytes": 1815
+        },
+        {
+          "path": "scenes/s23/evidence/stage39/all_test/identity.json",
+          "sha256": "9c99d34b7d5317743fdc0bf8cd6c9efc02a195dae08522e22db64eae32594fc3",
+          "bytes": 434
+        },
+        {
+          "path": "scenes/s23/evidence/stage39/all_test/result.json",
+          "sha256": "e5850d5f16ed15dd7f2ea80b128cab2f7951ec06dc3984209dbba909133988aa",
+          "bytes": 1256694
+        },
+        {
+          "path": "scenes/Meetingroom/evidence/stage39/benchmark_50.json",
+          "sha256": "e48cabe656f25ce7927d6fc2fdb5fcb4f017909fc42613370de621332c58fd2c",
+          "bytes": 1835
+        },
+        {
+          "path": "scenes/Meetingroom/evidence/stage39/all_test/identity.json",
+          "sha256": "000847143f14b256d6806a3e66f609ca9fc265f9a74ee0d903e264ee3d2ae52c",
+          "bytes": 442
+        },
+        {
+          "path": "scenes/Meetingroom/evidence/stage39/all_test/result.json",
+          "sha256": "9fb3e21ab808e790e421b017ee879f4caafc7cacadeec6521898934c5524bdf3",
+          "bytes": 480632
+        },
+        {
+          "path": "scenes/Office1/evidence/stage39/benchmark_50.json",
+          "sha256": "5482641b6f0ad10a5aa9c2705f20edbb64b7b4bbc92333bcb8bfdacdf9ee70a9",
+          "bytes": 1830
+        },
+        {
+          "path": "scenes/Office1/evidence/stage39/all_test/identity.json",
+          "sha256": "c9c09508f8e6bfb6e79e2ce58f55c97b5cf615c9b37cc4932cdaef5d42a453c6",
+          "bytes": 438
+        },
+        {
+          "path": "scenes/Office1/evidence/stage39/all_test/result.json",
+          "sha256": "3668060947f2ccde9ee1e1abbf5a6755e72a0dddf7a1a1ad50e7eec17a0af3d7",
+          "bytes": 530869
+        },
+        {
+          "path": "scenes/Office2/evidence/stage39/benchmark_50.json",
+          "sha256": "763598cc8b3662fcd3f2dbf9e4aaf594b221d3d0afce43c62292b89d4b03068c",
+          "bytes": 1836
+        },
+        {
+          "path": "scenes/Office2/evidence/stage39/all_test/identity.json",
+          "sha256": "d653dea30f66d913c6d46423240d8962e009554b53a395fad4d0de536bf69284",
+          "bytes": 438
+        },
+        {
+          "path": "scenes/Office2/evidence/stage39/all_test/result.json",
+          "sha256": "b7349a1c8e8c27620b145ca12d04fd91f23c8898830b59c4e72805773ba7961b",
+          "bytes": 387918
+        }
+      ]
+    },
+    "selftests": [
+      {
+        "scene": "s23",
+        "bit_exact": true,
+        "full_map_seconds": 1.015849562000028,
+        "raw_q15_sha256": "f0113c349ebd7af03716f83256ed62e12cff54e49af83b4345b56467eeac0eea"
+      },
+      {
+        "scene": "Meetingroom",
+        "bit_exact": true,
+        "full_map_seconds": 1.0899630499999944,
+        "raw_q15_sha256": "120bf110c366026e7d55fbabf73a7aaec2b782a8f8e0a7643fc4e3088ab816b1"
+      },
+      {
+        "scene": "Office1",
+        "bit_exact": true,
+        "full_map_seconds": 0.983133099999975,
+        "raw_q15_sha256": "50c87534f6732ebf4db5f3b693d416a35d018d41eba7fd64ede830eb670e6649"
+      },
+      {
+        "scene": "Office2",
+        "bit_exact": true,
+        "full_map_seconds": 0.9776510019999591,
+        "raw_q15_sha256": "f2af655eea8dfea34656993483991a3bc7cc58984f683ae10e3b69389784c189"
+      }
+    ],
+    "benchmarks": [
+      {
+        "scene": "s23",
+        "runs": 50,
+        "median_seconds": 1.003878380499998,
+        "p95_seconds": 1.0463675378999937,
+        "minimum_seconds": 0.9920632540000724,
+        "maximum_seconds": 1.071055149000017
+      },
+      {
+        "scene": "Meetingroom",
+        "runs": 50,
+        "median_seconds": 0.9635007834999101,
+        "p95_seconds": 1.0151290348500481,
+        "minimum_seconds": 0.9598416670000915,
+        "maximum_seconds": 1.035752699999989
+      },
+      {
+        "scene": "Office1",
+        "runs": 50,
+        "median_seconds": 0.962616536999974,
+        "p95_seconds": 0.9833709896999436,
+        "minimum_seconds": 0.9592409829999724,
+        "maximum_seconds": 1.03658644799998
+      },
+      {
+        "scene": "Office2",
+        "runs": 50,
+        "median_seconds": 0.960714484499988,
+        "p95_seconds": 1.0077110609999407,
+        "minimum_seconds": 0.9565798140000652,
+        "maximum_seconds": 1.0231266319999577
+      }
+    ],
+    "exported_full_tests": [
+      {
+        "scene": "s23",
+        "samples": 1225,
+        "pc_ssim_mean": 0.7545533671461945,
+        "fpga_raw_ssim_mean": 0.7415369036231871,
+        "mean_ssim_gap": 0.013016463523007338
+      },
+      {
+        "scene": "Meetingroom",
+        "samples": 200,
+        "pc_ssim_mean": 0.6925121814646792,
+        "fpga_raw_ssim_mean": 0.6826285870541962,
+        "mean_ssim_gap": 0.009883594410483032
+      },
+      {
+        "scene": "Office1",
+        "samples": 200,
+        "pc_ssim_mean": 0.6616383250334981,
+        "fpga_raw_ssim_mean": 0.6527056125136135,
+        "mean_ssim_gap": 0.00893271251988459
+      },
+      {
+        "scene": "Office2",
+        "samples": 100,
+        "pc_ssim_mean": 0.6128523011729731,
+        "fpga_raw_ssim_mean": 0.6053295467550209,
+        "mean_ssim_gap": 0.007522754417952138
+      }
+    ],
+    "pc_app_full_tests": [
+      {
+        "scene": "s23",
+        "samples": 1225,
+        "pc_ssim_mean": 0.7545533671461945,
+        "fpga_raw_ssim_mean": 0.7415369036231871,
+        "absolute_mean_ssim_gap": 0.013016463523007338,
+        "gap_under_0p015": true
+      },
+      {
+        "scene": "Meetingroom",
+        "samples": 200,
+        "pc_ssim_mean": 0.6925121814646792,
+        "fpga_raw_ssim_mean": 0.6826285870541962,
+        "absolute_mean_ssim_gap": 0.009883594410483032,
+        "gap_under_0p015": true
+      },
+      {
+        "scene": "Office1",
+        "samples": 200,
+        "pc_ssim_mean": 0.6616383250334981,
+        "fpga_raw_ssim_mean": 0.6527056125136135,
+        "absolute_mean_ssim_gap": 0.00893271251988459,
+        "gap_under_0p015": true
+      },
+      {
+        "scene": "Office2",
+        "samples": 100,
+        "pc_ssim_mean": 0.6128523011729731,
+        "fpga_raw_ssim_mean": 0.6053295467550209,
+        "absolute_mean_ssim_gap": 0.007522754417952138,
+        "gap_under_0p015": true
+      }
+    ],
+    "power": [
+      {
+        "scene": "s23",
+        "idle_samples": 10,
+        "inference_samples": 10,
+        "idle_median_w": 1.75155954155,
+        "inference_median_w": 2.0429390355,
+        "median_map_energy_j": 2.0508623304179676,
+        "median_dynamic_energy_j": 0.2925095744974348
+      },
+      {
+        "scene": "Meetingroom",
+        "idle_samples": 10,
+        "inference_samples": 10,
+        "idle_median_w": 1.7356934076,
+        "inference_median_w": 2.03972893325,
+        "median_map_energy_j": 1.965280425313811,
+        "median_dynamic_energy_j": 0.29293846717558225
+      },
+      {
+        "scene": "Office1",
+        "idle_samples": 10,
+        "inference_samples": 10,
+        "idle_median_w": 1.7350668514,
+        "inference_median_w": 1.9740681964500002,
+        "median_map_energy_j": 1.9002706910684835,
+        "median_dynamic_energy_j": 0.230066647110367
+      },
+      {
+        "scene": "Office2",
+        "idle_samples": 10,
+        "inference_samples": 10,
+        "idle_median_w": 1.7428747330999999,
+        "inference_median_w": 2.02776091955,
+        "median_map_energy_j": 1.9480992865146998,
+        "median_dynamic_energy_j": 0.2736942857564793
+      }
+    ]
+  },
+  "claims_allowed": true,
+  "claim_rule": "Only FULL_PASS permits final Stage39 physical timing, power, accuracy, and live-demo claims."
+}

@@ -1,5 +1,10 @@
 # Validation report for the clean reproduction source
 
+Historical snapshot. The completed four-scene software run is archived in
+`sim/validation/cold_reproduction_final_gate.json`. The matched deployed-system
+physical result is `board/evidence/physical_finalization.json`. The following
+historical checkpoints retain their original scope and dates.
+
 Validation date: 2026-10-13  
 Target: PYNQ-Z2 / XC7Z020-1CLG400C  
 Formal toolchain: Vivado 2024.1, Python 3.8.17, PyTorch 2.0.1 + CUDA 11.8

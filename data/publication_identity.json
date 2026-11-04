@@ -1,0 +1,12 @@
+{
+  "schema": "stage39-complete-publication-v1",
+  "date": "2026-11-04",
+  "report_sha256": "c28522760a21ad9e799613e2f22739a963f1e3e7f6dca99b64e5a13bac246c54",
+  "report_source_modified_local": "2026-11-04 13:44:57 Asia/Shanghai",
+  "report_original_name": "AMD报告.pdf",
+  "physical_bit_sha256": "0c3966e4f2e0ee7f367ca2de6855d0dd3acdb90de7ae993493fdeaa056b3ecf7",
+  "cold_reproduction_scope": "2026-10-13 software/RTL/Vivado validation; new physical execution pending for its new build",
+  "archived_physical_scope": "2026-10-08/09 actual PYNQ deployment; matches board_package.zip and full test identities",
+  "new_model_training_or_new_board_execution_for_publication": false,
+  "source_identity_base": "Stage39_GitHub_Final_20261103"
+}

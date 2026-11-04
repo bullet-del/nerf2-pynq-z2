@@ -1,0 +1,20 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/rtl/activation_pipeline32.v" into library work
+INFO: [VRFC 10-311] analyzing module activation_pipeline32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/rtl/n2_stage37_universal_stream_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module n2_stage37_universal_stream_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/rtl/packed_gemm_p128.v" into library work
+INFO: [VRFC 10-311] analyzing module packed_gemm_p128
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/rtl/packed_int8x2_mul.v" into library work
+INFO: [VRFC 10-311] analyzing module packed_int8x2_mul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/rtl/stage37_runtime_descriptor_memory.v" into library work
+INFO: [VRFC 10-311] analyzing module stage37_runtime_descriptor_memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/rtl/stage37_runtime_model_memory.v" into library work
+INFO: [VRFC 10-311] analyzing module stage37_runtime_model_memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/rtl/stage37_two_ray_engine.v" into library work
+INFO: [VRFC 10-311] analyzing module stage37_two_ray_engine
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/rtl/n2_isqrt64.sv" into library work
+INFO: [VRFC 10-311] analyzing module n2_isqrt64
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/rtl/stage37_ray_accumulator.sv" into library work
+INFO: [VRFC 10-311] analyzing module stage37_ray_accumulator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/tb_stage39_multiscene_generated.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_stage39_multiscene_generated

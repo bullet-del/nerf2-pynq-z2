@@ -1,0 +1,89 @@
+{
+  "schema": "n2-stage39-physical-evidence-export-v1",
+  "created_utc": "2026-10-08T11:43:47.871681+00:00",
+  "board_package": "N2-NeRF2-Stage39-board",
+  "scenes": [
+    "s23",
+    "Meetingroom",
+    "Office1",
+    "Office2"
+  ],
+  "contains_full_test_summaries": {
+    "s23": true,
+    "Meetingroom": true,
+    "Office1": true,
+    "Office2": true
+  },
+  "files": [
+    {
+      "path": "evidence/stage39_physical_gate/selftests.json",
+      "sha256": "4ca8e506dfb15f523be1970c6b023811d7a90c7bacc4daed11278ecba8551c6a",
+      "bytes": 5179
+    },
+    {
+      "path": "evidence/stage39_physical_gate/benchmark_50.json",
+      "sha256": "c2dc03f8608600d05f97a8706b114aa9b0321f429bb8d75d300b94fda100058a",
+      "bytes": 8591
+    },
+    {
+      "path": "scenes/s23/evidence/stage39/benchmark_50.json",
+      "sha256": "14ca097e22ba06396d67be0060b53c6022ee8424a5138bd3cae21467d852d66e",
+      "bytes": 1815
+    },
+    {
+      "path": "scenes/s23/evidence/stage39/all_test/identity.json",
+      "sha256": "9c99d34b7d5317743fdc0bf8cd6c9efc02a195dae08522e22db64eae32594fc3",
+      "bytes": 434
+    },
+    {
+      "path": "scenes/s23/evidence/stage39/all_test/result.json",
+      "sha256": "e5850d5f16ed15dd7f2ea80b128cab2f7951ec06dc3984209dbba909133988aa",
+      "bytes": 1256694
+    },
+    {
+      "path": "scenes/Meetingroom/evidence/stage39/benchmark_50.json",
+      "sha256": "e48cabe656f25ce7927d6fc2fdb5fcb4f017909fc42613370de621332c58fd2c",
+      "bytes": 1835
+    },
+    {
+      "path": "scenes/Meetingroom/evidence/stage39/all_test/identity.json",
+      "sha256": "000847143f14b256d6806a3e66f609ca9fc265f9a74ee0d903e264ee3d2ae52c",
+      "bytes": 442
+    },
+    {
+      "path": "scenes/Meetingroom/evidence/stage39/all_test/result.json",
+      "sha256": "9fb3e21ab808e790e421b017ee879f4caafc7cacadeec6521898934c5524bdf3",
+      "bytes": 480632
+    },
+    {
+      "path": "scenes/Office1/evidence/stage39/benchmark_50.json",
+      "sha256": "5482641b6f0ad10a5aa9c2705f20edbb64b7b4bbc92333bcb8bfdacdf9ee70a9",
+      "bytes": 1830
+    },
+    {
+      "path": "scenes/Office1/evidence/stage39/all_test/identity.json",
+      "sha256": "c9c09508f8e6bfb6e79e2ce58f55c97b5cf615c9b37cc4932cdaef5d42a453c6",
+      "bytes": 438
+    },
+    {
+      "path": "scenes/Office1/evidence/stage39/all_test/result.json",
+      "sha256": "3668060947f2ccde9ee1e1abbf5a6755e72a0dddf7a1a1ad50e7eec17a0af3d7",
+      "bytes": 530869
+    },
+    {
+      "path": "scenes/Office2/evidence/stage39/benchmark_50.json",
+      "sha256": "763598cc8b3662fcd3f2dbf9e4aaf594b221d3d0afce43c62292b89d4b03068c",
+      "bytes": 1836
+    },
+    {
+      "path": "scenes/Office2/evidence/stage39/all_test/identity.json",
+      "sha256": "d653dea30f66d913c6d46423240d8962e009554b53a395fad4d0de536bf69284",
+      "bytes": 438
+    },
+    {
+      "path": "scenes/Office2/evidence/stage39/all_test/result.json",
+      "sha256": "b7349a1c8e8c27620b145ca12d04fd91f23c8898830b59c4e72805773ba7961b",
+      "bytes": 387918
+    }
+  ]
+}

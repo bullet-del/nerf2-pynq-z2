@@ -1,6 +1,6 @@
-* text=auto eol=lf
+* -text
 
-*.bat text eol=crlf
+*.bat -text
 
 *.bit binary
 *.hwh binary

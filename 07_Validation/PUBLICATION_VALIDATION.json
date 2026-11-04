@@ -1,53 +1,26 @@
 {
-  "schema": "stage39-source-publication-validation-v1",
-  "validated_on": "2026-11-03",
-  "status": "SOURCE_CHECKS_PASS_PUBLICATION_PENDING",
-  "release": "39.0-source-2026.11.03",
-  "checks": {
-    "publication_safety_tests": {
-      "status": "PASS",
-      "tests": 14,
-      "includes": "Real local bare-repository push, remote commit equality and idempotent retry; GitHub account API operations simulated."
-    },
-    "generic_pynq_offline_workflow": {
-      "status": "PASS",
-      "tests": 1,
-      "coverage": "HWH inventory, bundle generation, mock golden-reference pass and intentional negative control"
-    },
-    "python_3_8_syntax": {
-      "status": "PASS",
-      "files": 141
-    },
-    "inference_source_identity": {
-      "status": "PASS",
-      "scope": "All files in 01_Vivado,02_Model_Pipeline,03_Package_Builder,04_PC_App,05_PYNQ_Board,06_Power_Measurement are byte-identical to the current source repository."
-    },
-    "portable_cli": {
-      "status": "PASS",
-      "version": "2.103.3",
-      "official_archive_sha256": "98d0cfa794721665d7973dd728c78aff7bd836d58f10f6d7a03568eccb0a22e0",
-      "executed": "gh --version only; no authentication or GitHub repository creation"
-    },
-    "clean_git_checkout": {
-      "status": "PASS",
-      "coverage": [
-        "clean commit and clone",
-        "Git attribute line endings",
-        "different working directory",
-        "spaces and Chinese path",
-        "external and generated input exclusion",
-        "clean Git working tree"
-      ]
-    },
-    "source_manifest": {
-      "status": "PASS",
-      "method": "Regenerated release manifest and verified with verify_kit.py, also verified after clean Git checkout."
-    }
+  "schema": "stage39-complete-publication-validation-v1",
+  "prepared_on": "2026-11-04",
+  "local_checks": {
+    "publication_safety_and_local_git_roundtrip": "PASS, 20 tests, including documentation update and draft-release reuse",
+    "generic_pynq_offline_positive_and_negative": "PASS, 1 workflow test",
+    "python_3_8_syntax": "PASS, 145 files",
+    "separate_clean_git_checkout_integrity": "PASS",
+    "source_contract_audit": "PASS",
+    "release_asset_hashes_and_zip_integrity": "PASS",
+    "saved_fpga_map_identity_coverage": "PASS, 1725 maps",
+    "official_cli_archive_hash_and_version": "PASS, GitHub CLI 2.103.3"
   },
-  "implementation_changes": "None to RTL, model arithmetic, PC/board runtime, numerical gates or data splits; publication tooling and descriptive labels only.",
-  "historical_validation": "See VALIDATION_REPORT.md and validation_summary.json for the archived 2026-10-13 evidence scope.",
-  "new_training_or_vivado_or_board_run_performed_for_this_source_copy": false,
-  "physical_gate": "PENDING_NEW_BOARD_EXECUTION",
-  "github_publication": "PENDING_USER_AUTHORIZATION_AND_EXECUTION",
-  "licensing": "Existing rights-reserved project LICENSE and third-party licenses retained."
+  "report": "report/design_report.pdf",
+  "markdown_collaboration_record": "report/llm_collaboration.md",
+  "report_integrity": "data/publication_identity.json",
+  "local_complete_validation_command": "python scripts/publish_complete.py --check",
+  "publication_tests": "python -B -m unittest discover -s scripts/tests -v",
+  "source_manifest_command": "python scripts/verify_kit.py",
+  "all_test_maps_expected": 1725,
+  "license": "MIT for project-authored material with third-party notices retained",
+  "physical_evidence": "board/evidence/physical_finalization.json",
+  "cold_reproduction_evidence": "sim/validation/cold_reproduction_final_gate.json",
+  "new_training_or_vivado_or_board_execution_for_this_publication": false,
+  "remote_publication_status": "Pending execution of publish_complete.py --publish by the user"
 }

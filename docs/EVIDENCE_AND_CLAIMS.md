@@ -53,7 +53,7 @@ named in the table, but it is not a whole-PC wall-power measurement.
 | PC is less efficient than FPGA | Descriptive comparison only | explicitly different boundary and precision labels |
 | Clean-room reproducibility | Yes | independent six-stage host run and new board run |
 | Reusable engineering Skill | Yes | run the generic source audit on this and another contract |
-| LLM collaboration record | Outside this release | add a curated, privacy-reviewed record separately |
+| LLM collaboration record | Markdown planning/debugging record and submitted report appendix A | See report/llm_collaboration.md and report/design_report.pdf |
 
 The repository can support these claims; the result of a particular clean run
 is established only by that run's generated reports and physical evidence.

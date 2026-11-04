@@ -1,0 +1,9 @@
+{
+  "schema": "n2-stage39-all-test-identity-v1",
+  "scene_id": "Meetingroom",
+  "bit_sha256": "0c3966e4f2e0ee7f367ca2de6855d0dd3acdb90de7ae993493fdeaa056b3ecf7",
+  "runtime_model_sha256": "0afc6a2315d6faaef93717551f70c0b322d4c64e10e2ce203b6ca71027b10d84",
+  "test_catalog_sha256": "9d416feb49f9ea4b7677051572a00e7a66d20be3f860ea1deaacec1bad80a78d",
+  "output_mode": "raw_int8_q15",
+  "qat_algorithm_id": "stage39-hardware-exact-qat-ste-v1"
+}
