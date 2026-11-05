@@ -30,5 +30,5 @@ PC application. These caches contain all 1725 actual FPGA maps. If the newly
 built board has a different identity, generate new board evidence for that build.
 
 The source checkpoint, original data and complete split files needed for a full
-rebuild are in `nerf2_inputs.zip`. The download script verifies SHA-256 before
-extracting them under `external/nerf2_inputs`.
+rebuild are in `nerf2_inputs.zip`. The download script checks complete file size
+and ZIP integrity before extracting them under `external/nerf2_inputs`.

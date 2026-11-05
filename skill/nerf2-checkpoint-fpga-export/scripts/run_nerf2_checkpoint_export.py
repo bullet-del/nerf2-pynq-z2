@@ -72,17 +72,17 @@ def load_indexes(path: Path) -> list[str]:
 
 def validate_inputs(args: argparse.Namespace, project: Path) -> dict[str, Any]:
     required_project = [
-        project / "02_Model_Pipeline/stage37/train_factorized_scene.py",
-        project / "02_Model_Pipeline/stage37/export_ray_stage37.py",
-        project / "02_Model_Pipeline/stage37/build_runtime_model.py",
-        project / "02_Model_Pipeline/stage37/build_scene_runtime_assets.py",
-        project / "02_Model_Pipeline/stage39_core/make_train_only_calibration.py",
-        project / "02_Model_Pipeline/stage39_core/train_hardware_exact_qat.py",
-        project / "02_Model_Pipeline/stage39_core/export_fixed_quant.py",
-        project / "03_Package_Builder/evaluate_stage39_cold.py",
-        project / "04_PC_App/template/software/stage11/reference.py",
-        project / "05_PYNQ_Board/template/software/stage24/fixed_renderer.py",
-        project / "05_PYNQ_Board/template/software/stage29/build_sparse_model.py",
+        project / "src/model/stage37/train_factorized_scene.py",
+        project / "src/model/stage37/export_ray_stage37.py",
+        project / "src/model/stage37/build_runtime_model.py",
+        project / "src/model/stage37/build_scene_runtime_assets.py",
+        project / "src/model/stage39_core/make_train_only_calibration.py",
+        project / "src/model/stage39_core/train_hardware_exact_qat.py",
+        project / "src/model/stage39_core/export_fixed_quant.py",
+        project / "build/pipeline/evaluate_stage39_cold.py",
+        project / "src/host/software/stage11/reference.py",
+        project / "board/source/software/stage24/fixed_renderer.py",
+        project / "board/source/software/stage29/build_sparse_model.py",
     ]
     required_input = [
         args.checkpoint, args.config,
@@ -312,11 +312,11 @@ def main() -> None:
     checkpoint_contract = validate_checkpoint(args.checkpoint)
     formal_defaults_used = all(getattr(args, key) == value for key, value in FORMAL_DEFAULTS.items())
     py = sys.executable
-    stage37 = project / "02_Model_Pipeline/stage37"
-    stage39 = project / "02_Model_Pipeline/stage39_core"
-    builder = project / "03_Package_Builder"
-    pc = project / "04_PC_App/template"
-    board = project / "05_PYNQ_Board/template"
+    stage37 = project / "src/model/stage37"
+    stage39 = project / "src/model/stage39_core"
+    builder = project / "build/pipeline"
+    pc = project / "src/host"
+    board = project / "board/source"
     reference = pc / "software/stage11/reference.py"
     fixed_renderer = board / "software/stage24/fixed_renderer.py"
 

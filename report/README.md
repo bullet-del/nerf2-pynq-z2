@@ -1,9 +1,8 @@
-# Submitted report
+# Design report and collaboration
 
-`design_report.pdf` is a byte-identical copy of the submitted `AMD报告.pdf`.
-It includes the design description, results, LLM collaboration appendix and
-reproduction instructions. Its source hash is recorded in
-`../data/publication_identity.json`.
+- [Submitted design report](design_report.pdf): principles, architecture, optimization, results, Skills and reproduction appendix.
+- [LLM collaboration](llm_collaboration.md): initial planning and actual debugging conversations, corrections and verification.
+- [Current repository update](repository_update.md): command/path correspondence and clock clarification after the November 5 organization.
 
-`llm_collaboration.md` adds the initial Stage planning and selected actual
-debugging conversations with changes and verification. It accompanies the PDF.
+Read the update alongside the PDF's historical reproduction appendix. The
+original submitted PDF and its experimental values are preserved.

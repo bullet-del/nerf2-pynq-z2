@@ -1,15 +1,14 @@
-# Inputs, reference outputs and measurement data
+# Test data and reference outputs
 
-`input_manifest.json` contains hashes and byte sizes for the original datasets,
-fixed split files, configs and four checkpoints. Obtain their complete bytes
-from `nerf2_inputs.zip` in the Release.
+- reference_results: all 1725 GT/PC/FPGA per-map comparison records.
+- power_summary: recorded board-input and GPU power summaries.
+- validation/history: dated development snapshots; historical states are retained.
+- [downloads.json](downloads.json): the six complete Release artifacts.
 
-`reference_results/<scene>/validation.json` contains per-map GT/PC/FPGA metrics
-for all 1725 held-out inputs. Full GT and PC FP32 maps are in the matching PC
-package. Every actual FPGA map is in `test_results.zip`.
+Original datasets, four model parameter files, fixed splits and configs are in
+nerf2_inputs.zip. Full PC maps are in pc_app_package.zip; every saved FPGA map
+is in test_results.zip. Raw meter logs are in power_logs.zip. Use
+python build/tools/download_artifacts.py from the repository root.
 
-`power_summary` contains the archived summaries. `power_logs.zip` preserves
-the source FNB58 records, raw NVIDIA telemetry, board run JSON and analysis.
-
-`release_assets.json` lists the six complete downloads with bytes and SHA-256.
-`publication_identity.json` records report/hardware identity and validation scope.
+There are no separate publication checksum inventories. Identity fields inside
+the original scientific model/output records remain intact.

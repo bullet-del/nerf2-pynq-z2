@@ -146,7 +146,7 @@ python scripts/summarize_validation_reports.py --reports reports/board_R1/valida
 证据。这些开发观察用于提炼本技能包，但新脚本在另一支队伍的板卡上仍应重新执行
 `PASS_BOARD`，不能沿用本队实物结论。
 
-可独立审阅的离线测试、真实 Stage39 HWH/BIT 盘点和证据边界见 `VERIFICATION.md`
+可独立审阅的离线测试、真实 Stage39 HWH/BIT 盘点和证据边界见 `verification.md`
 与 `verification/verified_effects.json`。
 
 ## 七 从失败和观察中提炼的规则

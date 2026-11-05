@@ -84,8 +84,8 @@ Stage39_QAT_Four_Scenes.ipynb
 
 **保留的复验入口。**
 
-- [板端校验器](../05_PYNQ_Board/template/software/stage39/verify_stage39_board_package.py)。
-- [Notebook 完整性回归脚本](../02_Model_Pipeline/stage39_core/test_stage39_notebook_integrity.py)。该脚本检查原包通过、运行状态变化通过、源代码变化被拒绝，并在结束后恢复文件。
+- [板端校验器](../board/source/software/stage39/verify_stage39_board_package.py)。
+- [Notebook 完整性回归脚本](../src/model/stage39_core/test_stage39_notebook_integrity.py)。该脚本检查原包通过、运行状态变化通过、源代码变化被拒绝，并在结束后恢复文件。
 
 ### 2.3 电脑功率测量使用了错误的模型基准
 
@@ -119,9 +119,9 @@ PC 正式测量显式读取 s23 的 `010000.tar`，其余三个场景的 `005000
 
 **保留的实现与结果。**
 
-- [checkpoint 谱系审计脚本](../06_Power_Measurement/audit_stage39_checkpoint_lineage.py)。
-- [PC 完整测试测量入口](../06_Power_Measurement/run_pc_all_scenes.py)。
-- [四场景输入与 checkpoint 哈希](../00_Config/reproduction_config.json)。
+- [checkpoint 谱系审计脚本](../src/power/audit_stage39_checkpoint_lineage.py)。
+- [PC 完整测试测量入口](../src/power/run_pc_all_scenes.py)。
+- [四场景输入与 checkpoint 哈希](../build/config/reproduction_config.json)。
 - [正式 PC 测量摘要](../data/power_summary/pc_gpu_full_test_summary.json)。
 
 ### 2.4 App 轮播报缺少 FPGA 全测试集证据
@@ -154,8 +154,8 @@ complete FPGA raw test-set evidence is required
 
 最终归档含四场景完整结果和身份文件，物理 finalizer 为 `FULL_PASS`。当前发布检查逐项核对了全部 1725 幅缓存中的原始输出哈希和来源图哈希。
 
-- [板端服务](../05_PYNQ_Board/template/jupyter/stage39_board_service.py)。
-- [四场景物理证据清单](../board/evidence/physical_export/physical_evidence_manifest.json)。
+- [板端服务](../board/source/jupyter/stage39_board_service.py)。
+- [四场景原始物理记录](../board/evidence/physical_export)。
 - [物理 finalizer 结果](../board/evidence/physical_finalization.json)。
 - [逐图参考结果目录](../data/reference_results)。完整图缓存见根 README 的 `test_results.zip` 下载入口。
 
@@ -208,9 +208,9 @@ complete FPGA raw test-set evidence is required
 
 **保留的实现与结果。**
 
-- [固定复现参数](../00_Config/reproduction_config.json)。
-- [训练前预检](../03_Package_Builder/preflight.py)。
-- [含 `verify_qat_inputs` 的模型流水线](../03_Package_Builder/run_model_pipeline.py)。
+- [固定复现参数](../build/config/reproduction_config.json)。
+- [训练前预检](../build/pipeline/preflight.py)。
+- [含 `verify_qat_inputs` 的模型流水线](../build/pipeline/run_model_pipeline.py)。
 - [完整冷复现检查结果](../sim/validation/cold_reproduction_final_gate.json)。
 
 ## 3. 本记录的来源

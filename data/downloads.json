@@ -1,0 +1,43 @@
+{
+  "schema": "stage39-release-assets-v1",
+  "repository": "bullet-del/nerf2-pynq-z2",
+  "tag": "stage39-complete-20261104",
+  "assets": [
+    {
+      "name": "nerf2_inputs.zip",
+      "bytes": 86669490,
+      "description": "Original four checkpoints, full datasets, fixed train/test splits and configs.",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-complete-20261104/nerf2_inputs.zip"
+    },
+    {
+      "name": "board_package.zip",
+      "bytes": 144413822,
+      "description": "Archived physical-validated PYNQ board deployment including BIT/HWH, runtime models and six-cell notebook.",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-complete-20261104/board_package.zip"
+    },
+    {
+      "name": "pc_app_package.zip",
+      "bytes": 127854837,
+      "description": "Matching archived PC application, GT maps, FP32 reference maps and runtime assets.",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-complete-20261104/pc_app_package.zip"
+    },
+    {
+      "name": "test_results.zip",
+      "bytes": 284417908,
+      "description": "Full 1725 FPGA map cache, per-map comparison metrics and actual interaction/HDMI run records.",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-complete-20261104/test_results.zip"
+    },
+    {
+      "name": "power_logs.zip",
+      "bytes": 5732704,
+      "description": "FNB58 records, board program JSON, PC GPU telemetry and per-run/per-map power analysis.",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-complete-20261104/power_logs.zip"
+    },
+    {
+      "name": "demonstration.mp4",
+      "bytes": 165457127,
+      "description": "Original final demonstration video, 179.8 seconds.",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-complete-20261104/demonstration.mp4"
+    }
+  ]
+}

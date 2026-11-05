@@ -1,19 +1,15 @@
-# Board deployment and captured outputs
+# PYNQ source and physical results
 
-The complete deployable engineering package is the `board_package.zip` Release
-asset linked from the root README. It contains runtime models, BIT/HWH,
-notebook and drivers. The matching `pc_app_package.zip` is available alongside it.
+source contains Python drivers, services and integer reference. notebook is the
+review notebook; photos are actual board/system images. evidence preserves
+four-scene full-test, selftest, 50-run timing and physical finalization records.
+Directory names are lower-case; original scene IDs inside JSON remain intact.
 
-`notebook/stage39_qat_four_scenes.ipynb` provides the exact notebook source for
-review. Execute the original notebook in the deployed package root on PYNQ.
-`photos` contains actual board/system photographs.
+Use the complete board_package.zip and pc_app_package.zip Release downloads in
+the root README for the archived system. Run the original notebook inside its
+original extracted deployment directory. New builds use build/pipeline and
+write matched packages under ignored outputs.
 
-`evidence/physical_export` contains the four-scene full-test summaries, source
-identity hashes, bit-exact selftests and 50-run benchmarks. Every original
-exported file is checked against its archived manifest.
-`evidence/physical_finalization.json` records the actual FULL_PASS.
-`evidence/deployed_package_manifest.json` identifies the matched board package.
-
-The `test_results.zip` Release asset includes all actual FPGA output-map cache
-files and recorded interactive runs. This evidence was captured on physical
-hardware. The publication scripts copy the recorded results.
+Archived FULL_PASS belongs to the matched deployment. HDMI loads a display
+Overlay, and the next inference restores the inference Overlay. See
+[setup and recovery](../docs/hardware_setup.md).

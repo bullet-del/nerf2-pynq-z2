@@ -1,5 +1,0 @@
-interface:
-  display_name: "NeRF2 Checkpoint FPGA Export"
-  short_description: "Build an FPGA model and deployment report"
-  default_prompt: "Use $nerf2-checkpoint-fpga-export to convert this compatible NeRF2 scene into a runtime NPZ and descriptive deployment report."
-

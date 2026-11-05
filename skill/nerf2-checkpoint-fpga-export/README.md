@@ -99,7 +99,7 @@ python skill/nerf2-checkpoint-fpga-export/scripts/run_nerf2_checkpoint_export.py
 这些结果验证了工具链和报告逻辑。正式新场景的最终精度、容量和板端行为仍必须由
 该场景的默认完整运行与实物证据决定。
 
-可独立审阅的测试边界和摘要见 `VERIFICATION.md` 与
+可独立审阅的测试边界和摘要见 `verification.md` 与
 `verification/verified_effects.json`。
 
 ## 七 从失败和观察中提炼的规则

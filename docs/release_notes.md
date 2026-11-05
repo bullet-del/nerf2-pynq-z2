@@ -9,8 +9,8 @@ the initial Stage plan and actual debugging exchanges with verification evidence
 
 Six assets provide original reproduction inputs, the matched archived PYNQ/PC
 deployments, all 1725 physical FPGA output maps, raw power measurement evidence
-and the final demonstration video. Each asset size and SHA-256 is recorded in
-`data/release_assets.json` in the source tree.
+and the final demonstration video. Asset descriptions, sizes and direct links
+are listed in `data/downloads.json` in the source tree.
 
 The repository contains the RTL/Tcl, Python and PYNQ source, both competition
 Skills, actual simulation logs, original resource/timing reports, deployed

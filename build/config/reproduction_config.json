@@ -1,0 +1,83 @@
+{
+  "schema": "n2-stage39-cold-reproduction-config-v1",
+  "input_root": "external/nerf2_inputs",
+  "vivado_executable": "C:/Xilinx/Vivado/2024.1/bin/vivado.bat",
+  "conda_environment": "nerf2",
+  "required_vivado_version": "2024.1",
+  "allow_different_vivado_version": false,
+  "scenes": {
+    "s23": {
+      "dataset": "data/RFID/s23",
+      "checkpoint": "logs/RFID/s23/spectrum-exp1/ckpts/010000.tar",
+      "config": "logs/RFID/s23/spectrum-exp1/config.yml",
+      "checkpoint_sha256": "eeccf2bba9cd4e84853e0fcf1dab9fa2d218b166a6f81485a9e5dc498f8a8beb",
+      "dataset_count": 6123,
+      "train_count": 4898,
+      "test_count": 1225,
+      "factorization_steps": 0,
+      "activation_percentile": 99.5
+    },
+    "Meetingroom": {
+      "dataset": "data/RFID/Meetingroom",
+      "checkpoint": "logs/RFID/Meetingroom/spectrum-meetingroom/ckpts/005000.tar",
+      "config": "logs/RFID/Meetingroom/spectrum-meetingroom/config.yml",
+      "checkpoint_sha256": "b12006b8945f7fddbfb9e54c870dc9a52a634adff66eb4a48a07e8d8f20d72ae",
+      "dataset_count": 1000,
+      "train_count": 800,
+      "test_count": 200,
+      "factorization_steps": 3000,
+      "activation_percentile": 99.5
+    },
+    "Office1": {
+      "dataset": "data/RFID/Office1",
+      "checkpoint": "logs/RFID/Office1/spectrum-Office1/ckpts/005000.tar",
+      "config": "logs/RFID/Office1/spectrum-Office1/config.yml",
+      "checkpoint_sha256": "8a4e437a31dc631e99cba20633a581b8f93007e43ff329e1b59d458c1dfad16d",
+      "dataset_count": 1000,
+      "train_count": 800,
+      "test_count": 200,
+      "factorization_steps": 3000,
+      "activation_percentile": 99.5
+    },
+    "Office2": {
+      "dataset": "data/RFID/Office2",
+      "checkpoint": "logs/RFID/Office2/spectrum-Office2/ckpts/005000.tar",
+      "config": "logs/RFID/Office2/spectrum-Office2/config.yml",
+      "checkpoint_sha256": "95e5fc58eb2c4790517fcb3380e7f5d4247654773f3723b3c14a13bf9a7e72ba",
+      "dataset_count": 500,
+      "train_count": 400,
+      "test_count": 100,
+      "factorization_steps": 3000,
+      "activation_percentile": 99.5
+    }
+  },
+  "factorization": {
+    "batch": 512,
+    "learning_rate": 0.0002,
+    "seed": 20260905,
+    "validation_maps": 20
+  },
+  "calibration": {
+    "count": 8192,
+    "seed": 3902
+  },
+  "qat": {
+    "steps": 1800,
+    "batch": 192,
+    "learning_rate": 1e-05,
+    "seed": 3902,
+    "algorithm_id": "stage39-hardware-exact-qat-ste-v1"
+  },
+  "acceptance": {
+    "resolution": [
+      90,
+      360
+    ],
+    "total_test_maps": 1725,
+    "maximum_mean_ssim_gap": 0.015,
+    "weight_capacity_words": 3072,
+    "frequency_mhz": 95.0,
+    "latency_median_limit_seconds": 1.2,
+    "latency_p95_limit_seconds": 1.5
+  }
+}
