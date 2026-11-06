@@ -30,7 +30,7 @@
 03_package_builder/     总控、评估、仿真准备、打包、最终电脑端检查
 04_pc_app/template/     PC App及随包提供的NeRF2参考源码
 05_pynq_board/template/ PYNQ驱动、服务及独立整数参考
-06_power_measurement/   PC GPU、FPGA、ARM的测量与统计
+06_power_measurement/   PC GPU与FPGA整板功率的测量与统计
 07_validation/          检查入口说明
 data/inputs/            原始数据、模型参数、config及固定划分
 results/                已有真实实验和历史复现结果（不参与冷启动）
@@ -79,6 +79,8 @@ python scripts/check_repository.py
 
 ```bat
 set CONDA_CHANNEL_PRIORITY=strict
+set PIP_DEFAULT_TIMEOUT=120
+set PIP_RETRIES=10
 conda env create -f 00_config/environment.yml
 conda activate nerf2
 ```
@@ -124,7 +126,7 @@ python scripts/configure_repository.py --vivado "E:/AMD/Vivado/2024.1/bin/vivado
 python scripts/configure_repository.py --vivado "E:/AMD/Vivado/2024.1/bin/vivado.bat" --force
 ```
 
-Vivado 2025.2/2026.1可能需要IP升级与重新验证，本仓库不把它们标为已经验证。AMD指南允许其他版本，但须说明并保证复现；这里正式使用2024.1。Windows的Vivado临时项目路径应保持简短；若本机TEMP被改为很长的路径，可在当前Anaconda Prompt先执行：
+Vivado 2025.2/2026.1可能需要IP升级及重新生成硬件；本仓库的命令、IP版本和归档结果以2024.1为准。AMD指南允许其他版本，但须说明并保证复现；这里正式使用2024.1。Windows的Vivado临时项目路径应保持简短；若本机TEMP被改为很长的路径，可在当前Anaconda Prompt先执行：
 
 ```bat
 mkdir E:\vivado_tmp
@@ -169,6 +171,7 @@ python 03_package_builder/reproduce_stage39.py vivado
 
 ```tcl
 cd $env(TEMP)
+set MODE bit
 source {E:/stage39/nerf2-pynq-z2-main/01_vivado/tcl/build_stage39.tcl}
 ```
 
@@ -328,7 +331,7 @@ cd /home/xilinx/jupyter_notebooks/N2-NeRF2-Stage39-board
 
 ### 4.3 启动PC App
 
-电脑仍在仓库根目录、`nerf2`环境执行：
+若旧App仍占用8310端口，先在它原来的终端按Ctrl+C退出。电脑仍在仓库根目录、`nerf2`环境执行：
 
 ```bat
 python outputs/N2-NeRF2-Stage39-PC-App/pc_app/stage39_pc_server.py --port 8310
