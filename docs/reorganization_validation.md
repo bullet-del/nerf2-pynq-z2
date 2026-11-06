@@ -1,30 +1,45 @@
-# Verification of the organized repository
+# Current numbered repository verification
 
-The November 5, 2026 change reorganizes the source tree. It removes standalone
-publication checksum inventories and redundant upload helpers, consolidates
-Skills, lowercases custom paths, and updates documentation/Python/Tcl/CI paths.
+The maintained tree follows the validated NoPS1 numerical workflow, with
+lowercase numbered directories and separate skill/report/results folders.
+The complete original inputs are regular files under data/inputs, included
+by GitHub Download ZIP; no Git LFS or external private NeRF2 tree is needed.
 
-The following checks were actually executed after migration:
+November 6 verification actually completed:
 
-| Check | Result and scope |
+| Check | Actual result |
 |---|---|
-| Repository layout and links | PASS; all seven AMD correspondence rows, lower-case custom paths, Python/JSON syntax and local Markdown links |
-| Layout integration tests | 4/4 PASS; includes old mixed-case names and exclusion of local configs/generated outputs |
-| Generic PYNQ offline workflow | PASS; HWH inventory, generated adapter bundle, golden-output mock pass and intentional negative control |
-| Source workflow audit | PASS; relocated required files and fixed formal configuration |
-| Input preflight | PASS; four original checkpoints, disjoint splits, CUDA and Vivado 2024.1 |
-| Office2 model smoke workflow | Completed factorization, training calibration, PTQ, short QAT, one-map evaluation and runtime export; 2385/3072 words |
-| Compatible-new-scene Skill | Default nine-stage dry-run PLANNED; model shape and relocated dependency checks passed |
-| Ordered reproduction workflow | Seven-stage dry-run PLANNED with the relocated executable paths |
-| Vivado 2024.1 Block Design | BD VALIDATED using the relocated Tcl and nine source RTL modules |
-| Actual RTL simulation | Runtime-load/cache/inference and four-scene-switch-and-return both PASS using archived golden vectors |
+| Source layout, links and original inputs | PASS; seven AMD correspondence rows, four original checkpoints and 8623 PNGs |
+| Repository integration | Four tests PASS |
+| Generic PYNQ Skill | Offline positive/negative controls PASS |
+| Source audit | PASS against 00_config/workflow.json |
+| Generated App HTTP and PC preview | PASS; four actual scene pages plus an Office2 GT/PC CUDA preview and saved PNG; no board execution claimed |
+| Notebook integrity regression | PASS; output/count changes accepted, source tamper rejected, original restored |
+| Original PC GPU power inputs | Four scenes PASS using bundled model/renderer and original checkpoints; not a new power experiment |
+| New-scene export Skill | Default nine-stage dry-run PLANNED with relocated dependencies |
+| Cold reconstruction | Full structural adaptation, 1800-step QAT for each scene, 1725-map evaluation and runtime export PASS |
+| RTL | Runtime/cache/inference and four-scene-switch-and-return PASS |
+| Vivado 2024.1 | Fresh RTL/Tcl implementation and new BIT/HWH; timing gate PASS |
+| Assembly and final host verification | Both package verifiers and all 17 host checks PASS |
 
-The first BD test used a custom temporary path longer than Windows' IP-generation
-limit. Retesting in an isolated short temporary directory passed. Hardware
-logic and clock settings were not changed to obtain that result.
+Raw new results and exact metrics are in
+[November 6 reconstruction](../results/reproduction_20261106/README.md).
+The computer rebooted during the first attempt; only completed newly generated
+adaptation stages were retained, and missing work was resumed. No historical
+intermediate model, map or prebuilt bitstream was used to finish that run.
 
-This validation is not a new full 1800-step four-scene QAT run, routed bitstream
-implementation, physical PYNQ experiment or power measurement. Original source
-RTL, deployed BIT/HWH, report PDF and recorded experimental results are retained.
-The short model run is connectivity verification only. Newly generated work is
-ignored and kept separate from the archived formal results.
+Vivado starts in an isolated short directory; absolute source/output paths are
+preserved. Earlier startup failures and interrupted work are not relabeled as
+passed. The RTL bytes and formal model settings remain those of the NoPS1 kit.
+
+The new package's physical field stays PENDING_NEW_BOARD_EXECUTION. This does
+not claim a new board test, HDMI demonstration or power measurement. Historical
+physical results retain their original identity and date.
+
+
+The actual App startup test exposed two missing shared helper files in the PC
+template: stage27_display.py and stage28_exact_common.py. They were copied
+unchanged from the shared implementation and verified byte-for-byte against
+the archived working App. Both are now required by the source checker.
+Assembly and all 17 host checks were rerun after that correction; the actual
+App HTTP/PC-preview test then passed.

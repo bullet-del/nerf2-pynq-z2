@@ -12,14 +12,14 @@ jobs:
         with:
           python-version: "3.11"
       - name: AMD layout and recorded-result checks
-        run: python -B build/tools/check_repository.py
+        run: python -B scripts/check_repository.py
       - name: Layout integration tests
-        run: python -B -m unittest discover -s build/tests -v
+        run: python -B -m unittest discover -s tests -v
       - name: Source contract audit
-        run: python -B skill/fpga-ml-reproducibility-audit/scripts/audit_fpga_repro.py --root . --contract build/workflow.json --mode source
+        run: python -B skill/fpga-ml-reproducibility-audit/scripts/audit_fpga_repro.py --root . --contract 00_config/workflow.json --mode source
       - name: Generic PYNQ offline positive and negative controls
         run: |
           python -m pip install numpy==1.24.4
           python -B -m unittest discover -s skill/pynq-overlay-validation/tests -v
       - name: Compile Python sources
-        run: python -m compileall -q src board/source build skill
+        run: python -m compileall -q 00_config 02_model_pipeline 03_package_builder 04_pc_app 05_pynq_board 06_power_measurement scripts skill

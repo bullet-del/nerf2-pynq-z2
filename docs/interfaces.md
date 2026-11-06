@@ -3,7 +3,7 @@
 PC and PYNQ communicate over wired Ethernet using the scene-aware HTTP service.
 PC sends a scene identifier, a selected test input or legal Tx coordinate and
 optional ARM/HDMI settings. The board returns the actual integer-derived map and
-timing/status. The source is in src/host/pc_app and board/source/jupyter.
+timing/status. The source is in 04_pc_app/template/pc_app and 05_pynq_board/template/jupyter.
 
 ARM controls DMA and GPIO through PS GP0. DMA uses HP0 to access DDR and exchanges
 64-bit AXI4-Stream records with the custom PL core. Runtime model writes are

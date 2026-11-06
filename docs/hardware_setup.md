@@ -2,7 +2,7 @@
 
 The target is a PYNQ-Z2 using XC7Z020CLG400-1. The ARM runs PYNQ Linux/Python
 and the PL runs the packaged inference Overlay. Board photos are in
-`board/photos`. The submitted report gives the detailed interface diagrams.
+`results/photos`. The submitted report gives the detailed interface diagrams.
 
 Connect the board RJ45 to the PC Ethernet interface or USB Ethernet adapter.
 Configure the board/PC addresses for the same subnet, preserving the established

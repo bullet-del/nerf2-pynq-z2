@@ -1,0 +1,24 @@
+{
+  "schema": "n2-stage39-hardware-exact-qat-checkpoint-v1",
+  "algorithm_id": "stage39-hardware-exact-qat-ste-v1",
+  "scene": "Office2",
+  "source_checkpoint_sha256": "823a1bed7b178a90b9256bc955bae5fa4d2d06d97ea3ef336a5f0ec3ec61f626",
+  "train_index_sha256": "079c7f8c11c1f937511ef9b17fdcc14345730c69d29d3d269175eb545ce02f45",
+  "test_artifacts_opened": [],
+  "steps": 1800,
+  "batch": 192,
+  "learning_rate": 1e-05,
+  "seed": 3902,
+  "quant_manifest_sha256": "fa861f0837fddeb69a0636ee0b45c1e84337d73ed2d896a0d30f5afa7c30d602",
+  "hardware_forward": [
+    "INT8 weights",
+    "INT16 bias",
+    "arithmetic right shift",
+    "INT8 saturation",
+    "ReLU",
+    "Q15 LUT renderer"
+  ],
+  "output_calibration": null,
+  "elapsed_seconds": 511.37699499999997,
+  "checkpoint_sha256": "0b259330d1ec5302d9d25918a0c98639b733df7b5e4b2d88efaf9c7814bff720"
+}

@@ -97,7 +97,7 @@ def write_markdown(report: dict[str, Any], path: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run a contract-defined FPGA/ML reproduction workflow")
     parser.add_argument("--root", type=Path, default=Path.cwd())
-    parser.add_argument("--contract", type=Path, default=Path("build/workflow.json"))
+    parser.add_argument("--contract", type=Path, default=Path("00_config/workflow.json"))
     parser.add_argument("--pipeline", required=True)
     parser.add_argument("--report-dir", type=Path, required=True)
     parser.add_argument("--dry-run", action="store_true")

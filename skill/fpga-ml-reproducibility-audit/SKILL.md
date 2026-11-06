@@ -5,7 +5,7 @@ description: Audit FPGA-accelerated ML repositories with a declarative contract 
 
 # FPGA/ML reproducibility audit
 
-Look for a project contract named `build/workflow.json`. If the user
+Look for a project contract named `00_config/workflow.json`. If the user
 provides another path, use that path. Read
 [references/contract-schema.md](references/contract-schema.md) when creating or
 changing a contract.

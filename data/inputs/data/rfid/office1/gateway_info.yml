@@ -1,0 +1,4 @@
+dataset_name: nerf2_test_1
+gateway1:
+  position: [0.1, 0.1, 1]
+  orientation:  [ 1, 0, 0,  0]  # quaternion

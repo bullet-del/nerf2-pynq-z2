@@ -1,0 +1,56 @@
+{
+  "schema": "stage39-numbered-repository-validation-v1",
+  "date": "2026-11-06",
+  "host_status": "PASS",
+  "source_basis": "validated NoPS1 numerical pipeline",
+  "fresh_original_input_run": true,
+  "resume_after_machine_restart": true,
+  "archived_intermediate_models_used": false,
+  "archived_bitstream_used": false,
+  "rtl_bytes_equal_original_nops1": true,
+  "full_test_maps": 1725,
+  "scenes": [
+    {
+      "scene": "s23",
+      "maps": 1225,
+      "pc_mean_ssim": 0.7545534930087519,
+      "qat_integer_mean_ssim": 0.7415369036231789,
+      "mean_ssim_gap": 0.01301658938557293,
+      "status": "PASS"
+    },
+    {
+      "scene": "Meetingroom",
+      "maps": 200,
+      "pc_mean_ssim": 0.6925123339526891,
+      "qat_integer_mean_ssim": 0.682628587054179,
+      "mean_ssim_gap": 0.009883746898510126,
+      "status": "PASS"
+    },
+    {
+      "scene": "Office1",
+      "maps": 200,
+      "pc_mean_ssim": 0.6616384745158226,
+      "qat_integer_mean_ssim": 0.6527056125135933,
+      "mean_ssim_gap": 0.008932862002229314,
+      "status": "PASS"
+    },
+    {
+      "scene": "Office2",
+      "maps": 100,
+      "pc_mean_ssim": 0.6128524901606137,
+      "qat_integer_mean_ssim": 0.6053295467549846,
+      "mean_ssim_gap": 0.00752294340562909,
+      "status": "PASS"
+    }
+  ],
+  "final_gate_checks": 17,
+  "physical_status": "PENDING_NEW_BOARD_EXECUTION",
+  "limitations": [
+    "No new physical-board execution or power experiment was performed.",
+    "Exact environment and hardware prerequisites still apply on another computer."
+  ],
+  "pc_app_http_and_preview": "PASS",
+  "notebook_runtime_state_and_tamper_regression": "PASS",
+  "original_power_input_checks": 4,
+  "shared_display_modules_identical_to_archived_app": true
+}

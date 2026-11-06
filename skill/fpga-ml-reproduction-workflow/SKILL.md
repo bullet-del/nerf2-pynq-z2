@@ -8,7 +8,7 @@ description: Execute a contract-defined FPGA/ML reproduction pipeline from decla
 Use this Skill when the user wants one command to turn declared source inputs
 into generated FPGA/ML artifacts and an acceptance report.
 
-The project must provide a `build/workflow.json` file with
+The project must provide a `00_config/workflow.json` file with
 `ordered_commands` and `workflow_pipelines`. Read
 [references/workflow-schema.md](references/workflow-schema.md) before creating
 or changing those fields.
@@ -16,7 +16,7 @@ or changing those fields.
 Run the workflow from the project root:
 
 ```text
-python skill/fpga-ml-reproduction-workflow/scripts/run_fpga_ml_workflow.py --root . --contract build/workflow.json --pipeline software --report-dir work/reports/one-command
+python skill/fpga-ml-reproduction-workflow/scripts/run_fpga_ml_workflow.py --root . --contract 00_config/workflow.json --pipeline software --report-dir work/reports/one-command
 ```
 
 The runner performs the following sequence:

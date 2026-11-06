@@ -1,0 +1,599 @@
+{
+  "schema": "stage39-fpga-power-completeness-audit-v1",
+  "created_utc": "2026-10-08T14:50:17.831457+00:00",
+  "status": "DATA_USABLE_WITH_ONE_RECORDING_LIMITATION__STAGE39_FORMAL_FINALIZATION_PENDING",
+  "scope": "complete PYNQ-Z2 5 V Micro-USB J8 board input measured by FNIRSI FNB58; PBUS trapezoidal integration; software NRG excluded",
+  "counts": {
+    "run_jsons": 12,
+    "fnb58_cfn_logs": 12,
+    "screen_recordings": 12,
+    "unique_test_maps_per_round": 1725,
+    "measured_map_inferences": 5175
+  },
+  "checks": {
+    "all_four_scenes_three_repeats_present": true,
+    "every_run_covers_exact_full_test_catalog": true,
+    "all_clock_start_end_checks_pass": true,
+    "all_output_hashes_repeat_stable_and_match_saved_board_full_test": true,
+    "all_cfn_logs_decode_at_10_sps_and_pbus_equals_vbus_times_ibus": true,
+    "all_required_idle_and_active_windows_inside_cfn_capture": true,
+    "eleven_recordings_show_both_fnb58_start_and_stop": true,
+    "s23_R1_recording_shows_fnb58_stop": false,
+    "s23_R1_recording_shows_start_and_all_four_phase_markers": true,
+    "downloaded_physical_zip_contains_four_full_test_summaries": false,
+    "stage39_physical_finalization_full_pass_exists": false,
+    "generated_80_sample_power_csv_passes_stage39_validator": true
+  },
+  "s23_R1_limitation": {
+    "effect": "The inference energy window is covered and independently aligned by the visible FNB58 start plus four UTC phase markers; the video ends before the later FNB58 stop, so it lacks the same start-to-stop cadence closure as the other eleven runs.",
+    "recommended_action": "Rerun only s23 FPGA R1 if a uniform twelve-run audit trail is required. The current numeric result is plausible and repeat-consistent, but the recording package is not perfectly symmetric."
+  },
+  "per_run": [
+    {
+      "scene": "Meetingroom",
+      "repeat": "R1",
+      "maps": 200,
+      "active_s": 224.97394412700004,
+      "seconds_per_map": 1.1248697206350002,
+      "idle_W": 1.743724421070239,
+      "active_W": 2.0984701783496345,
+      "active_J": 472.1013600091817,
+      "J_per_map": 2.3605068000459086,
+      "dynamic_J_per_map": 0.3990429699620583,
+      "min_samples_per_map": 11,
+      "max_samples_per_map": 12,
+      "checks_passed": 28,
+      "checks_total": 28,
+      "max_phase_residual_s": 0.06662900000003447,
+      "cadence_residual_s": -0.019666666600016924
+    },
+    {
+      "scene": "Meetingroom",
+      "repeat": "R2",
+      "maps": 200,
+      "active_s": 225.169135418,
+      "seconds_per_map": 1.12584567709,
+      "idle_W": 1.743628801405068,
+      "active_W": 2.0974535830466867,
+      "active_J": 472.2820418146208,
+      "J_per_map": 2.361410209073104,
+      "dynamic_J_per_map": 0.39835229649178955,
+      "min_samples_per_map": 11,
+      "max_samples_per_map": 12,
+      "checks_passed": 28,
+      "checks_total": 28,
+      "max_phase_residual_s": 0.03354366669998399,
+      "cadence_residual_s": 0.044333333399947605
+    },
+    {
+      "scene": "Meetingroom",
+      "repeat": "R3",
+      "maps": 200,
+      "active_s": 224.8615381080001,
+      "seconds_per_map": 1.1243076905400005,
+      "idle_W": 1.7560430590677696,
+      "active_W": 2.1022080470026996,
+      "active_J": 472.70598901217704,
+      "J_per_map": 2.3635299450608853,
+      "dynamic_J_per_map": 0.38919616737381657,
+      "min_samples_per_map": 11,
+      "max_samples_per_map": 12,
+      "checks_passed": 28,
+      "checks_total": 28,
+      "max_phase_residual_s": 0.006289333399990937,
+      "cadence_residual_s": 0.13400000000001455
+    },
+    {
+      "scene": "Office1",
+      "repeat": "R1",
+      "maps": 200,
+      "active_s": 223.99333777099991,
+      "seconds_per_map": 1.1199666888549995,
+      "idle_W": 1.7445866515479813,
+      "active_W": 2.098008555642221,
+      "active_J": 469.94018919387804,
+      "J_per_map": 2.3497009459693903,
+      "dynamic_J_per_map": 0.3958209703879561,
+      "min_samples_per_map": 11,
+      "max_samples_per_map": 12,
+      "checks_passed": 28,
+      "checks_total": 28,
+      "max_phase_residual_s": 0.03951366660000133,
+      "cadence_residual_s": 0.06600000000003092
+    },
+    {
+      "scene": "Office1",
+      "repeat": "R2",
+      "maps": 200,
+      "active_s": 225.06970172599995,
+      "seconds_per_map": 1.1253485086299997,
+      "idle_W": 1.742979674743685,
+      "active_W": 2.099483487299658,
+      "active_J": 472.53037477847334,
+      "J_per_map": 2.3626518738923665,
+      "dynamic_J_per_map": 0.4011912481714714,
+      "min_samples_per_map": 11,
+      "max_samples_per_map": 12,
+      "checks_passed": 28,
+      "checks_total": 28,
+      "max_phase_residual_s": 0.03349800000000869,
+      "cadence_residual_s": 0.03333333329999277
+    },
+    {
+      "scene": "Office1",
+      "repeat": "R3",
+      "maps": 200,
+      "active_s": 224.53425362200005,
+      "seconds_per_map": 1.1226712681100002,
+      "idle_W": 1.7447526208599033,
+      "active_W": 2.09748480671616,
+      "active_J": 470.9574317580697,
+      "J_per_map": 2.3547871587903484,
+      "dynamic_J_per_map": 0.3960024974134487,
+      "min_samples_per_map": 11,
+      "max_samples_per_map": 12,
+      "checks_passed": 28,
+      "checks_total": 28,
+      "max_phase_residual_s": 0.032589000000029955,
+      "cadence_residual_s": 0.14566666659993643
+    },
+    {
+      "scene": "Office2",
+      "repeat": "R1",
+      "maps": 100,
+      "active_s": 111.13711420300024,
+      "seconds_per_map": 1.1113711420300023,
+      "idle_W": 1.7529262195964088,
+      "active_W": 2.1199725238787277,
+      "active_J": 235.60788457985328,
+      "J_per_map": 2.3560788457985327,
+      "dynamic_J_per_map": 0.4079251137490559,
+      "min_samples_per_map": 10,
+      "max_samples_per_map": 12,
+      "checks_passed": 30,
+      "checks_total": 30,
+      "max_phase_residual_s": 0.056526333333323464,
+      "cadence_residual_s": 0.09999999999999432
+    },
+    {
+      "scene": "Office2",
+      "repeat": "R2",
+      "maps": 100,
+      "active_s": 109.50193591099998,
+      "seconds_per_map": 1.0950193591099997,
+      "idle_W": 1.7519506580933775,
+      "active_W": 2.1160992389385327,
+      "active_J": 231.7171962028122,
+      "J_per_map": 2.317171962028122,
+      "dynamic_J_per_map": 0.3987501465054089,
+      "min_samples_per_map": 10,
+      "max_samples_per_map": 12,
+      "checks_passed": 29,
+      "checks_total": 29,
+      "max_phase_residual_s": 0.03964500000000726,
+      "cadence_residual_s": 0.1333333333000155
+    },
+    {
+      "scene": "Office2",
+      "repeat": "R3",
+      "maps": 100,
+      "active_s": 110.76936625999997,
+      "seconds_per_map": 1.1076936625999998,
+      "idle_W": 1.7538244362385782,
+      "active_W": 2.1205359459384088,
+      "active_J": 234.89066829397754,
+      "J_per_map": 2.3489066829397753,
+      "dynamic_J_per_map": 0.4062044397288821,
+      "min_samples_per_map": 10,
+      "max_samples_per_map": 12,
+      "checks_passed": 29,
+      "checks_total": 29,
+      "max_phase_residual_s": 0.03951533330000245,
+      "cadence_residual_s": 0.13333333340000308
+    },
+    {
+      "scene": "s23",
+      "repeat": "R1",
+      "maps": 1225,
+      "active_s": 1401.3891744839998,
+      "seconds_per_map": 1.1439911628440815,
+      "idle_W": 1.7430756594710817,
+      "active_W": 2.1057014073308316,
+      "active_J": 2950.9074085941606,
+      "J_per_map": 2.4089040070156416,
+      "dynamic_J_per_map": 0.4148406863505283,
+      "min_samples_per_map": 11,
+      "max_samples_per_map": 14,
+      "max_phase_residual_s": 0.006305666699987,
+      "phase_residuals": {
+        "idle_start": 0.0,
+        "idle_end": 0.006305666699987,
+        "active_start": -0.0062613333000030025,
+        "active_end": -0.0002220000001216249
+      },
+      "cfn_duration_s": 1509.6000000000001,
+      "last_required_relative_s": 1498.430222,
+      "record_start_visible_s": 13.4,
+      "record_stop_visible": false
+    },
+    {
+      "scene": "s23",
+      "repeat": "R2",
+      "maps": 1225,
+      "active_s": 1404.091030517,
+      "seconds_per_map": 1.1461967596057143,
+      "idle_W": 1.7445127602025563,
+      "active_W": 2.104681024385106,
+      "active_J": 2955.1639999120616,
+      "J_per_map": 2.412378775438418,
+      "dynamic_J_per_map": 0.41282373244863674,
+      "min_samples_per_map": 11,
+      "max_samples_per_map": 14,
+      "checks_passed": 28,
+      "checks_total": 28,
+      "max_phase_residual_s": 0.03373900000019603,
+      "cadence_residual_s": 0.03333333339969613
+    },
+    {
+      "scene": "s23",
+      "repeat": "R3",
+      "maps": 1225,
+      "active_s": 1400.6489465710001,
+      "seconds_per_map": 1.1433868951600001,
+      "idle_W": 1.7476785238259869,
+      "active_W": 2.1048188933763488,
+      "active_J": 2948.1126086874606,
+      "J_per_map": 2.4066225377040493,
+      "dynamic_J_per_map": 0.40834965192901834,
+      "min_samples_per_map": 11,
+      "max_samples_per_map": 14,
+      "checks_passed": 28,
+      "checks_total": 28,
+      "max_phase_residual_s": 0.039591333300009524,
+      "cadence_residual_s": 0.06666666669980259
+    }
+  ],
+  "per_scene_median": [
+    {
+      "scene": "s23",
+      "test_maps": 1225,
+      "repeats": 3,
+      "median_seconds_per_map": 1.1439911628440815,
+      "median_idle_W": 1.7445127602025563,
+      "median_active_W": 2.1048188933763488,
+      "median_total_J_per_map": 2.4089040070156416,
+      "median_dynamic_J_per_map": 0.41282373244863674,
+      "seconds_per_map_cv_percent": 0.1292263265979862,
+      "active_W_cv_percent": 0.02629975281605812,
+      "J_per_map_cv_percent": 0.12031121937150979,
+      "pc_gpu_to_fpga_time_ratio_descriptive": 1.1405254187071276,
+      "pc_gpu_to_fpga_active_power_ratio_descriptive": 20.92531577828477,
+      "pc_gpu_to_fpga_total_energy_ratio_descriptive": 23.85566209057614
+    },
+    {
+      "scene": "Meetingroom",
+      "test_maps": 200,
+      "repeats": 3,
+      "median_seconds_per_map": 1.1248697206350002,
+      "median_idle_W": 1.743724421070239,
+      "median_active_W": 2.0984701783496345,
+      "median_total_J_per_map": 2.361410209073104,
+      "median_dynamic_J_per_map": 0.39835229649178955,
+      "seconds_per_map_cv_percent": 0.06917476398195842,
+      "active_W_cv_percent": 0.11925754690694573,
+      "J_per_map_cv_percent": 0.0657044499580073,
+      "pc_gpu_to_fpga_time_ratio_descriptive": 1.181713735924558,
+      "pc_gpu_to_fpga_active_power_ratio_descriptive": 20.387709313861766,
+      "pc_gpu_to_fpga_total_energy_ratio_descriptive": 24.075867793557066
+    },
+    {
+      "scene": "Office1",
+      "test_maps": 200,
+      "repeats": 3,
+      "median_seconds_per_map": 1.1226712681100002,
+      "median_idle_W": 1.7445866515479813,
+      "median_active_W": 2.098008555642221,
+      "median_total_J_per_map": 2.3547871587903484,
+      "median_dynamic_J_per_map": 0.3960024974134487,
+      "seconds_per_map_cv_percent": 0.23969111704960308,
+      "active_W_cv_percent": 0.0493906534644499,
+      "J_per_map_cv_percent": 0.276984044394708,
+      "pc_gpu_to_fpga_time_ratio_descriptive": 1.192731156515889,
+      "pc_gpu_to_fpga_active_power_ratio_descriptive": 20.300679844922023,
+      "pc_gpu_to_fpga_total_energy_ratio_descriptive": 24.179255346902977
+    },
+    {
+      "scene": "Office2",
+      "test_maps": 100,
+      "repeats": 3,
+      "median_seconds_per_map": 1.1076936625999998,
+      "median_idle_W": 1.7529262195964088,
+      "median_active_W": 2.1199725238787277,
+      "median_total_J_per_map": 2.3489066829397753,
+      "median_dynamic_J_per_map": 0.4062044397288821,
+      "seconds_per_map_cv_percent": 0.7765481965418675,
+      "active_W_cv_percent": 0.11399347296138977,
+      "J_per_map_cv_percent": 0.8845736917232483,
+      "pc_gpu_to_fpga_time_ratio_descriptive": 1.2128073359620937,
+      "pc_gpu_to_fpga_active_power_ratio_descriptive": 19.92431483155216,
+      "pc_gpu_to_fpga_total_energy_ratio_descriptive": 24.145701662791076
+    }
+  ],
+  "physical_export": {
+    "saved_copy": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\physical_evidence\\Stage39_physical_evidence_20261008_INCOMPLETE_NO_ALL_TEST.zip",
+    "sha256": "9481668878329f80b72021229142660c40940fe2d07906dfd0f067146e14958f",
+    "manifest": {
+      "schema": "n2-stage39-physical-evidence-export-v1",
+      "created_utc": "2026-10-08T10:32:32.307840+00:00",
+      "board_package": "N2-NeRF2-Stage39-board",
+      "scenes": [
+        "s23",
+        "Meetingroom",
+        "Office1",
+        "Office2"
+      ],
+      "contains_full_test_summaries": {
+        "s23": false,
+        "Meetingroom": false,
+        "Office1": false,
+        "Office2": false
+      },
+      "files": [
+        {
+          "path": "evidence/stage39_physical_gate/selftests.json",
+          "sha256": "4ca8e506dfb15f523be1970c6b023811d7a90c7bacc4daed11278ecba8551c6a",
+          "bytes": 5179
+        },
+        {
+          "path": "evidence/stage39_physical_gate/benchmark_50.json",
+          "sha256": "c2dc03f8608600d05f97a8706b114aa9b0321f429bb8d75d300b94fda100058a",
+          "bytes": 8591
+        },
+        {
+          "path": "scenes/s23/evidence/stage39/benchmark_50.json",
+          "sha256": "14ca097e22ba06396d67be0060b53c6022ee8424a5138bd3cae21467d852d66e",
+          "bytes": 1815
+        },
+        {
+          "path": "scenes/Meetingroom/evidence/stage39/benchmark_50.json",
+          "sha256": "e48cabe656f25ce7927d6fc2fdb5fcb4f017909fc42613370de621332c58fd2c",
+          "bytes": 1835
+        },
+        {
+          "path": "scenes/Office1/evidence/stage39/benchmark_50.json",
+          "sha256": "5482641b6f0ad10a5aa9c2705f20edbb64b7b4bbc92333bcb8bfdacdf9ee70a9",
+          "bytes": 1830
+        },
+        {
+          "path": "scenes/Office2/evidence/stage39/benchmark_50.json",
+          "sha256": "763598cc8b3662fcd3f2dbf9e4aaf594b221d3d0afce43c62292b89d4b03068c",
+          "bytes": 1836
+        }
+      ]
+    }
+  },
+  "source_inventory": [
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_Meetingroom_R1.json",
+      "bytes": 87258,
+      "sha256": "16eeca8f420443ea9621069355825ed3c7719241fea9d563f855e9c640cbe584"
+    },
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_Meetingroom_R2.json",
+      "bytes": 87265,
+      "sha256": "91ae81a462cb8ddfaede644f0c30af1cfbee19450c88b7bf142f229a4890f4cd"
+    },
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_Meetingroom_R3.json",
+      "bytes": 87273,
+      "sha256": "314c487ab813fb7ab877eda378489ff3d2bb9160cbed9396802bb07cc496dada"
+    },
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_Office1_R1.json",
+      "bytes": 87271,
+      "sha256": "8eb7ed981fe9b21cfa557e2ff4a0a25652117985ae0d1211beae3fee2cfe08f3"
+    },
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_Office1_R2.json",
+      "bytes": 87269,
+      "sha256": "321e02b9ee561c0c2aff26e9405e25c69c2989e0c0b8d6f1754a61220f0d06da"
+    },
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_Office1_R3.json",
+      "bytes": 87267,
+      "sha256": "303962edc6bc8bfec536c61d55ef8a11cdbd49f9254551a1205ad3cdc80243b7"
+    },
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_Office2_R1.json",
+      "bytes": 44617,
+      "sha256": "1cbb8c0b54ccf6ce16db83c17f0e2d132b9f4ee258fb08132e68d15e5e4a795c"
+    },
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_Office2_R2.json",
+      "bytes": 44612,
+      "sha256": "44bdb27abbfd455aa0a9ddff1a3c863154d5ed3420d84903f258365141611beb"
+    },
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_Office2_R3.json",
+      "bytes": 44617,
+      "sha256": "7b7fb0ce2c4a1f559c5a92097ef107c3af7362dd99467ac1c9ccb9056d0eefbb"
+    },
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_s23_R1.json",
+      "bytes": 529672,
+      "sha256": "c08ac81ebf66a392576080fd6d753b506b2d5c94e50f04561819899d28df55bb"
+    },
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_s23_R2.json",
+      "bytes": 529672,
+      "sha256": "bd12a076a28e7181b6f0b6563358da3449dde026e6488d7f40a555f193e4173f"
+    },
+    {
+      "type": "run_json",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_run_jsons\\fpga_s23_R3.json",
+      "bytes": 529677,
+      "sha256": "3ae384f46c7147701b1963316ef2735f967e7a75efc974473decb9e56c1f4c2e"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261007_Office2_FPGA_R1.cfn",
+      "bytes": 83222,
+      "sha256": "ba6d0a8dbb87ca5bbf51418cb996b16ce4a136e2e0b378e27b1b26b97ff9f9ba"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261008_Meetingroom_FPGA_R1.cfn",
+      "bytes": 131142,
+      "sha256": "85ca7a34df08dfa3ef76deb1a8968b4dcf8a42cee35a3e2e9543c30d1fdc96e1"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261008_Meetingroom_FPGA_R2.cfn",
+      "bytes": 133702,
+      "sha256": "9428e2a942fd2f25bf36ae691b0249a8e369c0b521aa27f9db58f7bb2ef3dbff"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261008_Meetingroom_FPGA_R3.cfn",
+      "bytes": 133742,
+      "sha256": "7588b05cc09d239652277d1f3cf3df944edd4cc033e30592ec7bdafbfb695d42"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261008_Office1_FPGA_R1.cfn",
+      "bytes": 129462,
+      "sha256": "f2a43ca83cf24a545ac3fd99436b362110948f23d2f24422b8625e8e6147eb59"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261008_Office1_FPGA_R2.cfn",
+      "bytes": 143822,
+      "sha256": "b95fa2a565060579e4d5065811968d81bdc744a2665fec1f31c7de7fff5bbbd7"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261008_Office1_FPGA_R3.cfn",
+      "bytes": 131782,
+      "sha256": "ad6c41dda621be90686a5f92f3eaece8c574dcfd580b9fd78370df6b31d63e2a"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261008_Office2_FPGA_R2.cfn",
+      "bytes": 83942,
+      "sha256": "d48e04952961dd42a936de167642afd53cdaf35684e85116215ba0d956beee34"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261008_Office2_FPGA_R3.cfn",
+      "bytes": 85142,
+      "sha256": "85e1b19bcf449f289b280034c8648e0ba74c1afef64162d414348326258bd0ba"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261008_s23_FPGA__R1.cfn",
+      "bytes": 603982,
+      "sha256": "0426ac2c757d7b98375f6077341e1cfdd8da1af4f3d93a7cfb325acb576ee27b"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261008_s23_FPGA__R2.cfn",
+      "bytes": 600582,
+      "sha256": "b9eb426a5511fb9be197d88f558f79a0609e30ac7931b68a1085cbde9ea0ee8b"
+    },
+    {
+      "type": "fnb58_cfn",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261008_s23_FPGA__R3.cfn",
+      "bytes": 611702,
+      "sha256": "f435d5c6216684b8705b0ee5cf9d8fb3a1a66bfd6540eb24be8e37d63fc3adf4"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-07 22-16-11 Office2_R1.mp4",
+      "bytes": 169299059,
+      "sha256": "8f0eab5a71235e4f47c03370f418e87f5eed23fc7fb19f3a524648dd6edcfd40"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-08 12-05-47 Office2_R2.mp4",
+      "bytes": 176860258,
+      "sha256": "b20b8d42e4427766ba1776cd84dc43f73877cdecdc33602de446941e494e242e"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-08 12-17-38 Office2_R3.mp4",
+      "bytes": 172051330,
+      "sha256": "586bf785bdaed32728a42c585298dcf11e0bdfc0a9b48662e078496bc543211f"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-08 16-38-00 Meetingroom_R1.mp4",
+      "bytes": 279388181,
+      "sha256": "6d800a0766a87589080bb033215f46974078cf2dbb41bb945df29bfcd297b67e"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-08 16-45-03 Meetingroom_R2.mp4",
+      "bytes": 262933876,
+      "sha256": "074f51b8c096de14b16d5d1be5ccf35df0632e74750b2923c4340d24b70da3ef"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-08 16-52-02 Meetingroom_R3.mp4",
+      "bytes": 265434946,
+      "sha256": "58ae01ddf145185417ed8494e058ef7d12e4d2ec9cbee42ac8c0a06d2666f8dc"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-08 17-06-57 Office1_R1.mp4",
+      "bytes": 261256075,
+      "sha256": "91d588301229d56196b51b37ac43509fbc6c93e4c178b7ce855373c44e2ef34b"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-08 17-16-42 Office1_R2.mp4",
+      "bytes": 296943481,
+      "sha256": "e1c529238e7514c9371f306f6dca09dd3f6228a7b47516395854865d80926158"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-08 17-23-39 Office1_R3.mp4",
+      "bytes": 259402840,
+      "sha256": "b3d2c22134e967b25676a02d5ae0116ea24c99bd2f2d13054ea23bb816ac2f62"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-08 17-31-44 s23_R1.mp4",
+      "bytes": 1141177971,
+      "sha256": "2f7f215fa6d1503f01d0ba2420dddcdd4019c6b1e4cede1ed4d508d76c5b92c7"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-08 17-59-20 s23_R2.mp4",
+      "bytes": 1144233558,
+      "sha256": "88ad79c10be3371f59b0a2cb3aff018bb939b15ca465636324e1c1f5be4d0cc4"
+    },
+    {
+      "type": "screen_recording",
+      "path": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\board_fnb58_raw\\2026-10-08 18-28-22 s23_R3.mp4",
+      "bytes": 1161863580,
+      "sha256": "ff0c35722f22a8be5693ad69774c31350cc49ac25e3090b786133c5f76abbf1b"
+    }
+  ],
+  "interpretation": {
+    "pc_gpu_comparison": "descriptive only because NVIDIA GPU telemetry and complete PYNQ board input are different power boundaries",
+    "arm_comparison": "missing; no same-board FPGA-versus-ARM speedup or energy-efficiency factor can yet be claimed",
+    "formal_stage39": "requires a regenerated physical export containing all four all_test result/identity pairs, an 80-row FPGA power CSV, and the witnessed live-rehearsal flag"
+  },
+  "generated_power_gate_csv": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\fpga_power_audit_20261008\\stage39_board_input_power_80_samples.csv"
+}

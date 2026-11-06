@@ -1,3 +1,14 @@
+# November 6 numbered reproduction repository
+
+Current main follows the NoPS1 folder/execution structure with lowercase names.
+All original checkpoints/data/configs/splits are directly included. The root
+README gives every setup and reproduction command, plus the explicit AMD
+recommended-directory correspondence. New full host reconstruction results
+are in results/reproduction_20261106; they retain pending new-board status.
+
+The fixed November 4 Release below remains the archived, matched physical
+deployment, not a physical certification of a newly generated package.
+
 # Stage39 complete engineering submission
 
 This release accompanies the full current repository tree and MIT license.

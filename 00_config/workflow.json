@@ -1,0 +1,315 @@
+{
+  "schema": "fpga-ml-reproducibility-contract-v1",
+  "project": "N2-NeRF2 Stage39 on PYNQ-Z2",
+  "source": {
+    "required_files": [
+      "README.md",
+      "LICENSE",
+      "citation.cff",
+      "00_config/environment.yml",
+      "00_config/reproduction_config.json",
+      "01_vivado/tcl/build_stage39.tcl",
+      "01_vivado/tcl/run_stage39_rtl_tests.tcl",
+      "02_model_pipeline/stage39_core/train_hardware_exact_qat.py",
+      "03_package_builder/reproduce_stage39.py",
+      "03_package_builder/preflight.py",
+      "03_package_builder/verify_cold_reproduction.py",
+      "04_pc_app/template/pc_app/stage39_pc_server.py",
+      "05_pynq_board/template/jupyter/stage39_board_service.py",
+      "06_power_measurement/power_protocol.md",
+      "skill/fpga-ml-reproducibility-audit/SKILL.md",
+      "skill/fpga-ml-reproduction-workflow/SKILL.md",
+      "skill/fpga-ml-reproduction-workflow/scripts/run_fpga_ml_workflow.py",
+      "skill/nerf2-checkpoint-fpga-export/SKILL.md",
+      "skill/nerf2-checkpoint-fpga-export/references/input-and-output-contract.md",
+      "skill/nerf2-checkpoint-fpga-export/scripts/run_nerf2_checkpoint_export.py",
+      "skill/README.md",
+      "skill/nerf2-checkpoint-fpga-export/README.md",
+      "skill/nerf2-checkpoint-fpga-export/verification.md",
+      "skill/nerf2-checkpoint-fpga-export/verification/verified_effects.json",
+      "skill/pynq-overlay-validation/README.md",
+      "skill/pynq-overlay-validation/verification.md",
+      "skill/pynq-overlay-validation/verification/verified_effects.json",
+      "skill/pynq-overlay-validation/scripts/inspect_hwh.py",
+      "skill/pynq-overlay-validation/scripts/generate_validation_bundle.py",
+      "skill/pynq-overlay-validation/scripts/run_board_validation.py",
+      "skill/pynq-overlay-validation/scripts/summarize_validation_reports.py",
+      ".github/workflows/static-validation.yml",
+      "scripts/check_repository.py",
+      "docs/directory_map.md",
+      "report/repository_update.md"
+    ],
+    "required_directories": [
+      "01_vivado/rtl",
+      "01_vivado/sim",
+      "02_model_pipeline/stage37",
+      "02_model_pipeline/stage39_core",
+      "04_pc_app/template",
+      "05_pynq_board/template",
+      "skill/nerf2-checkpoint-fpga-export",
+      "skill/pynq-overlay-validation"
+    ],
+    "forbidden_suffixes": [
+      ".ps1",
+      ".pyc"
+    ],
+    "forbidden_path_fragments": [],
+    "scan_exclude_prefixes": [
+      ".git/",
+      "external/",
+      "work/",
+      "outputs/",
+      "01_vivado/output/",
+      "06_power_measurement/results/"
+    ],
+    "scan_exclude_path_fragments": [
+      "__pycache__"
+    ],
+    "glob_counts": [
+      {
+        "pattern": "01_vivado/rtl/*.v",
+        "minimum": 7,
+        "maximum": 7
+      },
+      {
+        "pattern": "01_vivado/rtl/*.sv",
+        "minimum": 2,
+        "maximum": 2
+      }
+    ]
+  },
+  "json_checks": [
+    {
+      "id": "config-schema",
+      "required_for": "source",
+      "path": "00_config/reproduction_config.json",
+      "pointer": "/schema",
+      "op": "eq",
+      "value": "n2-stage39-cold-reproduction-config-v1"
+    },
+    {
+      "id": "held-out-map-count",
+      "required_for": "source",
+      "path": "00_config/reproduction_config.json",
+      "pointer": "/acceptance/total_test_maps",
+      "op": "eq",
+      "value": 1725
+    },
+    {
+      "id": "accuracy-gap-limit",
+      "required_for": "source",
+      "path": "00_config/reproduction_config.json",
+      "pointer": "/acceptance/maximum_mean_ssim_gap",
+      "op": "eq",
+      "value": 0.015
+    },
+    {
+      "id": "runtime-weight-capacity",
+      "required_for": "source",
+      "path": "00_config/reproduction_config.json",
+      "pointer": "/acceptance/weight_capacity_words",
+      "op": "eq",
+      "value": 3072
+    },
+    {
+      "id": "formal-clock",
+      "required_for": "source",
+      "path": "00_config/reproduction_config.json",
+      "pointer": "/acceptance/frequency_mhz",
+      "op": "eq",
+      "value": 95.0
+    },
+    {
+      "id": "qat-learning-rate",
+      "required_for": "source",
+      "path": "00_config/reproduction_config.json",
+      "pointer": "/qat/learning_rate",
+      "op": "eq",
+      "value": 1e-05
+    },
+    {
+      "id": "s23-activation-percentile",
+      "required_for": "source",
+      "path": "00_config/reproduction_config.json",
+      "pointer": "/scenes/s23/activation_percentile",
+      "op": "eq",
+      "value": 99.5
+    },
+    {
+      "id": "meetingroom-activation-percentile",
+      "required_for": "source",
+      "path": "00_config/reproduction_config.json",
+      "pointer": "/scenes/Meetingroom/activation_percentile",
+      "op": "eq",
+      "value": 99.5
+    },
+    {
+      "id": "office1-activation-percentile",
+      "required_for": "source",
+      "path": "00_config/reproduction_config.json",
+      "pointer": "/scenes/Office1/activation_percentile",
+      "op": "eq",
+      "value": 99.5
+    },
+    {
+      "id": "office2-activation-percentile",
+      "required_for": "source",
+      "path": "00_config/reproduction_config.json",
+      "pointer": "/scenes/Office2/activation_percentile",
+      "op": "eq",
+      "value": 99.5
+    },
+    {
+      "id": "s23-software-gate",
+      "required_for": "software",
+      "path": "work/full/qat/s23/software_gate.json",
+      "pointer": "/status",
+      "op": "eq",
+      "value": "PASS"
+    },
+    {
+      "id": "meetingroom-software-gate",
+      "required_for": "software",
+      "path": "work/full/qat/Meetingroom/software_gate.json",
+      "pointer": "/status",
+      "op": "eq",
+      "value": "PASS"
+    },
+    {
+      "id": "office1-software-gate",
+      "required_for": "software",
+      "path": "work/full/qat/Office1/software_gate.json",
+      "pointer": "/status",
+      "op": "eq",
+      "value": "PASS"
+    },
+    {
+      "id": "office2-software-gate",
+      "required_for": "software",
+      "path": "work/full/qat/Office2/software_gate.json",
+      "pointer": "/status",
+      "op": "eq",
+      "value": "PASS"
+    },
+    {
+      "id": "rtl-simulation-gate",
+      "required_for": "software",
+      "path": "work/full/rtl_sim/rtl_simulation_report.json",
+      "pointer": "/status",
+      "op": "eq",
+      "value": "PASS"
+    },
+    {
+      "id": "cold-reproduction-final-gate",
+      "required_for": "software",
+      "path": "work/full/reports/cold_reproduction_final_gate.json",
+      "pointer": "/status",
+      "op": "eq",
+      "value": "PASS"
+    },
+    {
+      "id": "physical-finalization",
+      "required_for": "physical",
+      "path": "outputs/N2-NeRF2-Stage39-PC-App/stage39_reports/stage39_physical_finalization.json",
+      "pointer": "/status",
+      "op": "eq",
+      "value": "FULL_PASS"
+    }
+  ],
+  "ordered_commands": [
+    {
+      "id": "source-verify",
+      "command": "python scripts/check_repository.py",
+      "argv": [
+        "{python}",
+        "scripts/check_repository.py"
+      ]
+    },
+    {
+      "id": "preflight",
+      "command": "python 03_package_builder/reproduce_stage39.py preflight",
+      "argv": [
+        "{python}",
+        "03_package_builder/reproduce_stage39.py",
+        "preflight"
+      ]
+    },
+    {
+      "id": "vivado",
+      "command": "python 03_package_builder/reproduce_stage39.py vivado",
+      "argv": [
+        "{python}",
+        "03_package_builder/reproduce_stage39.py",
+        "vivado"
+      ]
+    },
+    {
+      "id": "models",
+      "command": "python 03_package_builder/reproduce_stage39.py models --profile full --scene all",
+      "argv": [
+        "{python}",
+        "03_package_builder/reproduce_stage39.py",
+        "models",
+        "--profile",
+        "full",
+        "--scene",
+        "all"
+      ]
+    },
+    {
+      "id": "rtl",
+      "command": "python 03_package_builder/reproduce_stage39.py rtl --profile full",
+      "argv": [
+        "{python}",
+        "03_package_builder/reproduce_stage39.py",
+        "rtl",
+        "--profile",
+        "full"
+      ]
+    },
+    {
+      "id": "assemble",
+      "command": "python 03_package_builder/reproduce_stage39.py assemble",
+      "argv": [
+        "{python}",
+        "03_package_builder/reproduce_stage39.py",
+        "assemble"
+      ]
+    },
+    {
+      "id": "verify",
+      "command": "python 03_package_builder/reproduce_stage39.py verify",
+      "argv": [
+        "{python}",
+        "03_package_builder/reproduce_stage39.py",
+        "verify"
+      ]
+    }
+  ],
+  "workflow_pipelines": {
+    "source": {
+      "steps": [
+        "source-verify"
+      ],
+      "audit_mode": "source"
+    },
+    "software": {
+      "steps": [
+        "source-verify",
+        "preflight",
+        "vivado",
+        "models",
+        "rtl",
+        "assemble",
+        "verify"
+      ],
+      "audit_mode": "software"
+    }
+  },
+  "claim_boundaries": [
+    "Smoke runs establish connectivity and never replace formal full-test gates.",
+    "Physical FPGA claims require the physical finalizer to report FULL_PASS.",
+    "Strict energy ratios use ARM and FPGA measurements at the same PYNQ-Z2 5 V input boundary.",
+    "NVIDIA telemetry is a descriptive GPU-domain comparison, not whole-PC power."
+  ]
+}

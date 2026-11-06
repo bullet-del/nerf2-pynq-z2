@@ -1,0 +1,58 @@
+{
+  "schema": "stage39-usbmeter-cfn-decoded-v1",
+  "source_file": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\stage39_power_comparison_kit\\results\\board_fnb58_raw\\20261007_Office2_FPGA_R1_REMEASURE.cfn",
+  "source_sha256": "ba6d0a8dbb87ca5bbf51418cb996b16ce4a136e2e0b378e27b1b26b97ff9f9ba",
+  "sampling_rate_sps": 10.0,
+  "sample_count": 2078,
+  "data_offset_bytes": 102,
+  "channel_descriptors": [
+    {
+      "id": 0,
+      "name": "voltage_V",
+      "color_argb": 4294967040,
+      "visible": true,
+      "stored_max": 4.85556,
+      "stored_min": 4.8515
+    },
+    {
+      "id": 1,
+      "name": "current_A",
+      "color_argb": 4278255360,
+      "visible": true,
+      "stored_max": 0.51071,
+      "stored_min": 0.35767
+    },
+    {
+      "id": 4,
+      "name": "power_W",
+      "color_argb": 4294923775,
+      "visible": true,
+      "stored_max": 2.4782662389,
+      "stored_min": 1.7364234694
+    },
+    {
+      "id": 6,
+      "name": "software_NRG_Wh",
+      "color_argb": 4294945280,
+      "visible": false
+    }
+  ],
+  "relative_start_s": 0.0,
+  "relative_end_s": 207.70000000000002,
+  "duration_s": 207.70000000000002,
+  "stored_sample_interval_s": 0.09999999999999432,
+  "min_voltage_V": 4.8515,
+  "max_voltage_V": 4.85556,
+  "min_power_W": 1.7364234694,
+  "max_power_W": 2.4782662389,
+  "max_PBUS_minus_VI_W": 0.0,
+  "whole_record_power_integral_J": 405.2552226353959,
+  "whole_record_power_integral_Wh": 0.11257089517649886,
+  "absolute_start_utc": null,
+  "phase_alignment_status": "REQUIRES_INDEPENDENT_TIME_ANCHOR",
+  "interpretation": "Whole-record integral includes settle/countdown/idle/tail; it is not inference energy.",
+  "software_NRG_delta_Wh": 0.02814272969939795,
+  "software_NRG_to_power_integral_ratio": 0.25000005245825957,
+  "software_NRG_consistent_with_power_integral": false,
+  "energy_method": "Integrate PBUS against relative_time_s; do not use unverified software NRG."
+}

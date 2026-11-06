@@ -65,7 +65,7 @@ def compare(exists: bool, actual: Any, op: str, expected: Any) -> bool:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Audit an FPGA/ML reproducibility contract")
     parser.add_argument("--root", type=Path, default=Path.cwd())
-    parser.add_argument("--contract", type=Path, default=Path("build/workflow.json"))
+    parser.add_argument("--contract", type=Path, default=Path("00_config/workflow.json"))
     parser.add_argument("--mode", choices=tuple(LEVEL), default="source")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()

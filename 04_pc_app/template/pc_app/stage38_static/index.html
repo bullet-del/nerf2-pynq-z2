@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>N2-NeRF² Stage38 单一位流四场景评委控制台</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">PYNQ-Z2 · 单一通用位流 · 四场景运行时模型 · INT8/Q15 硬件推理</p>
+      <h1>N2-NeRF² 评委控制台</h1>
+      <p>总体精度、动态证据、代表性案例、各场景完整测试集盲测与连续 Tx 查询</p>
+    </div>
+    <div id="health" class="health">正在检查服务…</div>
+  </header>
+
+  <div class="action-card" style="margin:0 24px 12px"><label>全局场景 <select id="sceneSelect"><option value="s23">S23</option><option value="Meetingroom">Meetingroom</option><option value="Office1">Office1</option><option value="Office2">Office2</option></select></label><span id="sceneStatus" class="note"></span></div>
+  <nav>
+    <button class="tab active" data-tab="overview">1 总体精度与动态证据</button>
+    <button class="tab" data-tab="cases">2 代表性案例</button>
+    <button class="tab" data-tab="measured">3A 真实测量盲测</button>
+    <button class="tab" data-tab="free">3B 任意 Tx 查询</button>
+  </nav>
+
+  <main>
+<div id="hardwareNotice" class="status"></div><button id="syncEvidence">下载当前场景已保存 FPGA 图（供断电浏览）</button><button id="pcPreview">当前场景 PC 检查（明确不作为 FPGA 证据）</button><div id="pcPreviewResult"></div>
+    <section id="overview" class="panel active">
+      <div class="stats" id="stats"></div>
+      <article class="action-card">
+        <div class="card-heading">
+          <div><h2><span class="scene-count">1225</span> 幅 test 空间谱的真实硬件统计</h2><p>同一 checkpoint、同一 90×360 网格、同一 GT。图中只比较 PC FP32 与 FPGA 原始 INT8/Q15 的曲线和平均值。</p></div>
+          <div class="button-row compact"><button id="batchBtn" class="primary">开始/继续/迁移 <span class="scene-count">1225</span> 幅验证</button><button id="batchStop">安全暂停</button></div>
+        </div>
+        <div id="batchStatus" class="status">尚未读取板端批量证据。</div>
+        <img id="batchImage" class="result-image full-chart hidden" alt="1225测试频谱精度与时间统计">
+        <p class="note">Stage38 直接使用 FPGA 原始 Q15 输出：raw_q15 / 32768，并将它作为最终 FPGA 结果。</p>
+      </article>
+
+      <article class="action-card">
+        <div class="card-heading">
+          <div><h2>保存证据动态浏览</h2><p>每隔 10–15 秒随机切换一个 test Tx，同时显示固定 Rx、测量 GT、PC 与 FPGA。这里读取已保存并带哈希的 FPGA 结果；正式盲测页会重新运行硬件。</p></div>
+          <div class="button-row compact"><select id="carouselSeconds" aria-label="保存证据切换间隔"><option value="10">10 秒</option><option value="12" selected>12 秒</option><option value="15">15 秒</option></select><button id="carouselToggle">暂停</button><button id="carouselNext">立即换一组</button></div>
+        </div>
+        <div id="carouselStatus" class="status">完成或迁移 <span class="scene-count">1225</span> 幅硬件验证后自动开始。</div>
+        <img id="carouselImage" class="result-image full-chart hidden" alt="随机Tx保存证据">
+      </article>
+    </section>
+
+    <section id="cases" class="panel">
+      <h2>低、中、高分位与最佳视觉案例</h2>
+      <p>P10、P50、P90 展示总体范围，MAX 只作为最佳视觉案例。三幅图均采用 NeRF² pre_spectrum 的圆形投影、90×360 原始角度网格和共享色标，不绘制单独误差图。</p>
+      <figure><img src="/assets/representative_gt_pc_gallery.png"><figcaption>官方测量 GT 与 PC FP32 参考</figcaption></figure>
+      <figure><img id="representativeHardware" class="hidden"><figcaption id="repHint">完成或迁移 <span class="scene-count">1225</span> 幅硬件验证后，这里自动出现 GT、PC、FPGA 三列板端结果。</figcaption></figure>
+    </section>
+
+    <section id="measured" class="panel">
+      <div class="mode-title">
+        <div><span class="badge measured">有原始测量 GT</span><h2>真实测量 Tx 盲测</h2></div>
+        <p>候选池随场景切换为该场景的全部 held-out test 坐标。训练点不进入正式盲测，避免把训练记忆误当泛化能力。</p>
+      </div>
+      <div class="form-grid">
+        <label>板端服务地址 <span>固定格式：http://PYNQ-IP:8311</span><input id="boardUrlA" value="http://192.168.2.99:8311"></label>
+        <label>真实测量 Tx 候选 <span>范围：当前场景全部 <span class="scene-count">1225</span> 个 test 点</span><select id="candidate"></select></label>
+        <label>评委随机种子 <span>可空；1–64 个可打印字符</span><input id="nonceA" maxlength="64" placeholder="例：judge-2026-09-27"></label>
+        <label>随机复核射线数 <span>只允许 8、16 或 32</span><select id="countA"><option>8</option><option selected>16</option><option>32</option></select></label>
+      </div>
+      <p class="explain"><b>随机种子的作用：</b>系统把“种子 + 场景 + Tx + bitstream 哈希 + 运行时模型哈希 + 抽查数量”按公开格式输入 SHA-256 计数器算法，现场确定要重算的射线位置。结果页会列出每条射线的完整图 Q15、现场重算 Q15、差值和 ARM Q15，并由电脑端独立复算选点；只要一项不一致，本次运行立即判失败。</p>
+      <p class="explain"><b>时间口径：</b>ARM只计算8/16/32条抽中射线，用于独立正确性复核；FPGA会通过正式生产包重算这些位置所在的数千至数万条射线。结果页会按实际射线数换算每条耗时、吞吐率和归一化加速比，不能直接用两项总秒数判断谁更快。</p>
+      <label class="check"><input id="armA" type="checkbox" checked> 随机射线同时运行独立 ARM 整数参考</label>
+      <label class="check"><input id="hdmiA" type="checkbox"> 已连接并打开 HDMI 显示器，允许板卡切换到物理 HDMI 输出</label>
+      <label>HDMI 显示比例 <span>当前显示器曾出现纵向拉长，默认使用4:3校正</span><select id="aspectA"><option value="four_three_stretch" selected>4:3显示器校正（圆形，推荐）</option><option value="square_pixels">标准16:9方形像素</option></select></label>
+      <p class="explain"><b>未连接显示器时请保持不勾选。</b>浏览器仍会显示并保存同一张 GT / PC / FPGA 高清对比图；物理 HDMI 画面不再显示底部色条。4:3校正会在发送前纵向预压缩，抵消显示器拉伸，使三幅极坐标图在屏幕上恢复为圆形。</p>
+      <div class="button-row"><button id="randomCandidate">随机选择一个 test Tx</button><button id="probeA">检查 PYNQ 连接</button><button id="selftestA">运行硬件自检</button><button id="runMeasured" class="primary">开始正式盲测</button></div>
+      <div id="measuredStatus" class="status"></div>
+      <div id="measuredResult" class="result"></div>
+    </section>
+
+    <section id="free" class="panel">
+      <div class="mode-title">
+        <div><span class="badge free">无测量 GT</span><h2>任意 Tx 连续查询</h2></div>
+        <p>评委在当前场景边界内输入连续坐标。PC 与 FPGA 预测同一空间谱；此模式只比较二者，不虚构 GT。</p>
+      </div>
+      <div class="form-grid">
+        <label>板端服务地址 <span>固定格式：http://PYNQ-IP:8311</span><input id="boardUrlB" value="http://192.168.2.99:8311"></label>
+        <label>Tx x / m <span>按当前场景加载</span><input id="txX" type="number" min="-0.893" max="0.724" step="0.001" value="0.100"></label>
+        <label>Tx y / m <span>按当前场景加载</span><input id="txY" type="number" min="-0.859" max="0.495" step="0.001" value="-0.300"></label>
+        <label>Tx z / m <span>按当前场景加载</span><input id="txZ" type="number" min="0.809" max="1.701" step="0.001" value="1.100"></label>
+        <label>评委随机种子 <span>可空；1–64 个可打印字符</span><input id="nonceB" maxlength="64" placeholder="例：free-query-17"></label>
+        <label>随机复核射线数 <span>只允许 8、16 或 32</span><select id="countB"><option>8</option><option selected>16</option><option>32</option></select></label>
+      </div>
+      <p class="explain">固定 Rx 坐标：<span id="rxText">按场景加载</span>。自由查询超出以上 Tx 范围时会在电脑端和板端同时拒绝。</p>
+      <p class="explain"><b>随机复核：</b>与盲测页使用同一套公开 SHA-256 选点规范。随机种子可以填写评委现场任意给出的 1–64 个可打印字符；它只决定抽查位置，不改变预测图。</p>
+      <p class="explain"><b>ARM与FPGA计时：</b>ARM时间只覆盖少量抽中射线；FPGA复核时间覆盖抽中位置所在的完整生产包。页面按工作量归一化后展示吞吐率，ARM稀疏复核时间不代表ARM生成完整90×360空间谱的时间。</p>
+      <label class="check"><input id="armB" type="checkbox" checked> 随机射线同时运行独立 ARM 整数参考</label>
+      <label class="check"><input id="hdmiB" type="checkbox"> 已连接并打开 HDMI 显示器，允许板卡切换到物理 HDMI 输出</label>
+      <label>HDMI 显示比例 <span>当前显示器曾出现纵向拉长，默认使用4:3校正</span><select id="aspectB"><option value="four_three_stretch" selected>4:3显示器校正（圆形，推荐）</option><option value="square_pixels">标准16:9方形像素</option></select></label>
+      <p class="explain"><b>未连接显示器时请保持不勾选。</b>浏览器仍会显示并保存 PC / FPGA 高清对比图；物理 HDMI 不显示底部色条，并按所选显示器比例保证圆形。</p>
+      <div class="button-row"><button id="probeB">检查 PYNQ 连接</button><button id="selftestB">运行硬件自检</button><button id="runFree" class="primary">开始自由查询</button></div>
+      <div id="freeStatus" class="status"></div>
+      <div id="freeResult" class="result"></div>
+    </section>
+  </main>
+  <footer>Stage38 单一 95 MHz 通用位流 · 四场景运行时权重与固定 Rx 中间缓存 · 90×360 原始网格 · 64 采样/射线 · 原始 Q15 留证</footer>
+  <script src="/app.js"></script>
+</body>
+</html>
+

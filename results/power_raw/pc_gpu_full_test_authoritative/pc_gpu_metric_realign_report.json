@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "method": "sum measured per-map inference-window energy within each repeat",
+  "scenes": {
+    "s23": {
+      "median_seconds_per_map": 1.3047511727346905,
+      "median_kernel_seconds_per_map": 1.3028763619808301,
+      "median_active_power_w": 44.043784976799195,
+      "median_gpu_energy_per_map_j": 57.46618010015329,
+      "median_dynamic_gpu_energy_per_map_j": 53.924477101989766,
+      "median_continuous_sweep_active_power_w": 44.04823673469387,
+      "median_continuous_sweep_gpu_energy_per_map_j": 57.56926086535436,
+      "median_continuous_sweep_dynamic_gpu_energy_per_map_j": 54.021563473964484,
+      "primary_minus_continuous_energy_j_per_map": -0.10308076520107079,
+      "primary_minus_continuous_energy_percent": -0.1790552174052761
+    },
+    "Meetingroom": {
+      "median_seconds_per_map": 1.329273817000001,
+      "median_kernel_seconds_per_map": 1.3273916467285156,
+      "median_active_power_w": 42.78319588127543,
+      "median_gpu_energy_per_map_j": 56.85340769841377,
+      "median_dynamic_gpu_energy_per_map_j": 53.91643150813402,
+      "median_continuous_sweep_active_power_w": 42.7807703247215,
+      "median_continuous_sweep_gpu_energy_per_map_j": 56.93303404672999,
+      "median_continuous_sweep_dynamic_gpu_energy_per_map_j": 53.991777706524914,
+      "primary_minus_continuous_energy_j_per_map": -0.07962634831622495,
+      "primary_minus_continuous_energy_percent": -0.13985966082690857
+    },
+    "Office1": {
+      "median_seconds_per_map": 1.3390447680000026,
+      "median_kernel_seconds_per_map": 1.3372268060302737,
+      "median_active_power_w": 42.59081846984608,
+      "median_gpu_energy_per_map_j": 56.9372002959876,
+      "median_dynamic_gpu_energy_per_map_j": 53.90487255318032,
+      "median_continuous_sweep_active_power_w": 42.594575883575885,
+      "median_continuous_sweep_gpu_energy_per_map_j": 57.026644457480444,
+      "median_continuous_sweep_dynamic_gpu_energy_per_map_j": 53.98962370577362,
+      "primary_minus_continuous_energy_j_per_map": -0.08944416149284251,
+      "primary_minus_continuous_energy_percent": -0.15684626430989262
+    },
+    "Office2": {
+      "median_seconds_per_map": 1.343419360999999,
+      "median_kernel_seconds_per_map": 1.3416246102905274,
+      "median_active_power_w": 42.23905403273348,
+      "median_gpu_energy_per_map_j": 56.716016175940005,
+      "median_dynamic_gpu_energy_per_map_j": 53.991302728293896,
+      "median_continuous_sweep_active_power_w": 42.22913642627469,
+      "median_continuous_sweep_gpu_energy_per_map_j": 56.787241603220224,
+      "median_continuous_sweep_dynamic_gpu_energy_per_map_j": 54.058465681954,
+      "primary_minus_continuous_energy_j_per_map": -0.07122542728021841,
+      "primary_minus_continuous_energy_percent": -0.12542505194719555
+    }
+  }
+}

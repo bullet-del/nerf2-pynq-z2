@@ -1,0 +1,13 @@
+{
+  "schema": "n2-stage39-cold-scene-software-gate-v1",
+  "scene": "Meetingroom",
+  "maps": 200,
+  "pc_mean_ssim": 0.6925123339526891,
+  "qat_integer_mean_ssim": 0.682628587054179,
+  "ptq_integer_mean_ssim": 0.6717961625475881,
+  "mean_ssim_gap": 0.009883746898510126,
+  "maximum_mean_ssim_gap": 0.015,
+  "gap_pass": true,
+  "qat_not_worse_than_ptq": true,
+  "status": "PASS"
+}

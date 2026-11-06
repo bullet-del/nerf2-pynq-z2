@@ -1,0 +1,8 @@
+{
+  "captured_local": "2026-10-06T00:06:05.8097578+08:00",
+  "power_plan": "电源方案 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (平衡)",
+  "battery_status": 2,
+  "estimated_charge_remaining_percent": 100,
+  "gpu": "0, NVIDIA GeForce RTX 4050 Laptop GPU, 610.60, [N/A], P3, 0, 0",
+  "cuda_compute_apps": "none"
+}

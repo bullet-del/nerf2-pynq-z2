@@ -8,8 +8,8 @@ human-readable `command` string when documentation or another auditor uses it.
   "ordered_commands": [
     {
       "id": "source-verify",
-      "command": "python build/tools/check_repository.py",
-      "argv": ["{python}", "build/tools/check_repository.py"]
+      "command": "python scripts/check_repository.py",
+      "argv": ["{python}", "scripts/check_repository.py"]
     }
   ],
   "workflow_pipelines": {

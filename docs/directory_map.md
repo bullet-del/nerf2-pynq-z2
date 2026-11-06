@@ -1,34 +1,47 @@
-# Directory correspondence and entry points
+# Directory correspondence
 
-The root README gives the required AMD 3.3.5.4 correspondence. This page adds
-the exact old/current mapping for existing users and the archived PDF appendix.
+The root README contains the explicit seven-row AMD 3.3.5.4 directory map.
+The executable structure follows the validated NoPS1 kit with lowercase names.
 
-| Earlier directory | Current repository directory | Responsibility |
-|---|---|---|
-| 00_Config | build/config | Fixed environment/config and ignored machine-local config |
-| 01_Vivado/rtl | src/rtl | Nine Verilog/SystemVerilog sources |
-| 01_Vivado/sim | sim/testbench | Testbench source and base vectors |
-| 01_Vivado/tcl | build/tcl | Vivado reconstruction and simulation Tcl |
-| 01_Vivado/output | build/output | Ignored newly generated hardware files |
-| 02_Model_Pipeline | src/model | Structural adaptation, PTQ, QAT, runtime export |
-| 02_Vitis | docs/control_architecture.md | Why this design uses PYNQ Linux control |
-| 03_Package_Builder | build/pipeline | Ordered full reconstruction and assembly |
-| 04_PC_App/template | src/host | PC source/template |
-| 05_PYNQ_Board/template | board/source | ARM, Notebook/service and integer-reference source |
-| 06_Power_Measurement | src/power | Power acquisition and analysis source |
-| 07_Validation | data/validation/history | Dated historical validation snapshots |
-| scripts/configure_repository.py | build/tools/configure_repository.py | Machine-local paths |
-| scripts/fetch_release_assets.py | build/tools/download_artifacts.py | Input/deployment/result downloads |
-| scripts/verify_kit.py | build/tools/check_repository.py | Layout, syntax, contract and result checks |
-| skills | skill | All reusable Skills in one directory |
+| Original NoPS1 directory | Current directory |
+|---|---|
+| 00_Config | 00_config |
+| 01_Vivado | 01_vivado |
+| 02_Model_Pipeline | 02_model_pipeline |
+| 02_Vitis | 02_vitis |
+| 03_Package_Builder | 03_package_builder |
+| 04_PC_App | 04_pc_app |
+| 05_PYNQ_Board | 05_pynq_board |
+| 06_Power_Measurement | 06_power_measurement |
+| 07_Validation | 07_validation and results/validation_history |
+| External NeRF2 inputs | data/inputs |
+| work and outputs | work and outputs, newly generated and ignored |
 
-The recommended guide directories have direct roles: src is source, sim is
-simulation/verification, build is reproducible construction and implementation
-reports, board is deployment/physical evidence, data is inputs/reference results,
-skill is reusable experience, and report is the design/collaboration record.
-docs supplies explanatory detail. No additional source tree is hidden elsewhere.
+| November 5 repository path | Current directory |
+|---|---|
+| src/rtl | 01_vivado/rtl |
+| sim/testbench | 01_vivado/sim |
+| build/tcl | 01_vivado/tcl |
+| build/config | 00_config |
+| build/pipeline | 03_package_builder |
+| src/model | 02_model_pipeline |
+| src/host | 04_pc_app/template |
+| board/source | 05_pynq_board/template |
+| src/power | 06_power_measurement |
+| build/tools | scripts |
+| build/tests | tests |
+| board/evidence | results/physical |
+| board/photos | results/photos |
+| build/reports and build/prebuilt | results/vivado/reports and results/vivado/prebuilt |
+| sim/validation | results/rtl |
+| data/reference_results | results/reference_results |
+| data/power_summary | results/power_summary |
+| skill and report | skill and report, still separate |
 
-Old names in this table or in historical logs are explanatory text, not current
-repository paths. Business scene identifiers remain s23/Meetingroom/Office1/Office2.
-Their repository evidence directories use s23/meetingroom/office1/office2.
-Do not globally lowercase model IDs or change the archived deployment ZIP.
+Business IDs remain s23/Meetingroom/Office1/Office2; tracked input paths use
+lowercase names. Generated board deployments keep their original directory and
+protocol filenames. Do not rename deployed packages. Checkpoint/data bytes are
+preserved. Legacy release builders requiring external Stage34/35/38 working
+folders are replaced by the complete cold builder, rather than exposed as
+current commands. Historical PDF Appendix B paths are superseded by the root
+README's full current commands.

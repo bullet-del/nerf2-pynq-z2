@@ -1,0 +1,18 @@
+{
+  "schema": "n2-stage37-runtime-model-v1",
+  "scene": "Office2",
+  "model_id_crc32": "b88fa9e0",
+  "checkpoint_sha256": "0b259330d1ec5302d9d25918a0c98639b733df7b5e4b2d88efaf9c7814bff720",
+  "weight_words": 2449,
+  "weight_capacity": 3072,
+  "factorized_graph_proved": true,
+  "signal_feature_columns_zero": true,
+  "attenuation_layer5_feature_columns_zero": true,
+  "final_scales": [
+    0.25,
+    0.25,
+    1.0,
+    1.0
+  ],
+  "runtime_model_sha256": "fb9226951c2280d804c4d777b28f7ecd2b0a8a61561b15c703e8a1e07e421b27"
+}

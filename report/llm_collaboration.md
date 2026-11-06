@@ -84,8 +84,8 @@ Stage39_QAT_Four_Scenes.ipynb
 
 **保留的复验入口。**
 
-- [板端校验器](../board/source/software/stage39/verify_stage39_board_package.py)。
-- [Notebook 完整性回归脚本](../src/model/stage39_core/test_stage39_notebook_integrity.py)。该脚本检查原包通过、运行状态变化通过、源代码变化被拒绝，并在结束后恢复文件。
+- [板端校验器](../05_pynq_board/template/software/stage39/verify_stage39_board_package.py)。
+- [Notebook 完整性回归脚本](../02_model_pipeline/stage39_core/test_stage39_notebook_integrity.py)。该脚本检查原包通过、运行状态变化通过、源代码变化被拒绝，并在结束后恢复文件。
 
 ### 2.3 电脑功率测量使用了错误的模型基准
 
@@ -119,10 +119,10 @@ PC 正式测量显式读取 s23 的 `010000.tar`，其余三个场景的 `005000
 
 **保留的实现与结果。**
 
-- [checkpoint 谱系审计脚本](../src/power/audit_stage39_checkpoint_lineage.py)。
-- [PC 完整测试测量入口](../src/power/run_pc_all_scenes.py)。
-- [四场景输入与 checkpoint 哈希](../build/config/reproduction_config.json)。
-- [正式 PC 测量摘要](../data/power_summary/pc_gpu_full_test_summary.json)。
+- [checkpoint 谱系审计脚本](../06_power_measurement/audit_stage39_checkpoint_lineage.py)。
+- [PC 完整测试测量入口](../06_power_measurement/run_pc_all_scenes.py)。
+- [四场景输入与 checkpoint 哈希](../00_config/reproduction_config.json)。
+- [正式 PC 测量摘要](../results/power_summary/pc_gpu_full_test_summary.json)。
 
 ### 2.4 App 轮播报缺少 FPGA 全测试集证据
 
@@ -154,10 +154,10 @@ complete FPGA raw test-set evidence is required
 
 最终归档含四场景完整结果和身份文件，物理 finalizer 为 `FULL_PASS`。当前发布检查逐项核对了全部 1725 幅缓存中的原始输出哈希和来源图哈希。
 
-- [板端服务](../board/source/jupyter/stage39_board_service.py)。
-- [四场景原始物理记录](../board/evidence/physical_export)。
-- [物理 finalizer 结果](../board/evidence/physical_finalization.json)。
-- [逐图参考结果目录](../data/reference_results)。完整图缓存见根 README 的 `test_results.zip` 下载入口。
+- [板端服务](../05_pynq_board/template/jupyter/stage39_board_service.py)。
+- [四场景原始物理记录](../results/physical/physical_export)。
+- [物理 finalizer 结果](../results/physical/physical_finalization.json)。
+- [逐图参考结果目录](../results/reference_results)。完整图缓存见根 README 的 `test_results.zip` 下载入口。
 
 ### 2.5 冷复现 s23 精度门禁失败
 
@@ -208,13 +208,40 @@ complete FPGA raw test-set evidence is required
 
 **保留的实现与结果。**
 
-- [固定复现参数](../build/config/reproduction_config.json)。
-- [训练前预检](../build/pipeline/preflight.py)。
-- [含 `verify_qat_inputs` 的模型流水线](../build/pipeline/run_model_pipeline.py)。
-- [完整冷复现检查结果](../sim/validation/cold_reproduction_final_gate.json)。
+- [固定复现参数](../00_config/reproduction_config.json)。
+- [训练前预检](../03_package_builder/preflight.py)。
+- [含 `verify_qat_inputs` 的模型流水线](../03_package_builder/run_model_pipeline.py)。
+- [完整冷复现检查结果](../results/rtl/cold_reproduction_final_gate.json)。
 
 ## 3. 本记录的来源
 
 初期 Stage 表依据项目留存的 `N2_NeRF2_从当前状态到完成的Stage计划.md` 整理。早期 DMA 案例依据 `README_stage5.md`、`README_stage10.md` 及项目主文档中的现场记录。Notebook、模型基准、轮播与 QAT 案例的引用来自 2026-10-04 至 2026-10-13 的实际用户和模型消息。
 
 本文件记录协作中的判断变化。当前实现和实验身份分别由源码、配置、逐图记录、原始实现报告及物理证据支撑，相关入口已附在各案例末尾。
+
+
+## 2026-11-06：恢复可逐步执行的NoPS1组织方式
+
+用户要求：下载GitHub ZIP后按根README从四个原始模型参数开始逐步复现，
+保留原有分类逻辑，单独组织Skill、报告和结果，并给出AMD目录对照。
+
+本次处理以已验证NoPS1数值流水线为基准，统一小写路径，加入四个原始
+checkpoint、全部8623幅数据及固定划分/config；通过本机配置文件隔离路径。
+电脑GPU功率入口的外部私人代码依赖改为自带参考源码，并实际核对四个原始
+模型。旧阶段依赖外部Stage34/35/38工作目录的构建脚本由完整冷启动构建器
+替代。Notebook按单元源内容校验的机制保留。
+
+验证过程中保留真实失败状态：Vivado启动环境曾出现安装Tcl规则初始化错误，
+后来改为独立短启动目录；电脑重启中断了首次运行，只保留已经落盘的本次
+结构适配结果，缺失阶段继续执行，没有用旧量化模型或旧位流冒充新结果。
+
+最终完整四场景QAT、1725幅评估、RTL、Tcl实现及交付包的17项电脑端检查
+实际通过，记录见results/reproduction_20261106。物理字段仍为
+PENDING_NEW_BOARD_EXECUTION，不能由电脑侧记录推断已在新板端完成测试。
+
+
+本次真实App启动还发现了仅检查包清单未覆盖的遗漏：PC模板没有包含
+stage27_display.py与stage28_exact_common.py。定位ModuleNotFoundError后，
+补入与已验证历史App逐字节相同的两个纯Python模块，并将它们加入源文件
+必需项。随后重新打包、重跑17项门禁，实际验证四场景HTTP页面及Office2
+GT/PC预测与PNG输出通过。模型、RTL和显示算法没有因此改变。

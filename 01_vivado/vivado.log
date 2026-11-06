@@ -1,0 +1,107 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Fri Nov  6 09:19:38 2026
+# Process ID: 35108
+# Current directory: E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_GitHub_NoPS1_20261106/repository/01_vivado
+# Command line: vivado.exe -mode batch -source E:\Codex\2026-10-04\e-codex-2026-09-05-fpga\outputs\Stage39_GitHub_NoPS1_20261106\repository\01_vivado\tcl\build_stage39.tcl
+# Log file: E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_GitHub_NoPS1_20261106/repository/01_vivado/vivado.log
+# Journal file: E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_GitHub_NoPS1_20261106/repository/01_vivado\vivado.jou
+# Running On        :ybp
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :13th Gen Intel(R) Core(TM) i7-13620H
+# CPU Frequency     :2918 MHz
+# CPU Physical cores:10
+# CPU Logical cores :16
+# Host memory       :16849 MB
+# Swap memory       :32782 MB
+# Total Virtual     :49631 MB
+# Available Virtual :9661 MB
+#-----------------------------------------------------------
+source {E:\Codex\2026-10-04\e-codex-2026-09-05-fpga\outputs\Stage39_GitHub_NoPS1_20261106\repository\01_vivado\tcl\build_stage39.tcl}
+# set PART xc7z020clg400-1
+# set BD_NAME n2_stage37_universal
+# set TOP_RTL n2_stage37_universal_stream_wrapper
+# set FREQ 95
+# set JOBS 1
+# set_param general.maxThreads 2
+# set mode_arg bit
+# if {[info exists ::MODE] && [string trim $::MODE] ne ""} {set mode_arg [string trim $::MODE]}
+# if {[lsearch -exact $argv "nobit"] >= 0} {set mode_arg nobit}
+# set script_dir [file dirname [file normalize [info script]]]
+# set root_dir [file normalize [file join $script_dir ..]]
+# if {$tcl_platform(platform) eq "windows" && [info exists ::env(TEMP)]} {
+#   set proj_dir [file normalize [file join $::env(TEMP) n2s39_vivado_build]]
+# } else {
+#   set proj_dir [file join $root_dir build n2_stage39_rebuild]
+# }
+# set out_dir [file join $root_dir output]
+# file mkdir $out_dir
+# proc stage37_fail {message} {error "RUN_STAGE37: $message"}
+# proc stage37_log_tail {path {count 80}} {
+#   if {$path eq "" || ![file exists $path]} {return}
+#   set handle [open $path r];set lines [split [read $handle] "\n"];close $handle
+#   set first [expr {[llength $lines]-$count}];if {$first<0} {set first 0}
+#   foreach line [lrange $lines $first end] {puts $line}
+# }
+# proc stage37_check_run {name} {
+#   set run [get_runs -quiet $name]
+#   if {$run eq ""} {stage37_fail "$name does not exist"}
+#   set failed [catch {wait_on_run $run} message]
+#   set status [get_property STATUS $run];set progress [get_property PROGRESS $run]
+#   puts ">> $name status=$status progress=$progress"
+#   if {$failed || $progress ne "100%" || [string first "ERROR" $status]>=0} {
+#     set log [get_property LOG $run]
+#     if {$failed} {puts ">> wait_on_run: $message"}
+#     stage37_log_tail $log
+#     stage37_fail "$name failed; log=$log"
+#   }
+# }
+# puts "=============================================================="
+==============================================================
+# puts " N2 Stage37 runtime-loadable multi-scene, exact 90x360 target"
+ N2 Stage37 runtime-loadable multi-scene, exact 90x360 target
+# puts " root=$root_dir mode=$mode_arg FCLK0=${FREQ}MHz"
+ root=E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_GitHub_NoPS1_20261106/repository/01_vivado mode=bit FCLK0=95MHz
+# puts "=============================================================="
+==============================================================
+# catch {close_project}
+# if {[file exists $proj_dir]} {file delete -force $proj_dir}
+# create_project n2_stage37 $proj_dir -part $PART
+create_project: Time (s): cpu = 00:00:33 ; elapsed = 00:01:18 . Memory (MB): peak = 521.754 ; gain = 199.102
+# set rtl_files [list \
+#   [file join $root_dir rtl packed_int8x2_mul.v] \
+#   [file join $root_dir rtl packed_gemm_p128.v] \
+#   [file join $root_dir rtl activation_pipeline32.v] \
+#   [file join $root_dir rtl stage37_runtime_model_memory.v] \
+#   [file join $root_dir rtl stage37_runtime_descriptor_memory.v] \
+#   [file join $root_dir rtl stage37_two_ray_engine.v] \
+#   [file join $root_dir rtl n2_isqrt64.sv] \
+#   [file join $root_dir rtl stage37_ray_accumulator.sv] \
+#   [file join $root_dir rtl n2_stage37_universal_stream_wrapper.v]]
+# foreach path $rtl_files {
+#   if {![file exists $path]} {stage37_fail "missing RTL $path"}
+#   add_files -norecurse $path
+# }
+# update_compile_order -fileset sources_1
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:13 . Memory (MB): peak = 521.754 ; gain = 0.000
+# create_bd_design n2_stage37_universal
+couldn't read file "E:/AMD/Vivado/2024.1/data/rsb/busdef/gt_outclk/busdef.tcl": no such file or directory
+ERROR: [BD 41-69] Error sourcing TCL script: couldn't read file "E:/AMD/Vivado/2024.1/data/rsb/busdef/gt_outclk/busdef.tcl": no such file or directory
+    while executing
+"source -notrace {E:/AMD/Vivado/2024.1/data/rsb/busdef/gt_outclk/busdef.tcl} "
+    (in namespace eval "::xilinx.com_signal_gt_outclk_1.0" script line 1)
+    invoked from within
+"namespace eval ::xilinx.com_signal_gt_outclk_1.0 { source -notrace {E:/AMD/Vivado/2024.1/data/rsb/busdef/gt_outclk/busdef.tcl} }"
+couldn't read file "E:/AMD/Vivado/2024.1/data/rsb/design_assist/conn/axi4/rules.tcl": No error
+ERROR: [Ip 78-90] Error in initialization of Rule object 'xilinx.com:bd_rule:axi4:1.0'
+Wrote  : <C:\Users\16844\AppData\Local\Temp\n2s39_vivado_build\n2_stage37.srcs\sources_1\bd\n2_stage37_universal\n2_stage37_universal.bd> 
+ERROR: [Common 17-39] 'create_bd_design' failed due to earlier errors.
+
+    while executing
+"create_bd_design $BD_NAME"
+    (file "E:\Codex\2026-10-04\e-codex-2026-09-05-fpga\outputs\Stage39_GitHub_NoPS1_20261106\repository\01_vivado\tcl\build_stage39.tcl" line 70)
+INFO: [Common 17-206] Exiting Vivado at Fri Nov  6 09:21:37 2026...
