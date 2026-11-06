@@ -448,6 +448,7 @@ python 06_power_measurement/stage39_final_steps/finalize_stage39_verified.py --p
 上述为已有物理部署结果。归档器件占用为50069 LUT、48464寄存器、127.5 BRAM、178 DSP；WNS +0.015 ns、WHS +0.019 ns，实际时钟约94.118 MHz。三轮连续活动窗口平均功率约2.098～2.120 W，单图积分能耗约2.349～2.409 J；10点采样功率中位数约1.974～2.043 W，与前者统计方法不同。
 
 - [本次完整电脑端复现记录](results/reproduction_20261106/README.md)：四场景完整QAT、1725幅评估、RTL、Vivado和17项电脑端检查均已实际通过；源码重建后按第4节运行板端步骤。
+- [本次仓库整理及全新目录运行记录](results/repository_repair_20261106/README.md)：独立Python环境、四场景模型短流程、原始NeRF2计时、RTL仿真及21项软件包检查。
 - [原NoPS1完整中间结果](results/cold_reproduction_20261013/README.md)：包含结构适配模型、QAT模型、定标、量化导出、全部PC/整数图、运行时资产、RTL输出及报告，单独归档，不作为新构建输入。
 - [功率原始输入与12轮对齐](results/power_alignment/captures.json)：配套未剪辑录像通过第5.2节下载。
 - [本次修改与AMD逐项对照](docs/submission_checklist.md)。

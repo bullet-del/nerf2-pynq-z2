@@ -34,6 +34,10 @@
     "original_nops1_intermediates": {
       "files": 7182,
       "contents_equal": true
+    },
+    "original_nops1_vivado_outputs": {
+      "files": 6,
+      "contents_equal": true
     }
   },
   "runtime_array_comparison": [
@@ -135,5 +139,18 @@
   },
   "host_package_checks": 21,
   "arm_power_required": false,
-  "board_execution": "Existing physical outputs retained unchanged; new package board steps are in README section 4."
+  "board_execution": "Existing physical outputs retained unchanged; new package board steps are in README section 4.",
+  "fresh_source_zip_execution": {
+    "status": "PASS",
+    "source_commit": "667c3025850d0b6efc965e01cb560083016ce9c8",
+    "steps": 9,
+    "prior_work_directory_used": false,
+    "profile": "smoke",
+    "formal_full_model_records": "../reproduction_20261106",
+    "details": "fresh_zip_run.json"
+  },
+  "public_power_recordings": {
+    "count": 12,
+    "release": "https://github.com/bullet-del/nerf2-pynq-z2/releases/tag/stage39-repro-results-20261106"
+  }
 }

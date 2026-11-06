@@ -1,0 +1,6 @@
+build_id=stage37-universal-runtime-model-f95-v1
+part=xc7z020clg400-1
+frequency_mhz=95
+wns_ns=0.015
+whs_ns=0.019
+timing_met=1

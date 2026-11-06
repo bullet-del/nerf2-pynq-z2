@@ -1,0 +1,151 @@
+[Stage39 cold] E:\Codex\s39env_20261106\python.exe E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\03_package_builder\preflight.py --config E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\00_config\reproduction_config.local.json
+{
+  "status": "PASS",
+  "python": "3.8.20 (default, Oct  3 2024, 15:19:54) [MSC v.1929 64 bit (AMD64)]",
+  "dependencies": [
+    {
+      "module": "torch",
+      "version": "2.0.1+cu118"
+    },
+    {
+      "module": "torchvision",
+      "version": "0.15.2+cu118"
+    },
+    {
+      "module": "numpy",
+      "version": "1.24.3"
+    },
+    {
+      "module": "pandas",
+      "version": "1.5.3"
+    },
+    {
+      "module": "PIL",
+      "version": "9.4.0"
+    },
+    {
+      "module": "imageio",
+      "version": "2.35.1"
+    },
+    {
+      "module": "yaml",
+      "version": "6.0.2"
+    },
+    {
+      "module": "scipy",
+      "version": "1.10.1"
+    },
+    {
+      "module": "skimage",
+      "version": "0.21.0"
+    },
+    {
+      "module": "matplotlib",
+      "version": "3.7.1"
+    },
+    {
+      "module": "configargparse",
+      "version": "installed"
+    },
+    {
+      "module": "tqdm",
+      "version": "4.67.1"
+    },
+    {
+      "module": "einops",
+      "version": "0.8.1"
+    }
+  ],
+  "errors": []
+}
+ENVIRONMENT CHECK PASS
+{
+  "schema": "n2-stage39-cold-preflight-v1",
+  "created_utc": "2026-11-06T09:31:17.992450+00:00",
+  "status": "PASS",
+  "kit_root": "E:\\Codex\\s39zip_20261106\\nerf2-pynq-z2-main",
+  "python": "3.8.20 (default, Oct  3 2024, 15:19:54) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": {
+    "available": true,
+    "version": "2.0.1+cu118",
+    "cuda_available": true,
+    "cuda_version": "11.8",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU"
+  },
+  "vivado_executable": "E:\\AMD\\Vivado\\2024.1\\bin\\vivado.bat",
+  "source_checks": {
+    "vivado_tcl": true,
+    "rtl_file_count_is_9": true,
+    "pc_template": true,
+    "board_template": true,
+    "factorizer": true,
+    "qat": true
+  },
+  "model_contract": {
+    "calibration_count": 8192,
+    "calibration_seed": 3902,
+    "qat_steps": 1800,
+    "qat_batch": 192,
+    "qat_learning_rate": 1e-05,
+    "qat_seed": 3902,
+    "activation_percentile": {
+      "s23": 99.5,
+      "Meetingroom": 99.5,
+      "Office1": 99.5,
+      "Office2": 99.5
+    }
+  },
+  "expected_model_contract": {
+    "calibration_count": 8192,
+    "calibration_seed": 3902,
+    "qat_steps": 1800,
+    "qat_batch": 192,
+    "qat_learning_rate": 1e-05,
+    "qat_seed": 3902,
+    "activation_percentile": 99.5
+  },
+  "scenes": [
+    {
+      "scene": "s23",
+      "ok": true,
+      "dataset": "E:\\Codex\\s39zip_20261106\\nerf2-pynq-z2-main\\data\\inputs\\data\\rfid\\s23",
+      "checkpoint": "E:\\Codex\\s39zip_20261106\\nerf2-pynq-z2-main\\data\\inputs\\logs\\rfid\\s23\\spectrum-exp1\\ckpts\\010000.tar",
+      "checkpoint_sha256": "eeccf2bba9cd4e84853e0fcf1dab9fa2d218b166a6f81485a9e5dc498f8a8beb",
+      "png_count": 6123,
+      "train_count": 4898,
+      "test_count": 1225
+    },
+    {
+      "scene": "Meetingroom",
+      "ok": true,
+      "dataset": "E:\\Codex\\s39zip_20261106\\nerf2-pynq-z2-main\\data\\inputs\\data\\rfid\\meetingroom",
+      "checkpoint": "E:\\Codex\\s39zip_20261106\\nerf2-pynq-z2-main\\data\\inputs\\logs\\rfid\\meetingroom\\spectrum-meetingroom\\ckpts\\005000.tar",
+      "checkpoint_sha256": "b12006b8945f7fddbfb9e54c870dc9a52a634adff66eb4a48a07e8d8f20d72ae",
+      "png_count": 1000,
+      "train_count": 800,
+      "test_count": 200
+    },
+    {
+      "scene": "Office1",
+      "ok": true,
+      "dataset": "E:\\Codex\\s39zip_20261106\\nerf2-pynq-z2-main\\data\\inputs\\data\\rfid\\office1",
+      "checkpoint": "E:\\Codex\\s39zip_20261106\\nerf2-pynq-z2-main\\data\\inputs\\logs\\rfid\\office1\\spectrum-office1\\ckpts\\005000.tar",
+      "checkpoint_sha256": "8a4e437a31dc631e99cba20633a581b8f93007e43ff329e1b59d458c1dfad16d",
+      "png_count": 1000,
+      "train_count": 800,
+      "test_count": 200
+    },
+    {
+      "scene": "Office2",
+      "ok": true,
+      "dataset": "E:\\Codex\\s39zip_20261106\\nerf2-pynq-z2-main\\data\\inputs\\data\\rfid\\office2",
+      "checkpoint": "E:\\Codex\\s39zip_20261106\\nerf2-pynq-z2-main\\data\\inputs\\logs\\rfid\\office2\\spectrum-office2\\ckpts\\005000.tar",
+      "checkpoint_sha256": "95e5fc58eb2c4790517fcb3380e7f5d4247654773f3723b3c14a13bf9a7e72ba",
+      "png_count": 500,
+      "train_count": 400,
+      "test_count": 100
+    }
+  ],
+  "failures": []
+}

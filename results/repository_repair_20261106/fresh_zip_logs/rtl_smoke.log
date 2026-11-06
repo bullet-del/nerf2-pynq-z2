@@ -1,0 +1,210 @@
+[Stage39 cold] E:\Codex\s39env_20261106\python.exe E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\03_package_builder\run_rtl_simulation.py --profile smoke --config E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\00_config\reproduction_config.local.json
+[Stage39 cold] E:\Codex\s39env_20261106\python.exe E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\02_model_pipeline\stage37\build_sim_vectors.py --source-root E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\05_pynq_board\template --tv E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\work\smoke\runtime\s23\hardware_export\tv3_ray_net.txt --manifest E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\work\smoke\runtime\s23\hardware_export\manifest_ray.json --base-vector E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\01_vivado\sim\vectors\two_ray_cache_build.memh --out E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\work\smoke\rtl_sim
+{
+  "schema": "n2-stage37-independent-sim-vector-v1",
+  "expected_q15": [
+    4960,
+    4960
+  ],
+  "first_raw_per_ray": [
+    [
+      0,
+      -93,
+      13,
+      0
+    ],
+    [
+      0,
+      -93,
+      13,
+      0
+    ]
+  ],
+  "cache_words": 64,
+  "tv": "E:\\Codex\\s39zip_20261106\\nerf2-pynq-z2-main\\work\\smoke\\runtime\\s23\\hardware_export\\tv3_ray_net.txt"
+}
+[Stage39 cold] E:\AMD\Vivado\2024.1\bin\vivado.bat -mode batch -source E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\01_vivado\tcl\run_stage39_rtl_tests.tcl -tclargs E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\work\smoke\rtl_sim
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Fri Nov  6 17:39:27 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source {E:\Codex\s39zip_20261106\nerf2-pynq-z2-main\01_vivado\tcl\run_stage39_rtl_tests.tcl}
+# if {[llength $argv] != 1} {error "usage: vivado -mode batch -source run_stage39_rtl_tests.tcl -tclargs <sim-work>"}
+# set work [file normalize [lindex $argv 0]]
+# if {![file isdirectory $work]} {error "simulation work directory missing: $work"}
+# cd $work
+# set rtl [glob -nocomplain [file join $work rtl *.v] [file join $work rtl *.sv]]
+# if {[llength $rtl] != 9} {error "expected nine RTL files, found [llength $rtl]"}
+# proc run_test {work rtl top snapshot pass_token log_name} {
+#   catch {file delete -force [file join $work xsim.dir]}
+#   foreach name {xvlog.log xelab.log xsim.log} {catch {file delete -force [file join $work $name]}}
+#   set tb [file join $work ${top}.sv]
+#   if {![file exists $tb]} {error "testbench missing: $tb"}
+#   if {[catch {exec xvlog -sv {*}$rtl $tb 2>@1} compile]} {puts $compile; error "xvlog failed for $top"}
+#   puts $compile
+#   if {[catch {exec xelab $top -s $snapshot 2>@1} elaborate]} {puts $elaborate; error "xelab failed for $top"}
+#   puts $elaborate
+#   if {[catch {exec xsim $snapshot -R 2>@1} simulate]} {puts $simulate; error "xsim failed for $top"}
+#   puts $simulate
+#   set handle [open [file join $work $log_name] w]; puts $handle $simulate; close $handle
+#   if {[string first $pass_token $simulate] < 0} {error "PASS token missing for $top"}
+# }
+# run_test $work $rtl tb_stage39_universal_generated stage39_universal_sim \
+#   "STAGE39_RUNTIME_LOAD_CACHE_AND_INFERENCE_PASS" universal.log
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/activation_pipeline32.v" into library work
+INFO: [VRFC 10-311] analyzing module activation_pipeline32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/n2_stage37_universal_stream_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module n2_stage37_universal_stream_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/packed_gemm_p128.v" into library work
+INFO: [VRFC 10-311] analyzing module packed_gemm_p128
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/packed_int8x2_mul.v" into library work
+INFO: [VRFC 10-311] analyzing module packed_int8x2_mul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/stage37_runtime_descriptor_memory.v" into library work
+INFO: [VRFC 10-311] analyzing module stage37_runtime_descriptor_memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/stage37_runtime_model_memory.v" into library work
+INFO: [VRFC 10-311] analyzing module stage37_runtime_model_memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/stage37_two_ray_engine.v" into library work
+INFO: [VRFC 10-311] analyzing module stage37_two_ray_engine
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/n2_isqrt64.sv" into library work
+INFO: [VRFC 10-311] analyzing module n2_isqrt64
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/stage37_ray_accumulator.sv" into library work
+INFO: [VRFC 10-311] analyzing module stage37_ray_accumulator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/tb_stage39_universal_generated.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_stage39_universal_generated
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:\AMD\Vivado\2024.1\bin\unwrapped\win64.o\xelab.exe tb_stage39_universal_generated -s stage39_universal_sim 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.stage37_runtime_descriptor_memor...
+Compiling module work.stage37_runtime_model_memory
+Compiling module work.packed_int8x2_mul
+Compiling module work.packed_gemm_p128_default
+Compiling module work.activation_pipeline32
+Compiling module work.stage37_two_ray_engine
+Compiling module work.n2_isqrt64
+Compiling module work.stage37_ray_accumulator
+Compiling module work.n2_stage37_universal_stream_wrap...
+Compiling module work.tb_stage39_universal_generated
+Built simulation snapshot stage39_universal_sim
+
+****** xsim v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Fri Nov  6 17:39:39 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/stage39_universal_sim/xsim_script.tcl
+# xsim {stage39_universal_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+STAGE39_RUNTIME_LOAD_CACHE_AND_INFERENCE_PASS
+$finish called at time : 1052145 ns : File "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/tb_stage39_universal_generated.sv" Line 27
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 225.934 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Nov  6 17:39:51 2026...
+# run_test $work $rtl tb_stage39_multiscene_generated stage39_multiscene_sim \
+#   "STAGE39_FOUR_SCENE_SWITCH_AND_RETURN_PASS" multiscene.log
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/activation_pipeline32.v" into library work
+INFO: [VRFC 10-311] analyzing module activation_pipeline32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/n2_stage37_universal_stream_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module n2_stage37_universal_stream_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/packed_gemm_p128.v" into library work
+INFO: [VRFC 10-311] analyzing module packed_gemm_p128
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/packed_int8x2_mul.v" into library work
+INFO: [VRFC 10-311] analyzing module packed_int8x2_mul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/stage37_runtime_descriptor_memory.v" into library work
+INFO: [VRFC 10-311] analyzing module stage37_runtime_descriptor_memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/stage37_runtime_model_memory.v" into library work
+INFO: [VRFC 10-311] analyzing module stage37_runtime_model_memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/stage37_two_ray_engine.v" into library work
+INFO: [VRFC 10-311] analyzing module stage37_two_ray_engine
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/n2_isqrt64.sv" into library work
+INFO: [VRFC 10-311] analyzing module n2_isqrt64
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/rtl/stage37_ray_accumulator.sv" into library work
+INFO: [VRFC 10-311] analyzing module stage37_ray_accumulator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/tb_stage39_multiscene_generated.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_stage39_multiscene_generated
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:\AMD\Vivado\2024.1\bin\unwrapped\win64.o\xelab.exe tb_stage39_multiscene_generated -s stage39_multiscene_sim 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.stage37_runtime_descriptor_memor...
+Compiling module work.stage37_runtime_model_memory
+Compiling module work.packed_int8x2_mul
+Compiling module work.packed_gemm_p128_default
+Compiling module work.activation_pipeline32
+Compiling module work.stage37_two_ray_engine
+Compiling module work.n2_isqrt64
+Compiling module work.stage37_ray_accumulator
+Compiling module work.n2_stage37_universal_stream_wrap...
+Compiling module work.tb_stage39_multiscene_generated
+Built simulation snapshot stage39_multiscene_sim
+
+****** xsim v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Fri Nov  6 17:39:59 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/stage39_multiscene_sim/xsim_script.tcl
+# xsim {stage39_multiscene_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+STAGE39_FOUR_SCENE_SWITCH_AND_RETURN_PASS
+$finish called at time : 3151615 ns : File "E:/Codex/s39zip_20261106/nerf2-pynq-z2-main/work/smoke/rtl_sim/tb_stage39_multiscene_generated.sv" Line 21
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 226.352 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Nov  6 17:40:08 2026...
+# puts "STAGE39 RTL TESTS PASS"
+STAGE39 RTL TESTS PASS
+INFO: [Common 17-206] Exiting Vivado at Fri Nov  6 17:40:08 2026...
+{
+  "schema": "n2-stage39-cold-rtl-simulation-v1",
+  "created_utc": "2026-11-06T09:40:08.437499+00:00",
+  "status": "PASS",
+  "runtime_load_cache_inference_bit_exact": true,
+  "four_scene_switch_and_return": true,
+  "model_ids": {
+    "s23": "9d17c1a3",
+    "Meetingroom": "828e4af3",
+    "Office1": "f1f11b96",
+    "Office2": "15c0def9"
+  },
+  "load_words": {
+    "s23": 53671,
+    "Meetingroom": 60403,
+    "Office1": 61491,
+    "Office2": 85835
+  },
+  "expected_q15": [
+    4960,
+    4960
+  ],
+  "logs": {
+    "universal_sha256": "16fad8ab64e4ca90c6c7778915c4b0f9cee4eebb60c3522e87e7f3ad584cfbd9",
+    "multiscene_sha256": "2c5e17f6984d34fbc3e42bdef2143a10580eb1d59b1260bd0753eb149f49a117"
+  }
+}

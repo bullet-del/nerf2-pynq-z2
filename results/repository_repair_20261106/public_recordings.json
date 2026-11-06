@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "release_url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/tag/stage39-repro-results-20261106",
+  "public": true,
+  "assets": [
+    {
+      "name": "meetingroom_r1.mp4",
+      "bytes": 279388181,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/meetingroom_r1.mp4"
+    },
+    {
+      "name": "meetingroom_r2.mp4",
+      "bytes": 262933876,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/meetingroom_r2.mp4"
+    },
+    {
+      "name": "meetingroom_r3.mp4",
+      "bytes": 265434946,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/meetingroom_r3.mp4"
+    },
+    {
+      "name": "office1_r1.mp4",
+      "bytes": 261256075,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office1_r1.mp4"
+    },
+    {
+      "name": "office1_r2.mp4",
+      "bytes": 296943481,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office1_r2.mp4"
+    },
+    {
+      "name": "office1_r3.mp4",
+      "bytes": 259402840,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office1_r3.mp4"
+    },
+    {
+      "name": "office2_r1.mp4",
+      "bytes": 169299059,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office2_r1.mp4"
+    },
+    {
+      "name": "office2_r2.mp4",
+      "bytes": 176860258,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office2_r2.mp4"
+    },
+    {
+      "name": "office2_r3.mp4",
+      "bytes": 172051330,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office2_r3.mp4"
+    },
+    {
+      "name": "s23_r1.mp4",
+      "bytes": 1141177971,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/s23_r1.mp4"
+    },
+    {
+      "name": "s23_r2.mp4",
+      "bytes": 1144233558,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/s23_r2.mp4"
+    },
+    {
+      "name": "s23_r3.mp4",
+      "bytes": 1161863580,
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/s23_r3.mp4"
+    }
+  ]
+}

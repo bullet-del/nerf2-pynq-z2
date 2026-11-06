@@ -1,0 +1,154 @@
+{
+  "schema": "stage39-fresh-zip-execution-v1",
+  "source_commit": "667c3025850d0b6efc965e01cb560083016ce9c8",
+  "started_utc": "2026-11-06T09:29:31.682930+00:00",
+  "python": "E:\\Codex\\s39env_20261106\\python.exe",
+  "extraction_root": "E:\\Codex\\s39zip_20261106\\nerf2-pynq-z2-main",
+  "steps": [
+    {
+      "step": "archive",
+      "command": [
+        "E:/Git/cmd/git.exe",
+        "-C",
+        "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\Stage39_GitHub_Repair_20261106\\repository",
+        "archive",
+        "--format=zip",
+        "--prefix=nerf2-pynq-z2-main/",
+        "--output=E:\\Codex\\s39zip_20261106\\source.zip",
+        "667c3025850d0b6efc965e01cb560083016ce9c8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 63.367383,
+      "log": "fresh_zip_logs/archive.log"
+    },
+    {
+      "step": "environment",
+      "command": [
+        "E:\\Codex\\s39env_20261106\\python.exe",
+        "-B",
+        "scripts/check_environment.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 14.366543,
+      "log": "fresh_zip_logs/environment.log"
+    },
+    {
+      "step": "source",
+      "command": [
+        "E:\\Codex\\s39env_20261106\\python.exe",
+        "-B",
+        "scripts/check_repository.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.297072,
+      "log": "fresh_zip_logs/source.log"
+    },
+    {
+      "step": "configure",
+      "command": [
+        "E:\\Codex\\s39env_20261106\\python.exe",
+        "-B",
+        "scripts/configure_repository.py",
+        "--vivado",
+        "E:/AMD/Vivado/2024.1/bin/vivado.bat"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.173891,
+      "log": "fresh_zip_logs/configure.log"
+    },
+    {
+      "step": "preflight",
+      "command": [
+        "E:\\Codex\\s39env_20261106\\python.exe",
+        "-B",
+        "03_package_builder/reproduce_stage39.py",
+        "preflight"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 7.080378,
+      "log": "fresh_zip_logs/preflight.log"
+    },
+    {
+      "step": "unit",
+      "command": [
+        "E:\\Codex\\s39env_20261106\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.343266,
+      "log": "fresh_zip_logs/unit.log"
+    },
+    {
+      "step": "models_smoke",
+      "command": [
+        "E:\\Codex\\s39env_20261106\\python.exe",
+        "-B",
+        "03_package_builder/reproduce_stage39.py",
+        "models",
+        "--profile",
+        "smoke",
+        "--scene",
+        "all"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 327.799256,
+      "log": "fresh_zip_logs/models_smoke.log"
+    },
+    {
+      "step": "original_pc_smoke",
+      "command": [
+        "E:\\Codex\\s39env_20261106\\python.exe",
+        "-B",
+        "03_package_builder/measure_original_pc_reference.py",
+        "--scene",
+        "all",
+        "--limit",
+        "1",
+        "--output-root",
+        "work/smoke/original_pc_reference"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 15.171317,
+      "log": "fresh_zip_logs/original_pc_smoke.log"
+    },
+    {
+      "step": "rtl_smoke",
+      "command": [
+        "E:\\Codex\\s39env_20261106\\python.exe",
+        "-B",
+        "03_package_builder/reproduce_stage39.py",
+        "rtl",
+        "--profile",
+        "smoke"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 45.871923,
+      "log": "fresh_zip_logs/rtl_smoke.log"
+    }
+  ],
+  "scope": "Fresh Python prefix and committed source ZIP; 2-step QAT smoke is not a new full-model acceptance run or board execution.",
+  "status": "PASS",
+  "archive_bytes": 522242811,
+  "no_prior_work_directory": true,
+  "execution_environment_retries": [
+    {
+      "steps": [
+        "unit"
+      ],
+      "reason": "Desktop restricted temporary folder denied file creation; rerun with a writable short workspace TEMP/TMP. Source unchanged."
+    },
+    {
+      "steps": [
+        "rtl_smoke"
+      ],
+      "reason": "Desktop restricted execution denied Vivado startup; resumed with local application access. Source unchanged."
+    }
+  ],
+  "completed_utc": "2026-11-06T09:40:08.485083+00:00"
+}

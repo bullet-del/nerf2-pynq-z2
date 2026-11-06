@@ -1,0 +1,31 @@
+{
+  "schema": "stage39-original-pc-timing-summary-v1",
+  "status": "SMOKE_ONLY",
+  "scenes": [
+    {
+      "scene": "s23",
+      "maps": 1,
+      "status": "SMOKE_ONLY",
+      "seconds_per_map": 1.3096412000000006
+    },
+    {
+      "scene": "Meetingroom",
+      "maps": 1,
+      "status": "SMOKE_ONLY",
+      "seconds_per_map": 1.325562500000001
+    },
+    {
+      "scene": "Office1",
+      "maps": 1,
+      "status": "SMOKE_ONLY",
+      "seconds_per_map": 1.3031432999999986
+    },
+    {
+      "scene": "Office2",
+      "maps": 1,
+      "status": "SMOKE_ONLY",
+      "seconds_per_map": 1.3229480000000002
+    }
+  ],
+  "fixed_rx_cache_used": false
+}

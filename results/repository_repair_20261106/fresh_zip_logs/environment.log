@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "python": "3.8.20 (default, Oct  3 2024, 15:19:54) [MSC v.1929 64 bit (AMD64)]",
+  "dependencies": [
+    {
+      "module": "torch",
+      "version": "2.0.1+cu118"
+    },
+    {
+      "module": "torchvision",
+      "version": "0.15.2+cu118"
+    },
+    {
+      "module": "numpy",
+      "version": "1.24.3"
+    },
+    {
+      "module": "pandas",
+      "version": "1.5.3"
+    },
+    {
+      "module": "PIL",
+      "version": "9.4.0"
+    },
+    {
+      "module": "imageio",
+      "version": "2.35.1"
+    },
+    {
+      "module": "yaml",
+      "version": "6.0.2"
+    },
+    {
+      "module": "scipy",
+      "version": "1.10.1"
+    },
+    {
+      "module": "skimage",
+      "version": "0.21.0"
+    },
+    {
+      "module": "matplotlib",
+      "version": "3.7.1"
+    },
+    {
+      "module": "configargparse",
+      "version": "installed"
+    },
+    {
+      "module": "tqdm",
+      "version": "4.67.1"
+    },
+    {
+      "module": "einops",
+      "version": "0.8.1"
+    }
+  ],
+  "errors": []
+}
+ENVIRONMENT CHECK PASS

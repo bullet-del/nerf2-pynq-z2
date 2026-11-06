@@ -1,0 +1,20 @@
+test_complete_original_graph (test_original_pc_reference.OriginalReference) ... ok
+test_reject_fixed_rx_cache (test_original_pc_reference.OriginalReference) ... ok
+test_reject_invalid_time (test_original_pc_reference.OriginalReference) ... ok
+test_reject_missing_per_map_records (test_original_pc_reference.OriginalReference) ... ok
+test_reject_mixed_test_order (test_original_pc_reference.OriginalReference) ... ok
+test_reject_other_checkpoint (test_original_pc_reference.OriginalReference) ... ok
+test_reject_partial_run (test_original_pc_reference.OriginalReference) ... ok
+test_actual_repository (test_repository.RepositoryContract) ... ok
+test_local_config_and_generated_outputs_are_excluded (test_repository.RepositoryContract) ... ok
+test_lowercase_rule_detects_previous_failure (test_repository.RepositoryContract) ... ok
+test_model_and_scene_contract_stays_fixed (test_repository.RepositoryContract) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 5.096s
+
+OK
+REPOSITORY CHECK PASS
+AMD directory map: 7/7; lower-case paths and document links: PASS
+Python syntax: 121; recorded held-out maps: 1725
+No standalone source SHA256 inventory; recorded results retain their original scope.
