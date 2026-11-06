@@ -1,0 +1,139 @@
+{
+  "schema": "stage39-repository-repair-checks-v1",
+  "date": "2026-11-06",
+  "scope": "issues 1-8 and 10; excluded issues 9,11,12 retained",
+  "preservation": {
+    "01_vivado/rtl": {
+      "files": 9,
+      "contents_equal": true
+    },
+    "02_model_pipeline": {
+      "files": 12,
+      "contents_equal": true
+    },
+    "skill": {
+      "files": 33,
+      "contents_equal": true
+    },
+    "report": {
+      "files": 4,
+      "contents_equal": true
+    },
+    "data/inputs": {
+      "files": 8651,
+      "contents_equal": true
+    },
+    "point9_gt_labels": {
+      "unchanged": true,
+      "pc_file_only_change": "timing-chart label"
+    },
+    "existing_numeric_results": {
+      "files": 167,
+      "contents_equal": true
+    },
+    "original_nops1_intermediates": {
+      "files": 7182,
+      "contents_equal": true
+    }
+  },
+  "runtime_array_comparison": [
+    {
+      "scene": "s23",
+      "file": "cache_sentinel_512.npz",
+      "arrays": 3,
+      "all_equal": true
+    },
+    {
+      "scene": "s23",
+      "file": "stage37_runtime_model.npz",
+      "arrays": 14,
+      "all_equal": true
+    },
+    {
+      "scene": "Meetingroom",
+      "file": "cache_sentinel_512.npz",
+      "arrays": 3,
+      "all_equal": true
+    },
+    {
+      "scene": "Meetingroom",
+      "file": "stage37_runtime_model.npz",
+      "arrays": 14,
+      "all_equal": true
+    },
+    {
+      "scene": "Office1",
+      "file": "cache_sentinel_512.npz",
+      "arrays": 3,
+      "all_equal": true
+    },
+    {
+      "scene": "Office1",
+      "file": "stage37_runtime_model.npz",
+      "arrays": 14,
+      "all_equal": true
+    },
+    {
+      "scene": "Office2",
+      "file": "cache_sentinel_512.npz",
+      "arrays": 3,
+      "all_equal": true
+    },
+    {
+      "scene": "Office2",
+      "file": "stage37_runtime_model.npz",
+      "arrays": 14,
+      "all_equal": true
+    }
+  ],
+  "original_pc_full_graph_maps": 1725,
+  "fixed_rx_cache_used_in_pc_timing": false,
+  "pc_power_smoke": [
+    {
+      "scene": "s23",
+      "original_checkpoint": "eeccf2bba9cd4e84853e0fcf1dab9fa2d218b166a6f81485a9e5dc498f8a8beb",
+      "native_per_map_boundary": true,
+      "full_test_set": false,
+      "maps": 1
+    },
+    {
+      "scene": "Meetingroom",
+      "original_checkpoint": "b12006b8945f7fddbfb9e54c870dc9a52a634adff66eb4a48a07e8d8f20d72ae",
+      "native_per_map_boundary": true,
+      "full_test_set": false,
+      "maps": 1
+    },
+    {
+      "scene": "Office1",
+      "original_checkpoint": "8a4e437a31dc631e99cba20633a581b8f93007e43ff329e1b59d458c1dfad16d",
+      "native_per_map_boundary": true,
+      "full_test_set": false,
+      "maps": 1
+    },
+    {
+      "scene": "Office2",
+      "original_checkpoint": "95e5fc58eb2c4790517fcb3380e7f5d4247654773f3723b3c14a13bf9a7e72ba",
+      "native_per_map_boundary": true,
+      "full_test_set": false,
+      "maps": 1
+    }
+  ],
+  "fpga_power_reprocessing": {
+    "schema": "stage39-complete-fpga-capture-processing-v1",
+    "status": "PASS",
+    "runs": 12,
+    "measured_map_inferences": 5175,
+    "gate_samples": 80,
+    "arm_power_required": false,
+    "missing_recorder_stop_events": [
+      {
+        "scene": "s23",
+        "repeat": "R1"
+      }
+    ],
+    "scope": "Original CFN PBUS trapezoidal integral; reviewed video phase anchors; full board USB measurement point"
+  },
+  "host_package_checks": 21,
+  "arm_power_required": false,
+  "board_execution": "Existing physical outputs retained unchanged; new package board steps are in README section 4."
+}

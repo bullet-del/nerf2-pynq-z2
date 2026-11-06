@@ -1,0 +1,22 @@
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:\AMD\Vivado\2024.1\bin\unwrapped\win64.o\xelab.exe tb_stage39_multiscene_generated -s stage39_multiscene_sim 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.stage37_runtime_descriptor_memor...
+Compiling module work.stage37_runtime_model_memory
+Compiling module work.packed_int8x2_mul
+Compiling module work.packed_gemm_p128_default
+Compiling module work.activation_pipeline32
+Compiling module work.stage37_two_ray_engine
+Compiling module work.n2_isqrt64
+Compiling module work.stage37_ray_accumulator
+Compiling module work.n2_stage37_universal_stream_wrap...
+Compiling module work.tb_stage39_multiscene_generated
+Built simulation snapshot stage39_multiscene_sim

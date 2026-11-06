@@ -725,6 +725,9 @@ def main() -> int:
             "checkpoint": str(scene_data["checkpoint_path"]),
             "checkpoint_sha256": sha256(scene_data["checkpoint_path"]),
         },
+        "metric_alignment": {"status": "NATIVE_PER_MAP_WINDOWS_V1",
+            "primary": "sum of measured per-map inference windows",
+            "secondary": "continuous sweep including inter-map gaps", "rerun_required": False},
         "idle": idle,
         "repeats": repeat_results,
         "aggregate": {

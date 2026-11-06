@@ -1,0 +1,23 @@
+{
+  "schema": "n2-stage37-independent-sim-vector-v1",
+  "expected_q15": [
+    5351,
+    5351
+  ],
+  "first_raw_per_ray": [
+    [
+      0,
+      -113,
+      14,
+      0
+    ],
+    [
+      0,
+      -113,
+      14,
+      0
+    ]
+  ],
+  "cache_words": 64,
+  "tv": "E:\\Codex\\2026-10-04\\e-codex-2026-09-05-fpga\\outputs\\Stage39_Cold_Reproduction_Kit_NoPS1_20261012\\work\\full\\runtime\\s23\\hardware_export\\tv3_ray_net.txt"
+}

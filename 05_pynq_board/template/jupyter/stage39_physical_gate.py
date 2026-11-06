@@ -89,6 +89,8 @@ def export_evidence():
         raise RuntimeError("physical self-test and 50-run benchmark must both PASS")
 
     sources = list(required)
+    environment = ROOT / "evidence/stage39/board_environment.json"
+    if environment.is_file(): sources.append(environment)
     for scene in SCENES:
         benchmark_path = ROOT / "scenes" / scene / "evidence/stage39/benchmark_50.json"
         if not benchmark_path.is_file():

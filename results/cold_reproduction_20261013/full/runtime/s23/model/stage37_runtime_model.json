@@ -1,0 +1,18 @@
+{
+  "schema": "n2-stage37-runtime-model-v1",
+  "scene": "s23",
+  "model_id_crc32": "35622a80",
+  "checkpoint_sha256": "867d46f3c04a22519827a09b5e9a2e4eaadd4fb007a814fde157401984fc1b82",
+  "weight_words": 1448,
+  "weight_capacity": 3072,
+  "factorized_graph_proved": true,
+  "signal_feature_columns_zero": true,
+  "attenuation_layer5_feature_columns_zero": true,
+  "final_scales": [
+    0.0625,
+    0.0625,
+    0.0078125,
+    0.0078125
+  ],
+  "runtime_model_sha256": "31a2df57e190799e23ccef3001701657b30bdad1d5476966ea8742da277f9d56"
+}

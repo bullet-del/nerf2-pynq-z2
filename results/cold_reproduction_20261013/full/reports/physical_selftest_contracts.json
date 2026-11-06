@@ -1,0 +1,46 @@
+{
+  "schema": "n2-stage39-four-scene-physical-selftest-contracts-v1",
+  "profile": "full",
+  "scenes": [
+    {
+      "schema": "n2-stage39-physical-selftest-contract-v1",
+      "scene": "s23",
+      "spectrum_id": "04902",
+      "ray_count": 32400,
+      "samples_per_ray": 64,
+      "raw_q15_sha256": "f0113c349ebd7af03716f83256ed62e12cff54e49af83b4345b56467eeac0eea",
+      "runtime_model_sha256": "31a2df57e190799e23ccef3001701657b30bdad1d5476966ea8742da277f9d56",
+      "integer_reference": "portable sparse INT8/Q15 model regenerated from the selected QAT checkpoint"
+    },
+    {
+      "schema": "n2-stage39-physical-selftest-contract-v1",
+      "scene": "Meetingroom",
+      "spectrum_id": "801",
+      "ray_count": 32400,
+      "samples_per_ray": 64,
+      "raw_q15_sha256": "120bf110c366026e7d55fbabf73a7aaec2b782a8f8e0a7643fc4e3088ab816b1",
+      "runtime_model_sha256": "0afc6a2315d6faaef93717551f70c0b322d4c64e10e2ce203b6ca71027b10d84",
+      "integer_reference": "portable sparse INT8/Q15 model regenerated from the selected QAT checkpoint"
+    },
+    {
+      "schema": "n2-stage39-physical-selftest-contract-v1",
+      "scene": "Office1",
+      "spectrum_id": "801",
+      "ray_count": 32400,
+      "samples_per_ray": 64,
+      "raw_q15_sha256": "50c87534f6732ebf4db5f3b693d416a35d018d41eba7fd64ede830eb670e6649",
+      "runtime_model_sha256": "2390cd6fe75609f37c639738958d19e5900f666e93fe8a9387050f7113127abc",
+      "integer_reference": "portable sparse INT8/Q15 model regenerated from the selected QAT checkpoint"
+    },
+    {
+      "schema": "n2-stage39-physical-selftest-contract-v1",
+      "scene": "Office2",
+      "spectrum_id": "401",
+      "ray_count": 32400,
+      "samples_per_ray": 64,
+      "raw_q15_sha256": "f2af655eea8dfea34656993483991a3bc7cc58984f683ae10e3b69389784c189",
+      "runtime_model_sha256": "fb9226951c2280d804c4d777b28f7ecd2b0a8a61561b15c703e8a1e07e421b27",
+      "integer_reference": "portable sparse INT8/Q15 model regenerated from the selected QAT checkpoint"
+    }
+  ]
+}

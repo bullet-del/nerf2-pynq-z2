@@ -38,6 +38,90 @@
       "bytes": 165457127,
       "description": "Original final demonstration video, 179.8 seconds.",
       "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-complete-20261104/demonstration.mp4"
+    },
+    {
+      "name": "s23_r1.mp4",
+      "bytes": 1141177971,
+      "group": "power_recording",
+      "description": "Original unedited s23 FPGA R1 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/s23_r1.mp4"
+    },
+    {
+      "name": "s23_r2.mp4",
+      "bytes": 1144233558,
+      "group": "power_recording",
+      "description": "Original unedited s23 FPGA R2 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/s23_r2.mp4"
+    },
+    {
+      "name": "s23_r3.mp4",
+      "bytes": 1161863580,
+      "group": "power_recording",
+      "description": "Original unedited s23 FPGA R3 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/s23_r3.mp4"
+    },
+    {
+      "name": "meetingroom_r1.mp4",
+      "bytes": 279388181,
+      "group": "power_recording",
+      "description": "Original unedited Meetingroom FPGA R1 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/meetingroom_r1.mp4"
+    },
+    {
+      "name": "meetingroom_r2.mp4",
+      "bytes": 262933876,
+      "group": "power_recording",
+      "description": "Original unedited Meetingroom FPGA R2 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/meetingroom_r2.mp4"
+    },
+    {
+      "name": "meetingroom_r3.mp4",
+      "bytes": 265434946,
+      "group": "power_recording",
+      "description": "Original unedited Meetingroom FPGA R3 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/meetingroom_r3.mp4"
+    },
+    {
+      "name": "office1_r1.mp4",
+      "bytes": 261256075,
+      "group": "power_recording",
+      "description": "Original unedited Office1 FPGA R1 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office1_r1.mp4"
+    },
+    {
+      "name": "office1_r2.mp4",
+      "bytes": 296943481,
+      "group": "power_recording",
+      "description": "Original unedited Office1 FPGA R2 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office1_r2.mp4"
+    },
+    {
+      "name": "office1_r3.mp4",
+      "bytes": 259402840,
+      "group": "power_recording",
+      "description": "Original unedited Office1 FPGA R3 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office1_r3.mp4"
+    },
+    {
+      "name": "office2_r1.mp4",
+      "bytes": 169299059,
+      "group": "power_recording",
+      "description": "Original unedited Office2 FPGA R1 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office2_r1.mp4"
+    },
+    {
+      "name": "office2_r2.mp4",
+      "bytes": 176860258,
+      "group": "power_recording",
+      "description": "Original unedited Office2 FPGA R2 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office2_r2.mp4"
+    },
+    {
+      "name": "office2_r3.mp4",
+      "bytes": 172051330,
+      "group": "power_recording",
+      "description": "Original unedited Office2 FPGA R3 screen recording",
+      "url": "https://github.com/bullet-del/nerf2-pynq-z2/releases/download/stage39-repro-results-20261106/office2_r3.mp4"
     }
   ]
 }

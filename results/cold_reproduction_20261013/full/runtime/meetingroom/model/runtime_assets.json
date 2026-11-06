@@ -1,0 +1,21 @@
+{
+  "schema": "n2-stage37-scene-runtime-assets-v1",
+  "scene": "Meetingroom",
+  "runtime_model_sha256": "0afc6a2315d6faaef93717551f70c0b322d4c64e10e2ce203b6ca71027b10d84",
+  "quant_manifest_sha256": "1fccd1c60bb5fb211f967b247d2527ffa6cb64b72ef1a266bffead8a705d2b71",
+  "cache_sha256": "ac47317fbb1f28d23080bd7d4efa3ed5e57529902d3e73ea460c920c68d0651d",
+  "cache_shape": [
+    90,
+    360,
+    64
+  ],
+  "cache_is_tx_independent": true,
+  "cache_contains_final_heatmap": false,
+  "constant_manifest_sha256": "1b356c16380ca2e73acd0d260d238b7d4bcc95655fa16e4f23abb988f832911f",
+  "sentinel": {
+    "rays": 512,
+    "values": 32768,
+    "sha256": "ab9d49efcf64ef795518a5d0e058e61b5562dab9bc48e94c0cc1cd148aec1591"
+  },
+  "same_bitstream_required": true
+}

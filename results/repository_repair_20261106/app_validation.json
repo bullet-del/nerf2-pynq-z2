@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "checks": "four-scene registry and actual HTTP pages",
+  "scenes": [
+    {
+      "scene": "s23",
+      "test_maps": 1225,
+      "page_status": "PASS"
+    },
+    {
+      "scene": "Meetingroom",
+      "test_maps": 200,
+      "page_status": "PASS"
+    },
+    {
+      "scene": "Office1",
+      "test_maps": 200,
+      "page_status": "PASS"
+    },
+    {
+      "scene": "Office2",
+      "test_maps": 100,
+      "page_status": "PASS"
+    }
+  ],
+  "pc_preview": {
+    "ok": true,
+    "scene_id": "Office2",
+    "spectrum_id": "401",
+    "tx": [
+      6.535289287567139,
+      3.031543731689453,
+      0.34634166955947876
+    ],
+    "seconds": 1.2830332999999996,
+    "device": "cuda",
+    "metrics": {
+      "mae": 0.634300741435569,
+      "rmse": 0.6443160641860127,
+      "max_abs": 0.8218538165092468,
+      "psnr_db_data_range_1": 3.818020812453171,
+      "pearson_r": null,
+      "ssim_data_range_1": 0.5593779491384037,
+      "mse": 0.4151431905681541
+    },
+    "image_url": "/scene/Office2/evidence/pc_preview/20261106T071214_a4a27f64870b/comparison.png",
+    "fpga_used": false,
+    "gt_available": true
+  },
+  "physical_board_used": false
+}

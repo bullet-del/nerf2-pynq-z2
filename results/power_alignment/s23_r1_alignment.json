@@ -1,0 +1,24 @@
+{
+  "schema": "stage39-screenrecord-time-alignment-v1",
+  "reviewed": true,
+  "run_sha256": "c08ac81ebf66a392576080fd6d753b506b2d5c94e50f04561819899d28df55bb",
+  "cfn_sha256": "0426ac2c757d7b98375f6077341e1cfdd8da1af4f3d93a7cfb325acb576ee27b",
+  "video_sha256": "2f7f215fa6d1503f01d0ba2420dddcdd4019c6b1e4cede1ed4d508d76c5b92c7",
+  "video_fps": 30.0,
+  "video_duration_s": 1518.933333,
+  "recorder_active_first_video_s": 13.4,
+  "recorder_stopped_first_video_s": null,
+  "recorder_stop_observed": false,
+  "phase_first_visible_video_s": {
+    "idle_start": 40.368,
+    "idle_end": 100.4346666667,
+    "active_start": 110.4346666667,
+    "active_end": 1511.83
+  },
+  "boundary_shift_sensitivity_s": 0.2,
+  "review_method": "Original October 8 native-frame transition table; reconstructed without changing its observed event times.",
+  "limitations": [
+    "The video covers recording start, all four phase markers and the complete sweep; the later meter-stop click is absent."
+  ],
+  "video_file": "../../external/downloads/s23_r1.mp4"
+}

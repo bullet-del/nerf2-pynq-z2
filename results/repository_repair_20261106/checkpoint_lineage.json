@@ -1,0 +1,86 @@
+{
+  "schema": "stage39-checkpoint-lineage-audit-v2",
+  "status": "PASS",
+  "scenes": [
+    {
+      "scene": "s23",
+      "status": "PASS",
+      "checks": {
+        "original_is_selected_checkpoint": true,
+        "original_is_last_in_its_experiment": true,
+        "adaptation_from_original": true,
+        "adaptation_steps_unchanged": true,
+        "qat_from_adaptation": true,
+        "quant_from_adaptation": true,
+        "quant_from_qat": true,
+        "runtime_from_qat": true,
+        "runtime_bytes_match": true,
+        "runtime_fits_capacity": true,
+        "runtime_selection_is_qat": true,
+        "complete_test_split": true,
+        "no_test_data_in_qat": true,
+        "train_split_matches": true
+      }
+    },
+    {
+      "scene": "Meetingroom",
+      "status": "PASS",
+      "checks": {
+        "original_is_selected_checkpoint": true,
+        "original_is_last_in_its_experiment": true,
+        "adaptation_from_original": true,
+        "adaptation_steps_unchanged": true,
+        "qat_from_adaptation": true,
+        "quant_from_adaptation": true,
+        "quant_from_qat": true,
+        "runtime_from_qat": true,
+        "runtime_bytes_match": true,
+        "runtime_fits_capacity": true,
+        "runtime_selection_is_qat": true,
+        "complete_test_split": true,
+        "no_test_data_in_qat": true,
+        "train_split_matches": true
+      }
+    },
+    {
+      "scene": "Office1",
+      "status": "PASS",
+      "checks": {
+        "original_is_selected_checkpoint": true,
+        "original_is_last_in_its_experiment": true,
+        "adaptation_from_original": true,
+        "adaptation_steps_unchanged": true,
+        "qat_from_adaptation": true,
+        "quant_from_adaptation": true,
+        "quant_from_qat": true,
+        "runtime_from_qat": true,
+        "runtime_bytes_match": true,
+        "runtime_fits_capacity": true,
+        "runtime_selection_is_qat": true,
+        "complete_test_split": true,
+        "no_test_data_in_qat": true,
+        "train_split_matches": true
+      }
+    },
+    {
+      "scene": "Office2",
+      "status": "PASS",
+      "checks": {
+        "original_is_selected_checkpoint": true,
+        "original_is_last_in_its_experiment": true,
+        "adaptation_from_original": true,
+        "adaptation_steps_unchanged": true,
+        "qat_from_adaptation": true,
+        "quant_from_adaptation": true,
+        "quant_from_qat": true,
+        "runtime_from_qat": true,
+        "runtime_bytes_match": true,
+        "runtime_fits_capacity": true,
+        "runtime_selection_is_qat": true,
+        "complete_test_split": true,
+        "no_test_data_in_qat": true,
+        "train_split_matches": true
+      }
+    }
+  ]
+}

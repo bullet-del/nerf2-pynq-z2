@@ -1,0 +1,19 @@
+{
+  "schema": "stage39-screenrecord-time-alignment-v1",
+  "reviewed": true,
+  "run_sha256": "3ae384f46c7147701b1963316ef2735f967e7a75efc974473decb9e56c1f4c2e",
+  "cfn_sha256": "f435d5c6216684b8705b0ee5cf9d8fb3a1a66bfd6540eb24be8e37d63fc3adf4",
+  "video_file": "../../external/downloads/s23_r3.mp4",
+  "video_sha256": "ff0c35722f22a8be5693ad69774c31350cc49ac25e3090b786133c5f76abbf1b",
+  "video_fps": 30.0,
+  "video_duration_s": null,
+  "recorder_active_first_video_s": 14.9,
+  "recorder_stopped_first_video_s": 1543.8666666667,
+  "phase_first_visible_video_s": {
+    "idle_start": 41.3363333333,
+    "idle_end": 101.3696666667,
+    "active_start": 111.3696666667,
+    "active_end": 1512.025
+  },
+  "boundary_shift_sensitivity_s": 0.2
+}

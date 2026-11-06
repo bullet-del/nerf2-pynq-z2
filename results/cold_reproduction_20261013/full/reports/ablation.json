@@ -1,0 +1,102 @@
+{
+  "schema": "n2-stage39-cold-source-derived-ablation-v1",
+  "created_utc": "2026-10-13T15:15:37.630035+00:00",
+  "status": "PASS",
+  "profile": "full",
+  "maps": 1725,
+  "accuracy_rows": [
+    {
+      "scene": "s23",
+      "test_maps": 1225,
+      "factorized_pc_fp32": 0.7545534930087519,
+      "train_only_ptq": 0.7380942855234939,
+      "hardware_exact_qat_integer": 0.7415369036231789,
+      "qat_gain_over_ptq": 0.0034426180996850464,
+      "pc_minus_qat_gap": 0.01301658938557293,
+      "weight_words": 1448,
+      "weight_capacity": 3072,
+      "fits_one_unmodified_bitstream": true
+    },
+    {
+      "scene": "Meetingroom",
+      "test_maps": 200,
+      "factorized_pc_fp32": 0.6925123339526891,
+      "train_only_ptq": 0.6717961625475881,
+      "hardware_exact_qat_integer": 0.682628587054179,
+      "qat_gain_over_ptq": 0.010832424506590832,
+      "pc_minus_qat_gap": 0.009883746898510126,
+      "weight_words": 1851,
+      "weight_capacity": 3072,
+      "fits_one_unmodified_bitstream": true
+    },
+    {
+      "scene": "Office1",
+      "test_maps": 200,
+      "factorized_pc_fp32": 0.6616384745158226,
+      "train_only_ptq": 0.629838716981308,
+      "hardware_exact_qat_integer": 0.6527056125135933,
+      "qat_gain_over_ptq": 0.02286689553228527,
+      "pc_minus_qat_gap": 0.008932862002229314,
+      "weight_words": 1824,
+      "weight_capacity": 3072,
+      "fits_one_unmodified_bitstream": true
+    },
+    {
+      "scene": "Office2",
+      "test_maps": 100,
+      "factorized_pc_fp32": 0.6128524901606137,
+      "train_only_ptq": 0.6030485375647586,
+      "hardware_exact_qat_integer": 0.6053295467549846,
+      "qat_gain_over_ptq": 0.002281009190226002,
+      "pc_minus_qat_gap": 0.00752294340562909,
+      "weight_words": 2449,
+      "weight_capacity": 3072,
+      "fits_one_unmodified_bitstream": true
+    }
+  ],
+  "fixed_rx_cache_rows": [
+    {
+      "scene": "s23",
+      "test_maps": 1225,
+      "attenuation_sparse_macs_per_sample": 642,
+      "signal_sparse_macs_per_ray": 620,
+      "no_fixed_rx_cache_sparse_macs": 1655390520000,
+      "fixed_rx_cache_sparse_macs": 25939051200,
+      "source_derived_sparse_mac_reduction_percent": 98.43305547019806,
+      "source_derived_sparse_mac_speedup": 63.8184684257071
+    },
+    {
+      "scene": "Meetingroom",
+      "test_maps": 200,
+      "attenuation_sparse_macs_per_sample": 1055,
+      "signal_sparse_macs_per_ray": 573,
+      "no_fixed_rx_cache_sparse_macs": 441242640000,
+      "fixed_rx_cache_sparse_macs": 5900688000,
+      "source_derived_sparse_mac_reduction_percent": 98.6627112919096,
+      "source_derived_sparse_mac_speedup": 74.7781682407204
+    },
+    {
+      "scene": "Office1",
+      "test_maps": 200,
+      "attenuation_sparse_macs_per_sample": 1037,
+      "signal_sparse_macs_per_ray": 571,
+      "no_fixed_rx_cache_sparse_macs": 433764720000,
+      "fixed_rx_cache_sparse_macs": 5850403200,
+      "source_derived_sparse_mac_reduction_percent": 98.65124964519936,
+      "source_derived_sparse_mac_speedup": 74.14270524123876
+    },
+    {
+      "scene": "Office2",
+      "test_maps": 100,
+      "attenuation_sparse_macs_per_sample": 1187,
+      "signal_sparse_macs_per_ray": 536,
+      "no_fixed_rx_cache_sparse_macs": 247872960000,
+      "fixed_rx_cache_sparse_macs": 4198003200,
+      "source_derived_sparse_mac_reduction_percent": 98.30638920840741,
+      "source_derived_sparse_mac_speedup": 59.045443319338105
+    }
+  ],
+  "architecture_scope": "Sparse neural MAC workload derived from runtime descriptors. The Q15 renderer is identical in both cache cases and is excluded.",
+  "historical_stage34_or_stage35_artifacts_used": false,
+  "output_calibration": null
+}

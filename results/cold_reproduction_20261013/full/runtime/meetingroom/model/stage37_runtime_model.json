@@ -1,0 +1,18 @@
+{
+  "schema": "n2-stage37-runtime-model-v1",
+  "scene": "Meetingroom",
+  "model_id_crc32": "f14349e3",
+  "checkpoint_sha256": "5a6db4cddbe1d56a65588f9dc4ffd62884a0e408a98dd66f15b678951fa9a76e",
+  "weight_words": 1851,
+  "weight_capacity": 3072,
+  "factorized_graph_proved": true,
+  "signal_feature_columns_zero": true,
+  "attenuation_layer5_feature_columns_zero": true,
+  "final_scales": [
+    0.0625,
+    0.0625,
+    0.0078125,
+    0.0078125
+  ],
+  "runtime_model_sha256": "0afc6a2315d6faaef93717551f70c0b322d4c64e10e2ce203b6ca71027b10d84"
+}

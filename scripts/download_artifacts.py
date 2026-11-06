@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 ALIASES={'inputs':'nerf2_inputs.zip','board':'board_package.zip','pc':'pc_app_package.zip',
-         'results':'test_results.zip','power':'power_logs.zip','video':'demonstration.mp4'}
+         'results':'test_results.zip','power':'power_logs.zip','video':'demonstration.mp4','recordings':'__power_recordings__'}
 
 def validate_file(path,item):
     if not path.is_file() or path.stat().st_size!=item['bytes']:raise RuntimeError('Incomplete download: '+str(path))
@@ -36,7 +36,9 @@ def main():
     items=json.loads((ROOT/'data/downloads.json').read_text(encoding='utf-8'))['assets']
     args.destination.mkdir(parents=True,exist_ok=True)
     for item in items:
-        if args.asset!='all' and item['name']!=ALIASES[args.asset]:continue
+        if args.asset=='recordings':
+            if item.get('group')!='power_recording':continue
+        elif args.asset!='all' and item['name']!=ALIASES[args.asset]:continue
         path=args.destination/item['name']
         if not path.exists():
             partial=path.with_suffix(path.suffix+'.partial')

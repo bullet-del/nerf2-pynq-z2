@@ -1,0 +1,24 @@
+{
+  "schema": "n2-stage39-hardware-exact-qat-checkpoint-v1",
+  "algorithm_id": "stage39-hardware-exact-qat-ste-v1",
+  "scene": "Meetingroom",
+  "source_checkpoint_sha256": "0a0830d2661cb9dbe0b940b5ff877bd2c45a965faa0ad5ee5050a8503989cab3",
+  "train_index_sha256": "436ae9782c812a87e0d088721860a026be77866fb32c7a715167432fbb7f1122",
+  "test_artifacts_opened": [],
+  "steps": 1800,
+  "batch": 192,
+  "learning_rate": 1e-05,
+  "seed": 3902,
+  "quant_manifest_sha256": "f235d1a26669cc992a9603a0bb6abbea62abf1452cdde665291fa5a456812b6c",
+  "hardware_forward": [
+    "INT8 weights",
+    "INT16 bias",
+    "arithmetic right shift",
+    "INT8 saturation",
+    "ReLU",
+    "Q15 LUT renderer"
+  ],
+  "output_calibration": null,
+  "elapsed_seconds": 491.1889447,
+  "checkpoint_sha256": "5a6db4cddbe1d56a65588f9dc4ffd62884a0e408a98dd66f15b678951fa9a76e"
+}

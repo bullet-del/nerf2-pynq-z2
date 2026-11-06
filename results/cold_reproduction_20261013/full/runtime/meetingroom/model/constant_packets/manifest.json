@@ -1,0 +1,189 @@
+{
+  "schema": "n2-stage37-signal-constant-packets-v1",
+  "rows": 90,
+  "cols": 360,
+  "rows_per_packet": 5,
+  "packet_count": 18,
+  "packets": [
+    {
+      "packet_index": 0,
+      "first_row": 0,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_000_004.npz",
+      "file_bytes": 71109,
+      "sha256": "107c50e62acf2ab34e7214c448b9db6311da7ad8995627eac14ee46298dea316"
+    },
+    {
+      "packet_index": 1,
+      "first_row": 5,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_005_009.npz",
+      "file_bytes": 71716,
+      "sha256": "d2944bea9f62c1e4f1efc60721d1d5118c6df6178e28d7795ad0472c54fdc590"
+    },
+    {
+      "packet_index": 2,
+      "first_row": 10,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_010_014.npz",
+      "file_bytes": 71737,
+      "sha256": "bb2c9fcfb7ed077ce7fb19cd19c3b055ae5521dbb3c25ba543516783dc08cfb5"
+    },
+    {
+      "packet_index": 3,
+      "first_row": 15,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_015_019.npz",
+      "file_bytes": 71850,
+      "sha256": "15097fa89a7cb50b3c15452553280ec4f0aa5ed1c1ee5d63ad3c00f98c93d94a"
+    },
+    {
+      "packet_index": 4,
+      "first_row": 20,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_020_024.npz",
+      "file_bytes": 71771,
+      "sha256": "2be6b20f28ff2f2269ce30c9299f9180f60deef995823b9a23548b28c954c544"
+    },
+    {
+      "packet_index": 5,
+      "first_row": 25,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_025_029.npz",
+      "file_bytes": 71459,
+      "sha256": "39801b06f5dfdd5ffd6e2c7581a8a6dac69555e0eeebd50224da01b630e3d1e7"
+    },
+    {
+      "packet_index": 6,
+      "first_row": 30,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_030_034.npz",
+      "file_bytes": 71405,
+      "sha256": "2815c31485a2ed7768889b4f54e4447f969e2f0fe6ee364301d82998fd86c3b5"
+    },
+    {
+      "packet_index": 7,
+      "first_row": 35,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_035_039.npz",
+      "file_bytes": 70944,
+      "sha256": "4c6a3caebc8741831a52c5c0db3cad2b72b2691fab0ec052ad4be598bbfa3510"
+    },
+    {
+      "packet_index": 8,
+      "first_row": 40,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_040_044.npz",
+      "file_bytes": 70713,
+      "sha256": "301fb1ec2dfeb526cf1c7cf6b1868a42a83d87b3b7fc30704d2be7bc584609ed"
+    },
+    {
+      "packet_index": 9,
+      "first_row": 45,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_045_049.npz",
+      "file_bytes": 70309,
+      "sha256": "24d7f3c0f2e1f36e0f02ca78ce66716a90dca3d738ca41e0212dc2464ebc0fce"
+    },
+    {
+      "packet_index": 10,
+      "first_row": 50,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_050_054.npz",
+      "file_bytes": 69333,
+      "sha256": "5888392176784c7c01a3b698f7cdf01f0a4bc4145e9427b62c3ed3453e99ef75"
+    },
+    {
+      "packet_index": 11,
+      "first_row": 55,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_055_059.npz",
+      "file_bytes": 68553,
+      "sha256": "b02e549054c973556fac44f07756dccc9d4e8e2ffa6f1c8f32fa6fbf4a6c6d50"
+    },
+    {
+      "packet_index": 12,
+      "first_row": 60,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_060_064.npz",
+      "file_bytes": 67646,
+      "sha256": "6c2219c4b7a7ec4cf91636ed176f9e11f5b8581e17ae96f61df6b12f89a76d79"
+    },
+    {
+      "packet_index": 13,
+      "first_row": 65,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_065_069.npz",
+      "file_bytes": 66463,
+      "sha256": "fe723fd8ec5aaa60177b6381ffab630d297015eab6d19235c8118c261ff8d960"
+    },
+    {
+      "packet_index": 14,
+      "first_row": 70,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_070_074.npz",
+      "file_bytes": 64164,
+      "sha256": "88addf7870c148eae2ca0edcde6fdb9450f7ee26baa1028fe5fc718e24b1ede3"
+    },
+    {
+      "packet_index": 15,
+      "first_row": 75,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_075_079.npz",
+      "file_bytes": 60518,
+      "sha256": "a990d15a6b0d91c5e8883794f91259f76703a7bc09fd9c42280eb274c9fa71ba"
+    },
+    {
+      "packet_index": 16,
+      "first_row": 80,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_080_084.npz",
+      "file_bytes": 55546,
+      "sha256": "5940d284ad25b72fe4c60f4d2df7f4540966f72504586d3f315bbc5d52c21d4c"
+    },
+    {
+      "packet_index": 17,
+      "first_row": 85,
+      "row_count": 5,
+      "ray_count": 1800,
+      "pair_count": 900,
+      "file": "constants_085_089.npz",
+      "file_bytes": 36439,
+      "sha256": "24bdd5318d9d1e4fa414b0dd31df9088868e0faedbb44167541266aeb1dcddad"
+    }
+  ]
+}

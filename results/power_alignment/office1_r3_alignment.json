@@ -1,0 +1,19 @@
+{
+  "schema": "stage39-screenrecord-time-alignment-v1",
+  "reviewed": true,
+  "run_sha256": "303962edc6bc8bfec536c61d55ef8a11cdbd49f9254551a1205ad3cdc80243b7",
+  "cfn_sha256": "ad6c41dda621be90686a5f92f3eaece8c574dcfd580b9fd78370df6b31d63e2a",
+  "video_file": "../../external/downloads/office1_r3.mp4",
+  "video_sha256": "b3d2c22134e967b25676a02d5ae0116ea24c99bd2f2d13054ea23bb816ac2f62",
+  "video_fps": 30.0,
+  "video_duration_s": null,
+  "recorder_active_first_video_s": 13.3076666667,
+  "recorder_stopped_first_video_s": 342.5533333333,
+  "phase_first_visible_video_s": {
+    "idle_start": 41.541,
+    "idle_end": 101.5743333333,
+    "active_start": 111.6076666667,
+    "active_end": 336.0866666667
+  },
+  "boundary_shift_sensitivity_s": 0.2
+}

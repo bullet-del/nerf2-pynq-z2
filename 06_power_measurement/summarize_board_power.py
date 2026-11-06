@@ -32,7 +32,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("csv", type=Path)
     parser.add_argument("--out", type=Path, default=Path("board_power_summary.json"))
+    parser.add_argument("--platforms", nargs="+", choices=PLATFORMS, default=["PYNQ_FPGA"])
     args = parser.parse_args()
+    platforms = tuple(dict.fromkeys(args.platforms))
 
     with args.csv.open("r", encoding="utf-8-sig", newline="") as stream:
         rows = list(csv.DictReader(stream))
@@ -47,6 +49,7 @@ def main():
         state = row["state"].strip().lower()
         if scene not in SCENES or platform not in PLATFORMS or state not in {"idle", "active"}:
             raise ValueError(f"row {line}: invalid scene/platform/state")
+        if platform not in platforms: continue
         duration = number(row, "duration_s", required=True)
         if duration <= 0:
             raise ValueError(f"row {line}: duration_s must be positive")
@@ -109,7 +112,7 @@ def main():
 
     results = []
     for scene in SCENES:
-        for platform in PLATFORMS:
+        for platform in platforms:
             idle = groups[(scene, platform, "idle")]
             active = groups[(scene, platform, "active")]
             if len(idle) != 3 or len(active) != 3:
@@ -136,7 +139,7 @@ def main():
     aggregates = []
     for scene in SCENES:
         by_platform = {}
-        for platform in PLATFORMS:
+        for platform in platforms:
             subset = [r for r in results if r["scene"] == scene and r["platform"] == platform]
             agg = {
                 "scene": scene,
@@ -150,6 +153,7 @@ def main():
             }
             aggregates.append(agg)
             by_platform[platform] = agg
+        if set(platforms) != set(PLATFORMS): continue
         arm, fpga = by_platform["PYNQ_ARM"], by_platform["PYNQ_FPGA"]
         aggregates.append(
             {
@@ -165,6 +169,7 @@ def main():
         "schema": "stage39-board-power-comparison-v1",
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "power_boundary": "complete PYNQ-Z2 5 V Micro-USB J8 board input measured by FNIRSI FNB58",
+        "platforms": list(platforms),
         "rows": results,
         "aggregates": aggregates,
     }

@@ -1,0 +1,21 @@
+{
+  "schema": "n2-stage37-scene-runtime-assets-v1",
+  "scene": "Office1",
+  "runtime_model_sha256": "2390cd6fe75609f37c639738958d19e5900f666e93fe8a9387050f7113127abc",
+  "quant_manifest_sha256": "493ad24fbc04acabaff2f69ba9ffcbf5106c1269bd2b617f21b8721acd6325b7",
+  "cache_sha256": "853285587297a13c49c4c199430888e49f747f3eb32534b80694913f73edef61",
+  "cache_shape": [
+    90,
+    360,
+    64
+  ],
+  "cache_is_tx_independent": true,
+  "cache_contains_final_heatmap": false,
+  "constant_manifest_sha256": "1b356c16380ca2e73acd0d260d238b7d4bcc95655fa16e4f23abb988f832911f",
+  "sentinel": {
+    "rays": 512,
+    "values": 32768,
+    "sha256": "51abca706fe849fce2c86e2c99ef59d5bd032d34eea379c222e0aaf1b22c2847"
+  },
+  "same_bitstream_required": true
+}

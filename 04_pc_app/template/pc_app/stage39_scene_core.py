@@ -596,7 +596,7 @@ def save_all_test_figures(destination, report):
 
     ax = axes[1, 1]
     official_pc = float(PC_TIMING["mean_end_to_end_seconds_per_spectrum"])
-    timing_names = ["Official PC log\nmean end-to-end", "FPGA raw\nmean", "FPGA raw\nmedian"]
+    timing_names = ["Original NeRF2 FP32\nfull-graph mean", "FPGA raw\nmean", "FPGA raw\nmedian"]
     timing_values = [official_pc, float(seconds.mean()), float(np.median(seconds))]
     bars = ax.bar(timing_names, timing_values, color=["#1769aa", "#d97706", "#09a4b5"])
     ax.set_ylabel("Seconds per 90x360 spectrum")

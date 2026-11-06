@@ -1,0 +1,9 @@
+{
+  "schema": "n2-stage37-factorized-checkpoint-v1",
+  "scene": "s23",
+  "source_checkpoint_sha256": "eeccf2bba9cd4e84853e0fcf1dab9fa2d218b166a6f81485a9e5dc498f8a8beb",
+  "signal_feature_columns_zero": true,
+  "attenuation_layer5_feature_columns_zero": true,
+  "steps": 0,
+  "method": "exact structural mask; no retraining"
+}

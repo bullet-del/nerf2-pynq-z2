@@ -1,0 +1,19 @@
+{
+  "schema": "stage39-screenrecord-time-alignment-v1",
+  "reviewed": true,
+  "run_sha256": "16eeca8f420443ea9621069355825ed3c7719241fea9d563f855e9c640cbe584",
+  "cfn_sha256": "85ca7a34df08dfa3ef76deb1a8968b4dcf8a42cee35a3e2e9543c30d1fdc96e1",
+  "video_file": "../../external/downloads/meetingroom_r1.mp4",
+  "video_sha256": "6d800a0766a87589080bb033215f46974078cf2dbb41bb945df29bfcd297b67e",
+  "video_fps": 30.0,
+  "video_duration_s": null,
+  "recorder_active_first_video_s": 15.9253333333,
+  "recorder_stopped_first_video_s": 343.4056666667,
+  "phase_first_visible_video_s": {
+    "idle_start": 42.8586666667,
+    "idle_end": 102.892,
+    "active_start": 112.9253333333,
+    "active_end": 337.9723333333
+  },
+  "boundary_shift_sensitivity_s": 0.2
+}

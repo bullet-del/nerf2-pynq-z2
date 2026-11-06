@@ -137,10 +137,11 @@ def build_catalog(config: dict, scene: str, scene_root: Path, evaluation: dict,
         "source_sha256": hashes, "pc_ssim_summary": summary(scores.tolist()), "samples": samples}
     write_json(scene_root / "data/stage31/catalog.json", catalog)
     write_json(scene_root / "data/stage32/all_test_catalog.json", all_catalog)
-    write_json(scene_root / "data/stage33/pc_timing_reference.json", {
-        "scene_id": scene, "mean_end_to_end_seconds_per_spectrum": float(np.mean([r["seconds"] for r in rows])),
-        "sample_count": len(rows), "source": "cold reproduction full checkpoint replay on this GPU",
-        "scope": "FP32 all 32400 rays plus device-to-host transfer; no plotting", "device": "cuda"})
+    timing_path = KIT_ROOT / "work/full/pc_reference" / scene / "timing_reference.json"
+    from original_pc_timing_contract import require_original_pc_timing
+    expected_ids = [str(row["spectrum_id"]) for row in rows]
+    timing = require_original_pc_timing(timing_path, config["scenes"][scene]["checkpoint_sha256"], expected_ids)
+    write_json(scene_root / "data/stage33/pc_timing_reference.json", timing)
     return catalog, all_catalog
 
 

@@ -186,6 +186,7 @@ def main():
     }
     manifest["files"] = inventory_files(output)
     atomic_json(output / "manifest.json", manifest)
+    atomic_json(output.parent / "latest_rehearsal.json", {"manifest": output.name + "/manifest.json"})
     print("DIGITAL_FULL_PASS")
     print("Evidence directory =", output)
     print("Manifest =", output / "manifest.json")

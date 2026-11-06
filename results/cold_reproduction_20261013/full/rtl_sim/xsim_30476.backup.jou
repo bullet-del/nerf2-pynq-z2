@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# xsim v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Tue Oct 13 23:13:55 2026
+# Process ID: 30476
+# Current directory: E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim
+# Command line: xsim.exe -mode tcl -source {xsim.dir/stage39_universal_sim/xsim_script.tcl}
+# Log file: E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/xsim.log
+# Journal file: E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim\xsim.jou
+# Running On        :ybp
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26200
+# Processor Detail  :13th Gen Intel(R) Core(TM) i7-13620H
+# CPU Frequency     :2918 MHz
+# CPU Physical cores:10
+# CPU Logical cores :16
+# Host memory       :16849 MB
+# Swap memory       :18253 MB
+# Total Virtual     :35102 MB
+# Available Virtual :7024 MB
+#-----------------------------------------------------------
+source xsim.dir/stage39_universal_sim/xsim_script.tcl
+run -all

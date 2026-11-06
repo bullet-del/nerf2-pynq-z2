@@ -22,6 +22,8 @@ def main() -> None:
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     args = parser.parse_args()
     config = load_config(args.config)
+    import subprocess
+    subprocess.run([sys.executable, str(KIT_ROOT / "scripts/check_environment.py")], check=True)
     rows = []
     failures = []
     # These are the train-only quantization/QAT settings used by the accepted

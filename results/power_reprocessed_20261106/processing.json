@@ -1,0 +1,15 @@
+{
+  "schema": "stage39-complete-fpga-capture-processing-v1",
+  "status": "PASS",
+  "runs": 12,
+  "measured_map_inferences": 5175,
+  "gate_samples": 80,
+  "arm_power_required": false,
+  "missing_recorder_stop_events": [
+    {
+      "scene": "s23",
+      "repeat": "R1"
+    }
+  ],
+  "scope": "Original CFN PBUS trapezoidal integral; reviewed video phase anchors; full board USB measurement point"
+}

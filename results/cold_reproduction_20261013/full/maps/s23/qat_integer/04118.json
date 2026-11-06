@@ -1,0 +1,6 @@
+{
+  "seconds": 0.14959959999998773,
+  "device": "cuda-integer-reference",
+  "scope": "all 32400 rays including device-to-host transfer; excludes model loading and plotting",
+  "array_sha256": "9074b184ce76da19fec2d22ec7dd9d7beaa89355c769b340ea99782a5ba0cf3c"
+}

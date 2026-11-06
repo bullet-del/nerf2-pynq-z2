@@ -1,37 +1,17 @@
-# Final physical-evidence steps
+# 连续演示与最终收口
 
-## Export the board evidence
+所有电脑命令均在仓库根目录、nerf2环境运行。先完成根README第4节，四场景App全测试集结果保留在PC包里。
 
-Start the board service from the generated notebook. Confirm each scene has a
-saved `all_test/result.json` and `identity.json`, run notebook cell 5, and
-download:
+Notebook第5单元导出的ZIP下载为work/board_downloads/Stage39_physical_evidence.zip。根README第5节生成的80行采样文件为work/fpga_power/processed/stage39_board_input_power.csv。
 
-```text
-/home/xilinx/jupyter_notebooks/N2-NeRF2-Stage39-results/physical/stage39_physical_gate/Stage39_physical_evidence.zip
+```bat
+python 06_power_measurement/stage39_final_steps/stage39_continuous_rehearsal.py --scene Office2 --board-url http://192.168.2.99:8311 --output-root work/live
 ```
 
-The exporter packages saved results and does not rerun 1,725 maps. A missing
-scene result must be regenerated before export.
+把实际演示原片保存为work/live_camera.mp4，再运行：
 
-## Continuous live rehearsal
-
-With the board service, PC application, HDMI display, and continuous video
-recording active, run:
-
-```text
-python stage39_continuous_rehearsal.py --scene Office2
+```bat
+python 06_power_measurement/stage39_final_steps/finalize_stage39_verified.py --pc-app-root outputs/N2-NeRF2-Stage39-PC-App --physical-export work/board_downloads/Stage39_physical_evidence.zip --power-csv work/fpga_power/processed/stage39_board_input_power.csv --rehearsal-root work/live --video-file work/live_camera.mp4 --output work/final/stage39_final_acceptance.json
 ```
 
-The script produces a random nonce and performs a held-out blind query, ARM
-cross-check, HDMI display, valid arbitrary-Tx query, second ARM/HDMI check, and
-the +1-LSB negative control. Preserve the original uncompressed video and the
-generated rehearsal manifest.
-
-## Finalize
-
-```text
-python finalize_stage39_verified.py --pc-app-root "<PC_APP_ROOT>" --physical-export "<Stage39_physical_evidence.zip>" --power-csv "<stage39_board_input_power.csv>" --rehearsal-manifest "<manifest.json>" --video-file "<original_video>" --output "results/stage39_verified_final_acceptance.json"
-```
-
-Acceptance requires the original finalizer status `FULL_PASS` and the final
-message `VERIFIED STAGE39 FULL_PASS`.
+也可使用--rehearsal-manifest显式指定脚本打印的manifest.json路径。没有原片但已亲眼观察两次HDMI输出时，可用--user-observed-hdmi代替--video-file。最终状态必须为FULL_PASS。

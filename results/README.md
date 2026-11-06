@@ -27,10 +27,19 @@ the ordinary repository ZIP.
 
 Power records retain their original date and may reference old local paths or
 a then-pending finalization. Later completion is in physical/physical_finalization.json.
-Complete original measurement screen recordings and every alignment file are
-not included, limiting independent video-based power audits. ARM full-map power
-is unmeasured and is not presented as a completed experiment.
+All twelve original measurement screen recordings are now provided in the
+[raw recording release](https://github.com/bullet-del/nerf2-pynq-z2/releases/tag/stage39-repro-results-20261106).
+Portable alignment files and acquisition inputs are in power_alignment and power_inputs.
+Run the root README section 5.2 to download and recompute them. ARM power is outside this workflow.
 
 Archived FULL_PASS does not certify a different model/bitstream or a new run.
 New reconstruction evidence retains its own date, settings and pending physical
 field until actually executed on the board.
+
+## Added original outputs and processing records
+
+- [cold_reproduction_20261013](cold_reproduction_20261013/README.md): 7182 original NoPS1 intermediate output files, 604.6 MiB, including all full-test maps, checkpoints, calibration, QAT, sparse/runtime assets and RTL results.
+- [power_alignment](power_alignment/captures.json): all twelve capture pairings and frame events, including the original s23 R1 missing-stop-event record.
+- [power_inputs](power_inputs): the exact twelve program JSON and CFN pairs.
+- [power_reprocessed_20261106](power_reprocessed_20261106/processing.json): recomputed 5175 per-map energy intervals, four-scene FPGA-only summaries and 80 actual sampled observations.
+- [repository_repair_20261106](repository_repair_20261106): original full-graph NeRF2 timing and package/command check results from this update.

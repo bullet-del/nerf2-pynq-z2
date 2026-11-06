@@ -47,6 +47,11 @@ def main() -> None:
         checks.append({"id": f"lineage.{scene}.original_checkpoint", "status": "PASS" if
             actual_source_hash == source_hash == factor_source else "FAIL",
             "expected": source_hash, "actual": actual_source_hash, "factorized_source": factor_source})
+        from original_pc_timing_contract import require_original_pc_timing
+        catalog = json.loads((BOARD_PACKAGE / "scenes" / scene / "data/stage32/all_test_catalog.json").read_text(encoding="utf-8"))
+        timing = require_original_pc_timing(BOARD_PACKAGE / "scenes" / scene / "data/stage33/pc_timing_reference.json",
+            source_hash, [str(row["spectrum_id"]) for row in catalog["samples"]])
+        checks.append({"id": f"pc_reference.{scene}.original_full_graph", "status": "PASS", "maps": timing["sample_count"]})
         checks.append({"id": f"accuracy.{scene}.gap", "status": "PASS" if
             spec["stage39_gap_under_0p015"] else "FAIL", "gap": spec["stage39_mean_ssim_gap"]})
     checks.extend((

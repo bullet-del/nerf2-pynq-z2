@@ -16,6 +16,7 @@ def main():
     parser.add_argument("--pc-results", type=Path, required=True)
     parser.add_argument("--board-summary", type=Path, required=True)
     parser.add_argument("--out", type=Path, default=Path("stage39_power_comparison.csv"))
+    parser.add_argument("--include-arm", action="store_true", help="optional legacy ARM data, never required")
     args = parser.parse_args()
 
     pc_by_scene = {}
@@ -66,7 +67,7 @@ def main():
                 "median_dynamic_energy_per_map_j": agg["median_dynamic_gpu_energy_per_map_j"],
             }
         )
-        for platform in ("PYNQ_ARM", "PYNQ_FPGA"):
+        for platform in (("PYNQ_ARM", "PYNQ_FPGA") if args.include_arm else ("PYNQ_FPGA",)):
             item = board_rows[(scene, platform)]
             rows.append(
                 {
@@ -91,7 +92,7 @@ def main():
 
     claims = []
     for scene in SCENES:
-        arm = board_rows[(scene, "PYNQ_ARM")]
+        arm = board_rows.get((scene, "PYNQ_ARM")) if args.include_arm else None
         fpga = board_rows[(scene, "PYNQ_FPGA")]
         pc = pc_by_scene[scene]["aggregate"]
         claims.append(
@@ -101,7 +102,7 @@ def main():
                     "fpga_speedup_over_arm_x": arm["median_seconds_per_map"] / fpga["median_seconds_per_map"],
                     "fpga_total_energy_reduction_over_arm_x": arm["median_total_energy_per_map_j"] / fpga["median_total_energy_per_map_j"],
                     "validity": "same PYNQ-Z2 board-input boundary; suitable as primary energy-efficiency claim",
-                },
+                } if arm is not None else None,
                 "descriptive_cross_boundary": {
                     "fpga_board_j_per_map_divided_by_pc_gpu_j_per_map": fpga["median_total_energy_per_map_j"] / pc["median_gpu_energy_per_map_j"],
                     "validity": "different power boundaries and precision; report descriptively, not as a whole-system efficiency proof",

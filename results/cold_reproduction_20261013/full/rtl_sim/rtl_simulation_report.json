@@ -1,0 +1,27 @@
+{
+  "schema": "n2-stage39-cold-rtl-simulation-v1",
+  "created_utc": "2026-10-13T15:14:25.357666+00:00",
+  "status": "PASS",
+  "runtime_load_cache_inference_bit_exact": true,
+  "four_scene_switch_and_return": true,
+  "model_ids": {
+    "s23": "35622a80",
+    "Meetingroom": "f14349e3",
+    "Office1": "d0dd2294",
+    "Office2": "b88fa9e0"
+  },
+  "load_words": {
+    "s23": 53977,
+    "Meetingroom": 67679,
+    "Office1": 66761,
+    "Office2": 88011
+  },
+  "expected_q15": [
+    5351,
+    5351
+  ],
+  "logs": {
+    "universal_sha256": "15465e09378db60b99cc988093067db85c4eb483556e4ed7acaf45c85ce22f39",
+    "multiscene_sha256": "5f9751f202f1d4c7a19e61ef86d38eb6fc099788f1b24b897fa71e9ce08e14c5"
+  }
+}

@@ -68,6 +68,8 @@ def main():
     args = parser.parse_args()
     run = json.loads(args.run.read_text(encoding="utf-8"))
     alignment = json.loads(args.alignment.read_text(encoding="utf-8"))
+    video_path = Path(alignment["video_file"])
+    if not video_path.is_absolute(): video_path = args.alignment.parent / video_path
     names, rows, capture = decode(args.cfn)
     maps = run["map_results"]
     scene, repeat = run["scene"], run["repeat_id"]
@@ -113,7 +115,7 @@ def main():
             and alignment["reviewed"] is True,
         "alignment_cfn_sha256": alignment["cfn_sha256"] == capture["source_sha256"],
         "alignment_run_sha256": alignment["run_sha256"] == file_sha(args.run),
-        "video_sha256": alignment["video_sha256"] == file_sha(alignment["video_file"]),
+        "video_sha256": alignment["video_sha256"] == file_sha(video_path),
     }
     if scene == "Office2":
         checks["office2_test_ids_401_to_500"] = ids == [str(i) for i in range(401, 501)]
@@ -128,10 +130,11 @@ def main():
         raise ValueError("Audit checks failed: " + ", ".join(failures))
 
     start_video = float(alignment["recorder_active_first_video_s"])
-    stop_video = float(alignment["recorder_stopped_first_video_s"])
+    stop_event = alignment.get("recorder_stopped_first_video_s")
+    stop_video = float(stop_event) if stop_event is not None else None
     fps = float(alignment["video_fps"])
     sensitivity = float(alignment["boundary_shift_sensitivity_s"])
-    if fps <= 0 or not 0 < sensitivity <= 1 or stop_video <= start_video:
+    if fps <= 0 or not 0 < sensitivity <= 1 or (stop_video is not None and stop_video <= start_video):
         raise ValueError("Invalid video timing settings")
     ref = alignment["phase_first_visible_video_s"]
     origin = parse_time(run["idle_start_utc"]) - timedelta(seconds=ref["idle_start"] - start_video)
@@ -141,9 +144,17 @@ def main():
             raise ValueError("Unknown phase marker")
         estimated_video = start_video + (parse_time(run[field + "_utc"]) - origin).total_seconds()
         residuals[field] = visible - estimated_video
-    cadence_residual = (stop_video - start_video) - capture["duration_s"]
-    # One sample interval may separate the last sample from the stop click.
-    checks["video_cadence_matches_stored_time_axis"] = abs(cadence_residual) <= .2 + 1 / fps
+    cadence_residual = None if stop_video is None else (stop_video - start_video) - capture["duration_s"]
+    if stop_video is not None:
+        checks["video_cadence_matches_stored_time_axis"] = abs(cadence_residual) <= .2 + 1 / fps
+    else:
+        # The historical s23 R1 video ends after inference but before the meter
+        # stop click. Keep the missing-stop limitation; require all phase events
+        # and the complete inference window to remain inside the original video.
+        duration = float(alignment["video_duration_s"])
+        checks["video_covers_all_required_phase_events"] = (
+            alignment.get("recorder_stop_observed") is False
+            and start_video >= 0 and all(start_video < float(t) < duration for t in ref.values()))
     checks["independent_phase_events_agree"] = (
         set(ref) == {"idle_start", "idle_end", "active_start", "active_end"}
         and max(map(abs, residuals.values())) <= sensitivity)
@@ -204,7 +215,8 @@ def main():
         "time_alignment": {
             "method": "Record-start UI transition plus UTC phase first-appearance events in the same continuous screen recording",
             "phase_video_residual_s": residuals, "video_minus_cfn_duration_s": cadence_residual,
-            "video_duration_between_recorder_start_stop_s": stop_video - start_video,
+            "video_duration_between_recorder_start_stop_s": None if stop_video is None else stop_video - start_video,
+            "recorder_stop_observed": stop_video is not None,
             "boundary_shift_sensitivity_s": sensitivity,
             "precision_note": "Nominal alignment is estimated from 30 fps UI events and 10 Hz samples. Shift sensitivity is not a certified bound on absolute timing error or instrument accuracy.",
         },
@@ -228,13 +240,14 @@ def main():
             "FNB58 reports power at its USB measurement point, including downstream power-cable losses; these values are not isolated FPGA-chip power.",
             "10 Hz samples with screen-record alignment support approximate per-map energy; sub-millisecond power profiles and certified instrument accuracy are not established.",
             "Software NRG is inconsistent with the V*I time integral and is excluded; no correction factor is applied to raw NRG.",
-            "This is one repeat of Office2/FPGA. R2/R3, the other scenes and ARM runs are still required before a complete board comparison.",
+            "This report describes one FPGA repeat; combine all four scenes and R1/R2/R3. ARM power is outside this workflow.",
+            "The recorder stop click is absent from the historical s23 R1 video; all required phase markers must still be covered." if stop_video is None else "The recorder start and stop clicks are both present.",
         ],
     }
     if not all(checks.values()):
         raise ValueError("Power interval audit failed")
     args.out_dir.mkdir(parents=True, exist_ok=True)
-    stem = f"{scene}_FPGA_{repeat}_REMEASURE"
+    stem = f"{scene}_fpga_{repeat}_remeasure".lower()
     targets = [args.out_dir / (stem + suffix) for suffix in ("_audit.json", "_per_map_energy.csv", "_power_rows.csv")]
     if any(p.exists() for p in targets):
         raise ValueError("Audit output already exists; preserve it and choose a new output directory")

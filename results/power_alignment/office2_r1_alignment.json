@@ -1,0 +1,35 @@
+{
+  "schema": "stage39-screenrecord-time-alignment-v1",
+  "reviewed": true,
+  "run_sha256": "1cbb8c0b54ccf6ce16db83c17f0e2d132b9f4ee258fb08132e68d15e5e4a795c",
+  "cfn_sha256": "ba6d0a8dbb87ca5bbf51418cb996b16ce4a136e2e0b378e27b1b26b97ff9f9ba",
+  "video_file": "../../external/downloads/office2_r1.mp4",
+  "video_sha256": "8f0eab5a71235e4f47c03370f418e87f5eed23fc7fb19f3a524648dd6edcfd40",
+  "video_fps": 30.0,
+  "video_duration_s": 225.066667,
+  "video_container_creation_time_utc": "2026-10-07T14:16:11Z",
+  "container_creation_time_usage": "Cross-check of acquisition date only; whole-second metadata is not used for the phase alignment.",
+  "recorder_active_first_video_s": 13.066666666666666,
+  "recorder_stopped_first_video_s": 220.86666666666667,
+  "phase_first_visible_video_s": {
+    "idle_start": 36.93333333333333,
+    "idle_end": 97.0,
+    "active_start": 107.0,
+    "active_end": 218.2
+  },
+  "boundary_shift_sensitivity_s": 0.2,
+  "event_semantics": {
+    "record_start": "Play becomes disabled and Pause becomes active at video 13.066667s. This UI transition is the nominal CFN t=0 anchor, allowing sample/GUI timing uncertainty.",
+    "record_stop": "Recording controls stop and Save becomes active at video 220.866667s.",
+    "idle_start": "First visible FPGA IDLE START UTC line matching the downloaded JSON timestamp.",
+    "idle_end": "First visible FPGA IDLE END UTC line, followed by countdown.",
+    "active_start": "First visible FPGA ACTIVE START UTC line matching the downloaded JSON timestamp.",
+    "active_end": "100/100 is first visible at 218.133333s; ACTIVE END and PASS first appear at 218.2s. The JSON interval ends earlier than printing/writing, so the print event is a cross-check, not the interval endpoint."
+  },
+  "review_method": "Native video frames inspected around all UI transitions. No phase window was selected by optimizing energy or locating a power-level transition.",
+  "limitations": [
+    "No hardware trigger connects the meter and FPGA; USB/browser/GUI rendering latency is not independently calibrated.",
+    "The +/-0.2s common boundary-shift study expresses numerical sensitivity, not a certified upper limit on timing error.",
+    "Screenshots enlarge native crops for readability. Full original video is preserved unchanged with SHA-256."
+  ]
+}

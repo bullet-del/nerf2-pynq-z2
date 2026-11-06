@@ -1,0 +1,89 @@
+{
+  "schema": "stage39-fpga-power-captures-v1",
+  "runs": [
+    {
+      "scene": "s23",
+      "repeat": "R1",
+      "run": "../power_inputs/s23_r1.json",
+      "cfn": "../power_inputs/s23_r1.cfn",
+      "alignment": "s23_r1_alignment.json"
+    },
+    {
+      "scene": "s23",
+      "repeat": "R2",
+      "run": "../power_inputs/s23_r2.json",
+      "cfn": "../power_inputs/s23_r2.cfn",
+      "alignment": "s23_r2_alignment.json"
+    },
+    {
+      "scene": "s23",
+      "repeat": "R3",
+      "run": "../power_inputs/s23_r3.json",
+      "cfn": "../power_inputs/s23_r3.cfn",
+      "alignment": "s23_r3_alignment.json"
+    },
+    {
+      "scene": "Meetingroom",
+      "repeat": "R1",
+      "run": "../power_inputs/meetingroom_r1.json",
+      "cfn": "../power_inputs/meetingroom_r1.cfn",
+      "alignment": "meetingroom_r1_alignment.json"
+    },
+    {
+      "scene": "Meetingroom",
+      "repeat": "R2",
+      "run": "../power_inputs/meetingroom_r2.json",
+      "cfn": "../power_inputs/meetingroom_r2.cfn",
+      "alignment": "meetingroom_r2_alignment.json"
+    },
+    {
+      "scene": "Meetingroom",
+      "repeat": "R3",
+      "run": "../power_inputs/meetingroom_r3.json",
+      "cfn": "../power_inputs/meetingroom_r3.cfn",
+      "alignment": "meetingroom_r3_alignment.json"
+    },
+    {
+      "scene": "Office1",
+      "repeat": "R1",
+      "run": "../power_inputs/office1_r1.json",
+      "cfn": "../power_inputs/office1_r1.cfn",
+      "alignment": "office1_r1_alignment.json"
+    },
+    {
+      "scene": "Office1",
+      "repeat": "R2",
+      "run": "../power_inputs/office1_r2.json",
+      "cfn": "../power_inputs/office1_r2.cfn",
+      "alignment": "office1_r2_alignment.json"
+    },
+    {
+      "scene": "Office1",
+      "repeat": "R3",
+      "run": "../power_inputs/office1_r3.json",
+      "cfn": "../power_inputs/office1_r3.cfn",
+      "alignment": "office1_r3_alignment.json"
+    },
+    {
+      "scene": "Office2",
+      "repeat": "R1",
+      "run": "../power_inputs/office2_r1.json",
+      "cfn": "../power_inputs/office2_r1.cfn",
+      "alignment": "office2_r1_alignment.json"
+    },
+    {
+      "scene": "Office2",
+      "repeat": "R2",
+      "run": "../power_inputs/office2_r2.json",
+      "cfn": "../power_inputs/office2_r2.cfn",
+      "alignment": "office2_r2_alignment.json"
+    },
+    {
+      "scene": "Office2",
+      "repeat": "R3",
+      "run": "../power_inputs/office2_r3.json",
+      "cfn": "../power_inputs/office2_r3.cfn",
+      "alignment": "office2_r3_alignment.json"
+    }
+  ]
+}

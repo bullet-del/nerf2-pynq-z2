@@ -65,7 +65,7 @@ def main() -> int:
         expected_rows = int(value["workload"]["total_test_maps"]) * len(value["repeats"])
         if len(per_map) != expected_rows:
             raise AssertionError(f"{scene}: {len(per_map)} per-map rows, expected {expected_rows}")
-        if value.get("metric_alignment", {}).get("status") != "REALIGNED_FROM_EXISTING_PER_MAP_MEASUREMENTS":
+        if value.get("metric_alignment", {}).get("status") not in {"REALIGNED_FROM_EXISTING_PER_MAP_MEASUREMENTS", "NATIVE_PER_MAP_WINDOWS_V1"}:
             raise AssertionError(f"{scene}: primary metric boundary has not been aligned")
         expected_ids = [str(item) for item in value["workload"]["spectrum_ids"]]
         by_repeat: dict[int, list[dict[str, str]]] = defaultdict(list)
@@ -201,7 +201,7 @@ def main() -> int:
         "",
         "场景级主指标按每轮所有逐图推理窗口的实测能量求和，再取三轮中位数；每个逐图窗口包含 CPU→GPU、NeRF2 渲染、GPU 同步和 GPU→CPU，不含输入构造、模型加载、SSIM、绘图及文件输出。原连续 sweep（额外包含图间输入构造间隙）保留在场景 `summary.json` 作为次级证据。",
     ]
-    md_path = output / "PC_GPU四场景完整测试集功耗结果.md"
+    md_path = output / "pc_gpu_full_test_results.md"
     md_path.write_text("\n".join(md_lines) + "\n", encoding="utf-8")
     print(json.dumps({"status": "PASS", "csv": str(csv_path), "json": str(json_path), "markdown": str(md_path)}, ensure_ascii=False))
     return 0

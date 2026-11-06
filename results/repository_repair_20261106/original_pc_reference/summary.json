@@ -1,0 +1,31 @@
+{
+  "schema": "stage39-original-pc-timing-summary-v1",
+  "status": "PASS",
+  "scenes": [
+    {
+      "scene": "s23",
+      "maps": 1225,
+      "status": "PASS",
+      "seconds_per_map": 1.490934158857141
+    },
+    {
+      "scene": "Meetingroom",
+      "maps": 200,
+      "status": "PASS",
+      "seconds_per_map": 1.337686037999988
+    },
+    {
+      "scene": "Office1",
+      "maps": 200,
+      "status": "PASS",
+      "seconds_per_map": 1.3230627479999975
+    },
+    {
+      "scene": "Office2",
+      "maps": 100,
+      "status": "PASS",
+      "seconds_per_map": 1.3504999329999965
+    }
+  ],
+  "fixed_rx_cache_used": false
+}

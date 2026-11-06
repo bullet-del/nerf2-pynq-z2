@@ -25,6 +25,8 @@ def vivado(config_path: Path) -> None:
 
 def models(config: Path, profile: str = "full", scene: str = "all") -> None:
     call("run_model_pipeline.py", "all", "--profile", profile, "--scene", scene, "--config", config)
+    if profile == "full":
+        call("measure_original_pc_reference.py", "--scene", scene, "--config", config)
 
 
 def rtl(config: Path, profile: str = "full") -> None:
@@ -44,7 +46,7 @@ def verify(config: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Stage39 reproducible cold-start orchestrator")
-    parser.add_argument("command", choices=("preflight", "vivado", "models", "rtl", "assemble", "verify", "all"))
+    parser.add_argument("command", choices=("preflight", "vivado", "models", "rtl", "assemble", "verify", "pc-reference", "all"))
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--profile", choices=("full", "smoke"), default="full")
     parser.add_argument("--scene", choices=("s23", "Meetingroom", "Office1", "Office2", "all"), default="all")
@@ -52,6 +54,7 @@ def main() -> None:
     if args.command in ("preflight", "all"): preflight(config)
     if args.command in ("vivado", "all"): vivado(config)
     if args.command in ("models", "all"): models(config, args.profile, args.scene)
+    if args.command == "pc-reference": call("measure_original_pc_reference.py", "--scene", args.scene, "--config", config)
     if args.command in ("rtl", "all"): rtl(config, args.profile)
     if args.command in ("assemble", "all"):
         if args.profile != "full": raise RuntimeError("final packages can only be assembled from the full profile")

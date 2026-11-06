@@ -1,0 +1,18 @@
+
+****** xsim v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Tue Oct 13 23:14:13 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/stage39_multiscene_sim/xsim_script.tcl
+# xsim {stage39_multiscene_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+STAGE39_FOUR_SCENE_SWITCH_AND_RETURN_PASS
+$finish called at time : 3304955 ns : File "E:/Codex/2026-10-04/e-codex-2026-09-05-fpga/outputs/Stage39_Cold_Reproduction_Kit_NoPS1_20261012/work/full/rtl_sim/tb_stage39_multiscene_generated.sv" Line 21
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 226.012 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Oct 13 23:14:24 2026...

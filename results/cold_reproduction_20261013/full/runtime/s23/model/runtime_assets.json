@@ -1,0 +1,21 @@
+{
+  "schema": "n2-stage37-scene-runtime-assets-v1",
+  "scene": "s23",
+  "runtime_model_sha256": "31a2df57e190799e23ccef3001701657b30bdad1d5476966ea8742da277f9d56",
+  "quant_manifest_sha256": "d5f7f6c1cc8425568a7babec52fac61facca65e2d930d9b08cc945ab33523ffa",
+  "cache_sha256": "63b68591626a3e37bb68a3896df07056cdd5328f87aaa3d539e269d415cafe23",
+  "cache_shape": [
+    90,
+    360,
+    64
+  ],
+  "cache_is_tx_independent": true,
+  "cache_contains_final_heatmap": false,
+  "constant_manifest_sha256": "994e7b6d8dd88bd01742c8b8c371220c185fcc770f21c1a13c14b6cb67c91c5c",
+  "sentinel": {
+    "rays": 512,
+    "values": 32768,
+    "sha256": "f4546c3b3094e2b9e1c7336632ec89b26ed0e3a1c2dc457d2046d2dc9db5b3c0"
+  },
+  "same_bitstream_required": true
+}

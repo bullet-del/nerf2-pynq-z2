@@ -53,7 +53,9 @@ def main():
     parser.add_argument("--pc-app-root", required=True)
     parser.add_argument("--physical-export", required=True)
     parser.add_argument("--power-csv", required=True)
-    parser.add_argument("--rehearsal-manifest", required=True)
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--rehearsal-manifest")
+    group.add_argument("--rehearsal-root", help="directory containing latest_rehearsal.json from the sequential script")
     parser.add_argument("--video-file", help="optional uninterrupted external-camera recording")
     parser.add_argument("--user-observed-hdmi", action="store_true",
                         help="human witness confirms both physical HDMI outputs were seen")
@@ -63,7 +65,13 @@ def main():
     root = Path(args.pc_app_root).resolve()
     physical = Path(args.physical_export).resolve()
     power = Path(args.power_csv).resolve()
-    rehearsal_path = Path(args.rehearsal_manifest).resolve()
+    if args.rehearsal_manifest:
+        rehearsal_path = Path(args.rehearsal_manifest).resolve()
+    else:
+        rehearsal_root = Path(args.rehearsal_root).resolve()
+        pointer = json.loads((rehearsal_root / "latest_rehearsal.json").read_text(encoding="utf-8"))
+        rehearsal_path = (rehearsal_root / pointer["manifest"]).resolve()
+        require(rehearsal_root in rehearsal_path.parents, "rehearsal pointer leaves its output directory")
     require(root.is_dir(), "PC App root does not exist")
     require(power.is_file(), "80-row power CSV does not exist")
     physical_manifest = validate_physical_export(physical)
